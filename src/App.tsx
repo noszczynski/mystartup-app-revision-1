@@ -1,9 +1,11 @@
 import React from 'react';
+import theme from "./theme/theme";
 
-function App() {
+const App: React.FC<any> = () => {
+    console.log(theme)
   return (
     <div>
-      <p>dupa</p>
+      <p>App</p>
     </div>
   );
 }
