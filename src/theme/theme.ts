@@ -33,17 +33,9 @@ const sizes = {
   },
 };
 
-const breakpoints = [350, 640, 768, 1024, 1280, 1440, 1600, 1920, 2560];
-
-const mediaQueries = breakpoints.reduce((acc, curr) => {
-  acc[curr] = `@media screen and (min-width: ${curr}px)`;
-  return acc;
-}, {});
-
 const theme = {
   color: colors,
   size: sizes,
-  mq: mediaQueries,
 };
 
 export default theme;
