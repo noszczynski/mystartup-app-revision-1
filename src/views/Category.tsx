@@ -1,17 +1,8 @@
 import React from 'react';
-import { withRouter } from 'react-router';
-import { RouteComponentProps } from 'react-router-dom';
+import { useParams, withRouter } from 'react-router-dom';
 
-interface Props {
-  match: any
-}
-
-const defaultProps = {
-  match: null,
-};
-
-const Category: React.FC<Props & RouteComponentProps> = ({ match }) => {
-  const { id } = match.params;
+const Category: React.FC = () => {
+  const { id } = useParams();
 
   return (
     <div>
@@ -21,7 +12,5 @@ const Category: React.FC<Props & RouteComponentProps> = ({ match }) => {
     </div>
   );
 };
-
-Category.defaultProps = defaultProps;
 
 export default withRouter(Category);

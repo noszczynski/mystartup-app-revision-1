@@ -1,16 +1,8 @@
 import React from 'react';
-import { withRouter, RouteComponentProps } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
-interface Props {
-  match: any
-}
-
-const defaultProps = {
-  match: null,
-};
-
-const Settings: React.FC<Props & RouteComponentProps> = ({ match }) => {
-  const { id } = match.params;
+const Settings: React.FC = () => {
+  const { id } = useParams();
 
   return (
     <div>
@@ -21,6 +13,4 @@ const Settings: React.FC<Props & RouteComponentProps> = ({ match }) => {
   );
 };
 
-Settings.defaultProps = defaultProps;
-
-export default withRouter(Settings);
+export default Settings;

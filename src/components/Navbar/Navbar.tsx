@@ -7,6 +7,8 @@ const StyledNavigation = styled.nav`
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  width: 900px;
+  margin: 0 auto;
 `;
 
 const Navbar: React.FC = () => (
@@ -16,10 +18,10 @@ const Navbar: React.FC = () => (
       <Link to="/category">Categories</Link>
       <Link to="/category/test_id_1">Category with id test_id_1</Link>
       <Link to="/news">News</Link>
-      <Link to="/news/1">News #1</Link>
+      <Link to="/news/123">News #1</Link>
       <Link to="/about">About</Link>
-      <Link to="/results">Search results</Link>
-      <Link to="/project">Start-up</Link>
+      <Link to="/results/search+string">Search results</Link>
+      <Link to="/project/123">Start-up</Link>
     </StyledNavigation>
   </div>
 );
