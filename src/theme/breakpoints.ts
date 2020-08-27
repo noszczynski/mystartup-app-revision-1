@@ -1,4 +1,6 @@
-const breakpoints = {
+import { ObjectOfNumbers, ObjectOfStrings } from '../interfaces';
+
+const breakpoints: ObjectOfNumbers = {
   mobileS: 375,
   mobileM: 425,
   tabletS: 768,
@@ -11,7 +13,7 @@ const breakpoints = {
   desktopL: 3840,
 };
 
-const mq = {
+const mq: ObjectOfStrings = {
   mobileS: `@media screen and (min-width: ${breakpoints.mobileS}px)`,
   mobileM: `@media screen and (min-width: ${breakpoints.mobileM}px)`,
   tabletS: `@media screen and (min-width: ${breakpoints.tabletS}px)`,

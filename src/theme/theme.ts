@@ -1,4 +1,6 @@
-const colors = {
+import { ObjectOfStrings, ObjectOfAny, ThemeSizes } from '../interfaces';
+
+const colors: ObjectOfStrings = {
   light: '#FFFFFF',
   dark: '#464A5F',
   primary: '#6C63FF',
@@ -8,7 +10,7 @@ const colors = {
   lightGray: '#9C9CA1',
 };
 
-const sizes = {
+const sizes: ThemeSizes = {
   space: {
     sm: '.5rem', // 8px
     md: '1rem', // 16px
@@ -33,7 +35,7 @@ const sizes = {
   },
 };
 
-const theme = {
+const theme: ObjectOfAny = {
   color: colors,
   size: sizes,
 };

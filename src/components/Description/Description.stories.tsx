@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import Description from './Description';
 import Theme from '../Theme/Theme';
 
-const NormalDescription = (
+const NormalDescription: JSX.Element = (
   <Description>
     Lorem ipsum dolor sit amet,
     consectetur adipisicing elit. Animi asperiores dolorum, eveniet maiores modi officia!
@@ -12,7 +12,7 @@ const NormalDescription = (
   </Description>
 );
 
-const SmallDescription = (
+const SmallDescription: JSX.Element = (
   <Description small>
     Lorem ipsum dolor sit amet,
     consectetur adipisicing elit. Animi asperiores dolorum, eveniet maiores modi officia!
@@ -22,5 +22,5 @@ const SmallDescription = (
 );
 
 storiesOf('Description', module)
-  .add('Normal', () => <Theme>{NormalDescription}</Theme>)
-  .add('Small', () => <Theme>{SmallDescription}</Theme>);
+  .add('Normal', (): JSX.Element => <Theme>{NormalDescription}</Theme>)
+  .add('Small', (): JSX.Element => <Theme>{SmallDescription}</Theme>);
