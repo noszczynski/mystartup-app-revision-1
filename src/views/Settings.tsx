@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { useParams } from 'react-router-dom';
 
-const Settings: React.FC = () => {
+const Settings: FC = () => {
   const { id } = useParams();
 
   return (

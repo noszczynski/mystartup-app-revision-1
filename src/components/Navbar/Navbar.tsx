@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -11,7 +11,7 @@ const StyledNavigation = styled.nav`
   margin: 0 auto;
 `;
 
-const Navbar: React.FC = () => (
+const Navbar: FC = () => (
   <div>
     <StyledNavigation>
       <Link to="/">Home</Link>

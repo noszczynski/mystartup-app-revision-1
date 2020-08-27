@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { FC } from 'react';
 
-const NoRoute: React.FC = () => (
+const NoRoute: FC = () => (
   <div>
     404
   </div>

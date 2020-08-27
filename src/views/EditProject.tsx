@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { useParams } from 'react-router-dom';
 
-const EditProject: React.FC = () => {
+const EditProject: FC = () => {
   const { id } = useParams();
 
   return (

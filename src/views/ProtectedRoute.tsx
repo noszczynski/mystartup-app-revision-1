@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import {
   Route, Redirect, RouteProps,
 } from 'react-router-dom';
@@ -8,10 +8,10 @@ interface ProtectedRouteProps extends RouteProps {
   isAllowed: boolean;
   restrictedPath: string;
   authenticationPath: string;
-  component: React.FC;
+  component: FC;
 }
 
-export const ProtectedRoute: React.FC<ProtectedRouteProps> = ({
+export const ProtectedRoute: FC<ProtectedRouteProps> = ({
   isAuthenticated,
   isAllowed,
   restrictedPath,
@@ -28,7 +28,7 @@ export const ProtectedRoute: React.FC<ProtectedRouteProps> = ({
   }
 
   if (redirectPath) {
-    const renderComponent: React.FC = () => <Redirect to={{ pathname: redirectPath }} />;
+    const renderComponent: FC = () => <Redirect to={{ pathname: redirectPath }} />;
     return <Route {...props} component={renderComponent} render={undefined} />;
   }
   return <Route component={Component} {...props} />;

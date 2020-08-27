@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { useParams, withRouter } from 'react-router-dom';
 
-const Article: React.FC = () => {
+const Article: FC = () => {
   const { id } = useParams();
 
   return (

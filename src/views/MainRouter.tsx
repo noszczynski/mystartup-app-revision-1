@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import {
   Route, BrowserRouter as Router, Switch,
 } from 'react-router-dom';
@@ -16,7 +16,7 @@ import About from './About';
 import EditProject from './EditProject';
 import Settings from './Settings';
 
-const MainRouter: React.FC = () => (
+const MainRouter: FC = () => (
   <Router>
     <Layout>
       <Switch>

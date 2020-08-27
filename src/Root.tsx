@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { FC } from 'react';
 import Theme from './components/Theme/Theme';
 import MainRouter from './views/MainRouter';
 
-const Root: React.FC = () => (
+const Root: FC = () => (
   <Theme>
     <MainRouter />
   </Theme>

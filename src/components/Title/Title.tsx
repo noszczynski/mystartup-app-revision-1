@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 
 interface Props {
   small?: boolean,
@@ -8,7 +8,7 @@ const defaultProps = {
   small: false,
 };
 
-const Title: React.FC<Props> = ({ small, children }) => (
+const Title: FC<Props> = ({ small, children }) => (
   <div>
     {small
       ? <h2>{children}</h2>

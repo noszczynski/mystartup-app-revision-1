@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { FC } from 'react';
 
-const Categories: React.FC = () => (
+const Categories: FC = () => (
   <div>
     Categories view
   </div>
