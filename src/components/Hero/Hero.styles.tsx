@@ -78,8 +78,9 @@ const StyledBlob = styled(Image)`
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  height: 32px;
-  width: 32px;
+  min-height: 128px;
+  min-width: 128px;
+  z-index: 0;
 `;
 
 export {

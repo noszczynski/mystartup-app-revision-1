@@ -25,9 +25,9 @@ const Hero: FC = () => (
         as an investor or set up your own startup profile
       </Description>
       <StyledButtonWrapper>
-        <button type="button">Get started</button>
+        <button style={{ zIndex: 1 }} type="button">Get started</button>
         <StyledBlob src={blob} alt="" />
-        <button type="button">Get started</button>
+        <button style={{ zIndex: 1 }} type="button">Get started</button>
       </StyledButtonWrapper>
     </StyledContent>
     <StyledImageWrapper>
