@@ -56,6 +56,12 @@ const GlobalStyle = createGlobalStyle`
   ul, ol {
     list-style: none;
   }
+  
+  img {
+    display: block;
+    max-height: 100%;
+    max-width: 100%;
+  }
 `;
 
 export default GlobalStyle;

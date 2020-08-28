@@ -1,9 +1,12 @@
 import React, { FC } from 'react';
+import Hero from '../components/Hero/Hero';
+import CommentList from '../components/HomeSections/CommentList';
 
 const Home: FC = () => (
-  <div>
-    Home view
-  </div>
+  <>
+    <Hero />
+    <CommentList />
+  </>
 );
 
 export default Home;

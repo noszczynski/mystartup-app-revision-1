@@ -3,6 +3,7 @@ import { ObjectOfNumbers, ObjectOfStrings } from '../interfaces';
 const breakpoints: ObjectOfNumbers = {
   mobileS: 375,
   mobileM: 425,
+  mobileL: 576,
   tabletS: 768,
   tablet: 1024,
   laptopS: 1280,
@@ -16,6 +17,7 @@ const breakpoints: ObjectOfNumbers = {
 const mq: ObjectOfStrings = {
   mobileS: `@media screen and (min-width: ${breakpoints.mobileS}px)`,
   mobileM: `@media screen and (min-width: ${breakpoints.mobileM}px)`,
+  mobileL: `@media screen and (min-width: ${breakpoints.mobileL}px)`,
   tabletS: `@media screen and (min-width: ${breakpoints.tabletS}px)`,
   tablet: `@media screen and (min-width: ${breakpoints.tablet}px)`,
   laptopS: `@media screen and (min-width: ${breakpoints.laptopS}px)`,
@@ -26,4 +28,5 @@ const mq: ObjectOfStrings = {
   desktopL: `@media screen and (min-width: ${breakpoints.desktopL}px)`,
 };
 
+export { breakpoints };
 export default mq;
