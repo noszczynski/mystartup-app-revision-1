@@ -1,4 +1,6 @@
-const colors = {
+import { ObjectOfStrings, ObjectOfAny, ThemeSizes } from '../interfaces';
+
+const colors: ObjectOfStrings = {
   light: '#FFFFFF',
   dark: '#464A5F',
   primary: '#6C63FF',
@@ -8,7 +10,7 @@ const colors = {
   lightGray: '#9C9CA1',
 };
 
-const sizes = {
+const sizes: ThemeSizes = {
   space: {
     sm: '.5rem', // 8px
     md: '1rem', // 16px
@@ -33,17 +35,9 @@ const sizes = {
   },
 };
 
-const breakpoints = [350, 640, 768, 1024, 1280, 1440, 1600, 1920, 2560];
-
-const mediaQueries = breakpoints.reduce((acc, curr) => {
-  acc[curr] = `@media screen and (min-width: ${curr}px)`;
-  return acc;
-}, {});
-
-const theme = {
+const theme: ObjectOfAny = {
   color: colors,
   size: sizes,
-  mq: mediaQueries,
 };
 
 export default theme;
