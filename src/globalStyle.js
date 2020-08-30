@@ -18,19 +18,26 @@ const GlobalStyle = createGlobalStyle`
     font-family: Poppins, serif;
   }
   
+  h1, h2 {
+    font-weight: ${({ theme }) => theme.size.weight.bold};
+    background: ${({ theme }) => theme.gradient.violet};
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
   h1 {
     font-size: ${({ theme }) => theme.size.font.xxl};
-    line-height: ${({ theme }) => theme.size.font.xxl};
+    line-height: 80px;
   }
   
   h2 {
     font-size: ${({ theme }) => theme.size.font.xl};
-    line-height: ${({ theme }) => theme.size.font.xl};
+    line-height: 50px;
   }
   
   h3 {
     font-size: ${({ theme }) => theme.size.font.lg};
-    line-height: ${({ theme }) => theme.size.font.lg};
+    line-height: 32px;
   }
   
   h4 {

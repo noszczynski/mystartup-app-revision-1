@@ -17,7 +17,7 @@ import {
 const Hero: FC = () => (
   <StyledHero>
     <StyledContent>
-      <Title>
+      <Title component="h1">
         Find a project You want to support
       </Title>
       <Description>

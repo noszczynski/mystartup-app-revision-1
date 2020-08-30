@@ -4,7 +4,7 @@ import Image from '../Image/Image';
 
 const StyledHero = styled.header`
   min-height: calc(100vh - ${({ theme }) => theme.size.space.xxl});
-  background-color: ${({ theme }) => theme.color.light};
+  background-color: ${({ theme }) => theme.color.white};
   display: grid;
   grid-template-columns: 1fr;
   align-items: center;
@@ -81,6 +81,7 @@ const StyledBlob = styled(Image)`
   min-height: 128px;
   min-width: 128px;
   z-index: 0;
+  opacity: .18;
 `;
 
 export {
