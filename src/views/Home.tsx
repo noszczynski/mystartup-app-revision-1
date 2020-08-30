@@ -14,8 +14,8 @@ const StyledWrapper = styled.article`
 const Home: FC = () => (
   <StyledWrapper>
     <Hero />
-    <CommentList />
     <Advantages />
+    <CommentList />
   </StyledWrapper>
 );
 
