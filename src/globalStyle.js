@@ -60,6 +60,8 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
   }
   
+  /* Reset style */
+  
   ul, ol {
     list-style: none;
   }
@@ -69,6 +71,15 @@ const GlobalStyle = createGlobalStyle`
     max-height: 100%;
     max-width: 100%;
   }
+  
+  figure {
+    margin: 0;
+    margin-block-start: initial;
+    margin-block-end: initial;
+    margin-inline-start: initial;
+    margin-inline-end: initial;
+  }
+  
 `;
 
 export default GlobalStyle;

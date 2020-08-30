@@ -37,7 +37,7 @@ const StyledArticle = styled(motion.article)<{backgroundColor: string}>`
   justify-content: space-between;
   text-align: left;
   row-gap: 1rem;
-  max-width: 270px;
+  max-width: 400px;
   border-radius: .5rem;
   height: 100%;
   background: ${({ backgroundColor }) => backgroundColor};

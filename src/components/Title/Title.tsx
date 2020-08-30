@@ -27,11 +27,7 @@ const Title: FC<Props> = ({ component, children }) => {
     }
   };
 
-  return (
-    <div>
-      {renderHeadline()}
-    </div>
-  );
+  return renderHeadline();
 };
 
 Title.defaultProps = defaultProps;
