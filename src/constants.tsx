@@ -3,13 +3,9 @@ import {
 } from '@material-ui/icons';
 import React from 'react';
 import theme from './theme/theme';
+import { AdvantagesArray, CommentArray } from './interfaces';
 
-const ADVANTAGES_ITEMS: {
-  title: string,
-  description: string,
-  icon: JSX.Element,
-  background: string
-}[] = [
+const ADVANTAGES_ITEMS: AdvantagesArray = [
   {
     title: 'Categories',
     description: 'The projects available on our website have their own categories that you can filter the results by to choose what you really want to support',
@@ -36,7 +32,60 @@ const ADVANTAGES_ITEMS: {
   },
 ];
 
+const COMMENTS: CommentArray = [
+  {
+    author: 'John doe',
+    signature: 'Works in Google as Frontend developer',
+    avatar: 'https://api.adorable.io/avatars/120/random',
+    content:
+      `Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Corporis culpa et eveniet exercitationem facere id, ipsam praesentium quae quasi quo?
+            Blanditiis cumque cupiditate earum error iusto praesentium quasi rerum vero 1?
+         `,
+  },
+  {
+    author: 'John doe',
+    signature: 'Works in Google as Frontend developer',
+    avatar: 'https://api.adorable.io/avatars/120/random',
+    content:
+      `Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Corporis culpa et eveniet exercitationem facere id, ipsam praesentium quae quasi quo?
+            Blanditiis cumque cupiditate earum error iusto praesentium quasi rerum vero 2?
+         `,
+  },
+  {
+    author: 'John doe',
+    signature: 'Works in Google as Frontend developer',
+    avatar: 'https://api.adorable.io/avatars/120/random',
+    content:
+      `Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Corporis culpa et eveniet exercitationem facere id, ipsam praesentium quae quasi quo?
+            Blanditiis cumque cupiditate earum error iusto praesentium quasi rerum vero 3?
+         `,
+  },
+  {
+    author: 'John doe',
+    signature: 'Works in Google as Frontend developer',
+    avatar: 'https://api.adorable.io/avatars/120/random',
+    content:
+      `Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Corporis culpa et eveniet exercitationem facere id, ipsam praesentium quae quasi quo?
+            Blanditiis cumque cupiditate earum error iusto praesentium quasi rerum vero 4?
+         `,
+  },
+  {
+    author: 'John doe',
+    signature: 'Works in Google as Frontend developer',
+    avatar: 'https://api.adorable.io/avatars/120/random',
+    content:
+      `Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Corporis culpa et eveniet exercitationem facere id, ipsam praesentium quae quasi quo?
+            Blanditiis cumque cupiditate earum error iusto praesentium quasi rerum vero 5?
+         `,
+  },
+];
+
 export {
-  // eslint-disable-next-line import/prefer-default-export
   ADVANTAGES_ITEMS,
+  COMMENTS,
 };

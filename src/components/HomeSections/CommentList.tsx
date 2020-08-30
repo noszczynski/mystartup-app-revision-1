@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import styled from 'styled-components';
 import Comment from '../Comment/Comment';
 import mq from '../../theme/breakpoints';
+import { COMMENTS } from '../../constants';
 
 const StyledWrapper = styled.section`
   display: flex;
@@ -32,39 +33,22 @@ const RegularCommentsRow = styled.div`
 const CommentList: FC = () => (
   <StyledWrapper>
     <BigCommentsRow>
-      <Comment image="https://api.adorable.io/avatars/120/random">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        Corporis culpa et eveniet exercitationem facere id, ipsam praesentium quae quasi quo?
-        Blanditiis cumque cupiditate earum error iusto praesentium quasi rerum vero?
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        Corporis culpa et eveniet exercitationem facere id, ipsam praesentium quae quasi quo?
-        Blanditiis cumque cupiditate earum error iusto praesentium quasi rerum vero?
-      </Comment>
-      <Comment image="https://api.adorable.io/avatars/120/random">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        Corporis culpa et eveniet exercitationem facere id, ipsam praesentium quae quasi quo?
-        Blanditiis cumque cupiditate earum error iusto praesentium quasi rerum vero?
-      </Comment>
+      {COMMENTS.slice(0, 2).map(({
+        avatar, content, signature, author,
+      }) => (
+        <Comment image={avatar} name={author} signature={signature}>
+          {content}
+        </Comment>
+      ))}
     </BigCommentsRow>
     <RegularCommentsRow>
-      <Comment image="https://api.adorable.io/avatars/120/random">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        Corporis culpa et eveniet exercitationem facere id, ipsam praesentium quae quasi quo?
-        Blanditiis cumque cupiditate earum error iusto praesentium quasi rerum vero?
-      </Comment>
-      <Comment image="https://api.adorable.io/avatars/120/random">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        Corporis culpa et eveniet exercitationem facere id, ipsam praesentium quae quasi quo?
-        Blanditiis cumque cupiditate earum error iusto praesentium quasi rerum vero?
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        Corporis culpa et eveniet exercitationem facere id, ipsam praesentium quae quasi quo?
-        Blanditiis cumque cupiditate earum error iusto praesentium quasi rerum vero?
-      </Comment>
-      <Comment image="https://api.adorable.io/avatars/120/random">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        Corporis culpa et eveniet exercitationem facere id, ipsam praesentium quae quasi quo?
-        Blanditiis cumque cupiditate earum error iusto praesentium quasi rerum vero?
-      </Comment>
+      {COMMENTS.slice(2, 5).map(({
+        avatar, content, signature, author,
+      }) => (
+        <Comment image={avatar} name={author} signature={signature}>
+          {content}
+        </Comment>
+      ))}
     </RegularCommentsRow>
   </StyledWrapper>
 );

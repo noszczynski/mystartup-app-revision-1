@@ -11,6 +11,21 @@ interface ObjectOfAny {
 }
 
 type ArrayOfJSX = Array<JSX.Element>;
+type ArrayOfAny = Array<any>;
+
+type CommentArray = {
+  author: string
+  signature: string
+  avatar: string
+  content: string
+}[];
+
+type AdvantagesArray = {
+  title: string,
+  description: string,
+  icon: JSX.Element,
+  background: string
+}[];
 
 interface ThemeSizes {
   space: {[key: string]: string}
@@ -24,4 +39,7 @@ export type {
   ObjectOfNumbers,
   ObjectOfAny,
   ArrayOfJSX,
+  ArrayOfAny,
+  CommentArray,
+  AdvantagesArray,
 };
