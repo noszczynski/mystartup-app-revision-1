@@ -1,14 +1,12 @@
 import React, { FC } from 'react';
 import Image from '../Image/Image';
-import Title from '../Title/Title';
 import {
   StyledWrapper,
   StyledAvatar,
   StyledWrapperInner,
   StyledContent,
-  StyledSignature,
-  StyledSignatureInner,
 } from './Comment.styles';
+import Signature from '../Signature';
 
 interface Props {
   image: string,
@@ -41,15 +39,9 @@ const Comment: FC<Props> = ({
         {children}
         &#34;
       </StyledContent>
-      <StyledSignature>
-        <Image src={image} alt="start-up cover" />
-        <StyledSignatureInner>
-          <Title component="h5">{name}</Title>
-          <Title component="h6">
-            {signature}
-          </Title>
-        </StyledSignatureInner>
-      </StyledSignature>
+      <Signature image={image} name={name}>
+        {signature}
+      </Signature>
     </StyledWrapperInner>
   </StyledWrapper>
 );
