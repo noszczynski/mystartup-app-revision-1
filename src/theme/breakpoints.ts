@@ -1,4 +1,4 @@
-import { ObjectOfNumbers, ObjectOfStrings } from '../interfaces';
+import { ObjectOfNumbers, ObjectOfStrings } from '../utils/interfaces';
 
 const breakpoints: ObjectOfNumbers = {
   mobileS: 375,

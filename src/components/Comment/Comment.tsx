@@ -6,7 +6,7 @@ import {
   StyledWrapperInner,
   StyledContent,
 } from './Comment.styles';
-import Signature from '../Signature';
+import Signature from '../Signature/Signature';
 
 interface Props {
   image: string,

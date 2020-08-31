@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import styled from 'styled-components';
 import Comment from '../Comment/Comment';
 import mq from '../../theme/breakpoints';
-import { COMMENTS } from '../../constants';
+import { COMMENTS } from '../../utils/constants';
 import Title from '../Title/Title';
 import Container from '../Layout/Container';
 

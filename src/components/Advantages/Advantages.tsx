@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import Title from '../Title/Title';
 import mq from '../../theme/breakpoints';
-import { ADVANTAGES_ITEMS } from '../../constants';
+import { ADVANTAGES_ITEMS } from '../../utils/constants';
 import Container from '../Layout/Container';
 
 const StyledSection = styled.section`

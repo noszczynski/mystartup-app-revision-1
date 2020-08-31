@@ -2,7 +2,7 @@ import {
   Category, MonetizationOn, PlayArrow, FiberNew,
 } from '@material-ui/icons';
 import React from 'react';
-import theme from './theme/theme';
+import theme from '../theme/theme';
 import { AdvantagesArray, CommentArray } from './interfaces';
 
 const ADVANTAGES_ITEMS: AdvantagesArray = [

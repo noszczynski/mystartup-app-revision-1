@@ -1,4 +1,4 @@
-import { ObjectOfStrings, ObjectOfAny, ThemeSizes } from '../interfaces';
+import { ObjectOfStrings, ObjectOfAny, ThemeSizes } from '../utils/interfaces';
 
 const colors: ObjectOfStrings = {
   light: '#FCF3D7',
