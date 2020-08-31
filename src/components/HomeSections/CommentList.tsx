@@ -4,6 +4,7 @@ import Comment from '../Comment/Comment';
 import mq from '../../theme/breakpoints';
 import { COMMENTS } from '../../constants';
 import Title from '../Title/Title';
+import Container from '../Layout/Container';
 
 const StyledWrapper = styled.section`
   display: flex;
@@ -54,29 +55,31 @@ const RegularCommentsRow = styled.div`
 `;
 
 const CommentList: FC = () => (
-  <StyledWrapper>
-    <Title component="h2">
-      Happy start-up Owners are here!
-    </Title>
-    <BigCommentsRow>
-      {COMMENTS.slice(0, 2).map(({
-        avatar, content, signature, author,
-      }) => (
-        <Comment image={avatar} name={author} signature={signature}>
-          {content}
-        </Comment>
-      ))}
-    </BigCommentsRow>
-    <RegularCommentsRow>
-      {COMMENTS.slice(2, 5).map(({
-        avatar, content, signature, author,
-      }) => (
-        <Comment image={avatar} name={author} signature={signature}>
-          {content}
-        </Comment>
-      ))}
-    </RegularCommentsRow>
-  </StyledWrapper>
+  <Container>
+    <StyledWrapper>
+      <Title component="h2">
+        Happy start-up Owners are here!
+      </Title>
+      <BigCommentsRow>
+        {COMMENTS.slice(0, 2).map(({
+          avatar, content, signature, author,
+        }) => (
+          <Comment image={avatar} name={author} signature={signature}>
+            {content}
+          </Comment>
+        ))}
+      </BigCommentsRow>
+      <RegularCommentsRow>
+        {COMMENTS.slice(2, 5).map(({
+          avatar, content, signature, author,
+        }) => (
+          <Comment image={avatar} name={author} signature={signature}>
+            {content}
+          </Comment>
+        ))}
+      </RegularCommentsRow>
+    </StyledWrapper>
+  </Container>
 );
 
 export default CommentList;

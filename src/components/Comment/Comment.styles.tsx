@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const StyledWrapper = styled(motion.article)`
   border-radius: .5rem;
-  background-color: ${({ theme }) => theme.color.gray100};
+  background-color: ${({ theme }) => theme.color.gray50};
   padding: ${({ theme }) => theme.size.space.md};
   display: flex;
   flex-direction: column;

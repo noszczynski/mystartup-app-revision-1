@@ -15,6 +15,7 @@ const colors: ObjectOfStrings = {
   gray500: '#919699',
   gray300: '#C6CACC',
   gray100: '#E3E5E6',
+  gray50: '#F8F8F8',
 };
 
 const gradients: ObjectOfStrings = {

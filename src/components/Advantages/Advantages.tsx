@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Title from '../Title/Title';
 import mq from '../../theme/breakpoints';
 import { ADVANTAGES_ITEMS } from '../../constants';
+import Container from '../Layout/Container';
 
 const StyledSection = styled.section`
   display: flex;
@@ -89,31 +90,33 @@ const StyledDescription = styled.p`
 `;
 
 const Advantages: FC = () => (
-  <StyledSection>
-    <Title>Advantages</Title>
-    <StyledWrapper>
-      {ADVANTAGES_ITEMS.map(({
-        title, description, icon, background,
-      }) => (
-        <StyledArticle
-          key={title}
-          backgroundColor={background}
-          whileHover={{
-            y: -4,
-            boxShadow: `0 10px 10px -6px ${background}`,
-            transition: { duration: 0.3 },
-          }}
-        >
-          <StyledIcon>{icon}</StyledIcon>
-          <StyledContent>
-            <Title component="h3">{title}</Title>
-            <StyledDescription>{description}</StyledDescription>
-          </StyledContent>
-        </StyledArticle>
-      ))}
-    </StyledWrapper>
-    <button type="button">Become an Investor</button>
-  </StyledSection>
+  <Container>
+    <StyledSection>
+      <Title>Advantages</Title>
+      <StyledWrapper>
+        {ADVANTAGES_ITEMS.map(({
+          title, description, icon, background,
+        }) => (
+          <StyledArticle
+            key={title}
+            backgroundColor={background}
+            whileHover={{
+              y: -4,
+              boxShadow: `0 10px 10px -6px ${background}`,
+              transition: { duration: 0.3 },
+            }}
+          >
+            <StyledIcon>{icon}</StyledIcon>
+            <StyledContent>
+              <Title component="h3">{title}</Title>
+              <StyledDescription>{description}</StyledDescription>
+            </StyledContent>
+          </StyledArticle>
+        ))}
+      </StyledWrapper>
+      <button type="button">Become an Investor</button>
+    </StyledSection>
+  </Container>
 );
 
 export default Advantages;
