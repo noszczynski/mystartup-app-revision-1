@@ -1,6 +1,7 @@
 import React, { FC, useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import styled, { keyframes, css } from 'styled-components';
+import { NAV_ITEMS } from '../../constants';
 import logoImg from '../../assets/logo.svg';
 import searchIcon from '../../assets/search.svg';
 import accountIcon from '../../assets/account.svg';
@@ -9,12 +10,12 @@ const StyledNavigation = styled.nav<{ opened: boolean }>`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  max-width: 1300px;
-  margin: 18px auto 0;
+  max-width: 1280px;
+  margin:${({ theme }) => (`${theme.sizes.space.md} auto 0`)};
   position: relative;
-  @media (max-width: 1300px) {
-    margin-left: 30px;
-    margin-right: 30px;
+  @media (max-width: 1280px) {
+    margin-left: ${({ theme }) => theme.sizes.space.lg};
+    margin-right: ${({ theme }) => theme.sizes.space.lg};
   }
 
   ::before {
@@ -26,14 +27,13 @@ const StyledNavigation = styled.nav<{ opened: boolean }>`
     transform: translate(50%, -50%);
     top: 0px;
     right: 0px;
-    background: #6c63ff;
+    background: ${({ theme }) => theme.colors.primary};
     border-radius: 100%;
     transition: all 0.4s ease-in-out;
   }
 
-  ${({ opened }) =>
-    opened &&
-    css`
+  ${({ opened }) => opened
+    && css`
       ::before {
         width: 250vh;
         height: 250vh;
@@ -47,21 +47,18 @@ const Logo = styled.img`
 
 const appear = keyframes`
   from {
-   
-    background: rgba(108, 99, 255, 0);
+       background: rgba(108, 99, 255, 0);
   }
 
   to {
-   
-    background: rgba(241, 243, 244, 0.6);
+       background: rgba(241, 243, 244, 0.6);
   }
 `;
 
 const NavbarLink = styled(NavLink)`
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
+
+  font-weight: ${({ theme }) => theme.sizes.weight.medium};
+  font-size: ${({ theme }) => theme.sizes.font.lg};
   line-height: 27px;
   text-decoration: none;
   position: relative;
@@ -89,8 +86,7 @@ const NavLinksContainer = styled.div`
   position: absolute;
   top: 50%;
   left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  transform: translate(-100%, -50%);
   width: 300px;
   display: flex;
   justify-content: space-between;
@@ -119,7 +115,7 @@ const BurgerIcon = styled.div<{ opened: boolean }>`
     position: absolute;
     height: 3px;
     width: 100%;
-    background: #6c63ff;
+    background: ${({ theme }) => theme.colors.primary};
     border-radius: 9px;
     opacity: 1;
     left: 0;
@@ -146,9 +142,8 @@ const BurgerIcon = styled.div<{ opened: boolean }>`
     top: 18px;
   }
 
-  ${({ opened }) =>
-    opened &&
-    css`
+  ${({ opened }) => opened
+    && css`
       span {
         background: white;
       }
@@ -182,8 +177,7 @@ const SearchButton = styled.div<{ searchIcon: string }>`
   background-image: url(${searchIcon});
   top: 50%;
   right: 0px;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
   height: 52px;
   width: 52px;
   background-repeat: no-repeat;
@@ -227,16 +221,11 @@ const AccountButton = styled.div<{ accountIcon: string }>`
   }
 `;
 
-const navLinks: string[] = ['/', 'projects', 'news'];
-
-const renderNavLinks = () =>
-  navLinks.map((item) => (
-    <NavbarLink key={item} exact={item === '/'} to={item}>
-      {item === '/'
-        ? 'Home'
-        : `${item.charAt(0).toUpperCase() + item.slice(1)}`}
-    </NavbarLink>
-  ));
+const renderNavLinks = () => NAV_ITEMS.map((item) => (
+  <NavbarLink key={item.label} exact={item.exact} to={item.to}>
+    {item.label}
+  </NavbarLink>
+));
 
 const Navbar: FC = () => {
   const [isMenuOpen, openMenu] = useState(false);
@@ -244,7 +233,8 @@ const Navbar: FC = () => {
   return (
     <StyledNavigation opened={isMenuOpen}>
       <Link to="/">
-        <Logo src={logoImg} alt="logo" />{' '}
+        <Logo src={logoImg} alt="logo" />
+        {' '}
       </Link>
       <NavLinksContainer>{renderNavLinks()}</NavLinksContainer>
       <SearchButton searchIcon={searchIcon} />

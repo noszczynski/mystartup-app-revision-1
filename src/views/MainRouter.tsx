@@ -8,7 +8,6 @@ import News from './News';
 import Results from './Results';
 import Article from './Article';
 import Project from './Project';
-import Projects from './Projects';
 import NoRoute from './NoRoute';
 import Layout from '../components/Layout/Layout';
 import About from './About';
@@ -26,7 +25,6 @@ const MainRouter: FC = () => (
         <Route path="/news/:id" component={Article} />
         <Route path="/results/:search" component={Results} />
         <Route path="/about" component={About} />
-        <Route exact path="/projects" component={Projects} />
         <Route path="/project/:id" component={Project} />
         <ProtectedRoute
           restrictedPath="/project/:id/settings"
