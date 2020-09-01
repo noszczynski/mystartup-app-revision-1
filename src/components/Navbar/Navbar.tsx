@@ -11,11 +11,11 @@ const StyledNavigation = styled.nav<{ opened: boolean }>`
   flex-wrap: wrap;
   justify-content: space-between;
   max-width: 1280px;
-  margin:${({ theme }) => (`${theme.sizes.space.md} auto 0`)};
+  margin:${({ theme }) => (`${theme.size.space.md} auto 0`)};
   position: relative;
   @media (max-width: 1280px) {
-    margin-left: ${({ theme }) => theme.sizes.space.lg};
-    margin-right: ${({ theme }) => theme.sizes.space.lg};
+    margin-left: ${({ theme }) => theme.size.space.lg};
+    margin-right: ${({ theme }) => theme.size.space.lg};
   }
 
   ::before {
@@ -27,7 +27,7 @@ const StyledNavigation = styled.nav<{ opened: boolean }>`
     transform: translate(50%, -50%);
     top: 0px;
     right: 0px;
-    background: ${({ theme }) => theme.colors.primary};
+    background: ${({ theme }) => theme.color.primary};
     border-radius: 100%;
     transition: all 0.4s ease-in-out;
   }
@@ -56,9 +56,8 @@ const appear = keyframes`
 `;
 
 const NavbarLink = styled(NavLink)`
-
-  font-weight: ${({ theme }) => theme.sizes.weight.medium};
-  font-size: ${({ theme }) => theme.sizes.font.lg};
+  font-weight: ${({ theme }) => theme.size.weight.medium};
+  font-size: ${({ theme }) => theme.size.font.md};
   line-height: 27px;
   text-decoration: none;
   position: relative;
@@ -86,11 +85,10 @@ const NavLinksContainer = styled.div`
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-100%, -50%);
-  width: 300px;
-  display: flex;
+  transform: translate(-50%, -50%);
+    display: flex;
   justify-content: space-between;
-`;
+  `;
 
 const BurgerIcon = styled.div<{ opened: boolean }>`
   z-index: 99;
@@ -115,7 +113,7 @@ const BurgerIcon = styled.div<{ opened: boolean }>`
     position: absolute;
     height: 3px;
     width: 100%;
-    background: ${({ theme }) => theme.colors.primary};
+    background: ${({ theme }) => theme.color.primary};
     border-radius: 9px;
     opacity: 1;
     left: 0;
