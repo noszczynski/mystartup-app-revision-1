@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { ThemeProvider } from 'styled-components';
-import theme from '../../theme/theme';
 import GlobalStyle from '../../globalStyle';
+import theme from '../../theme/theme';
 
-const Theme = ({ children }) => (
+const Theme: FC = ({ children }) => (
   <ThemeProvider theme={theme}>
     <GlobalStyle />
     {children}
