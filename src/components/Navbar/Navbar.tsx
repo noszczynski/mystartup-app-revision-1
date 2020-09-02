@@ -25,28 +25,7 @@ const StyledNavigation = styled.nav<{ opened: boolean }>`
     margin-left: ${({ theme }) => theme.size.space.lg};
     margin-right: ${({ theme }) => theme.size.space.lg};
   }
-
-  /* ::before {
-    content: '';
-    z-index: 1;
-    position: fixed;
-    width: 0px;
-    height: 0px;
-    transform: translate(50%, -50%);
-    top: 0px;
-    right: 0px;
-    background: ${({ theme }) => theme.color.primary};
-    border-radius: 100%;
-    transition: all 0.4s ease-in-out;
-  }
-
-  ${({ opened }) => opened
-    && css`
-      ::before {
-        width: 250vh;
-        height: 250vh;
-      }
-    `} */
+ 
 `;
 
 const Logo = styled.img`
