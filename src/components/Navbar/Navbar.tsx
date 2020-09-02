@@ -7,6 +7,13 @@ import searchIcon from '../../assets/search.svg';
 import accountIcon from '../../assets/account.svg';
 import folderIcon from '../../assets/folder.svg';
 
+const Wrapper = styled.div`
+position:fixed;
+top:0;
+left:0;
+width:100%;
+`;
+
 const StyledNavigation = styled.nav<{ opened: boolean }>`
   display: flex;
   flex-wrap: wrap;
@@ -302,40 +309,42 @@ const Navbar: FC = () => {
   const [isMenuOpen, openMenu] = useState(true);
 
   return (
-    <StyledNavigation opened={isMenuOpen}>
-      <Link to="/">
-        <Logo src={logoImg} alt="logo" />
-        {' '}
-      </Link>
-      <NavLinksContainer>{renderNavLinks()}</NavLinksContainer>
-      <SearchButton searchIcon={searchIcon} />
-      <AccountButton accountIcon={accountIcon} />
-      <BurgerIcon
-        opened={isMenuOpen}
-        onClick={() => openMenu((prevState) => !prevState)}
-      >
-        <span />
-        <span />
-        <span />
-        <span />
-      </BurgerIcon>
-      <SideMenu opened={isMenuOpen}>
-        <SearchBar />
-        <SideLinksContainer>
-          {SIDE_NAV_ITEMS.map((item) => (
-            <SideLink to={item.to}>
-              {item.label}
-              {' '}
-            </SideLink>
-          ))}
-        </SideLinksContainer>
-        <SideButtonsContainer>
-          <SideButton to="/signin">sign in</SideButton>
-          <SideButton to="/download">download</SideButton>
-          <SideButton to="/register">register</SideButton>
-        </SideButtonsContainer>
-      </SideMenu>
-    </StyledNavigation>
+    <Wrapper>
+      <StyledNavigation opened={isMenuOpen}>
+        <Link to="/">
+          <Logo src={logoImg} alt="logo" />
+          {' '}
+        </Link>
+        <NavLinksContainer>{renderNavLinks()}</NavLinksContainer>
+        <SearchButton searchIcon={searchIcon} />
+        <AccountButton accountIcon={accountIcon} />
+        <BurgerIcon
+          opened={isMenuOpen}
+          onClick={() => openMenu((prevState) => !prevState)}
+        >
+          <span />
+          <span />
+          <span />
+          <span />
+        </BurgerIcon>
+        <SideMenu opened={isMenuOpen}>
+          <SearchBar />
+          <SideLinksContainer>
+            {SIDE_NAV_ITEMS.map((item) => (
+              <SideLink to={item.to}>
+                {item.label}
+                {' '}
+              </SideLink>
+            ))}
+          </SideLinksContainer>
+          <SideButtonsContainer>
+            <SideButton to="/signin">sign in</SideButton>
+            <SideButton to="/download">download</SideButton>
+            <SideButton to="/register">register</SideButton>
+          </SideButtonsContainer>
+        </SideMenu>
+      </StyledNavigation>
+    </Wrapper>
   );
 };
 
