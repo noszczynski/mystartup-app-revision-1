@@ -1,13 +1,45 @@
 import React, { FC } from 'react';
-import Navbar from '../Navbar/Navbar';
+import styled from 'styled-components';
+import mq, { breakpoints } from '../../theme/breakpoints';
+
+const setContainerMedia = () => {
+  let str = '';
+
+  for (const device in mq) {
+    if (Object.prototype.hasOwnProperty.call(mq, device)) {
+      const query = `${mq[device]}{max-width: ${breakpoints[device]}px}`;
+      str = str.concat(query);
+    }
+  }
+
+  return str;
+};
+
+const StyledWrapper = styled.main`
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+`;
+
+const StyledContainer = styled.article`
+  margin: 0 auto;
+  width: 100%;
+  max-width: 100%;
+  padding: 0 ${({ theme }) => theme.size.space.md};
+  
+  ${mq.tablet} {
+    padding: 0 ${({ theme }) => theme.size.space.lg};
+  }
+  
+  ${setContainerMedia()}
+`;
 
 const Layout: FC = ({ children }) => (
-  <main role="main">
-    <Navbar />
-    <article>
+  <StyledWrapper role="main">
+    <StyledContainer>
       {children}
-    </article>
-  </main>
+    </StyledContainer>
+  </StyledWrapper>
 );
 
 export default Layout;
