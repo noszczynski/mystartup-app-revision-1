@@ -1,10 +1,11 @@
 import React, { FC, useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import styled, { keyframes, css } from 'styled-components';
-import { NAV_ITEMS } from '../../constants';
+import { NAV_ITEMS, SIDE_NAV_ITEMS } from '../../constants';
 import logoImg from '../../assets/logo.svg';
 import searchIcon from '../../assets/search.svg';
 import accountIcon from '../../assets/account.svg';
+import folderIcon from '../../assets/folder.svg';
 
 const StyledNavigation = styled.nav<{ opened: boolean }>`
   display: flex;
@@ -18,7 +19,7 @@ const StyledNavigation = styled.nav<{ opened: boolean }>`
     margin-right: ${({ theme }) => theme.size.space.lg};
   }
 
-  ::before {
+  /* ::before {
     content: '';
     z-index: 1;
     position: fixed;
@@ -38,7 +39,7 @@ const StyledNavigation = styled.nav<{ opened: boolean }>`
         width: 250vh;
         height: 250vh;
       }
-    `}
+    `} */
 `;
 
 const Logo = styled.img`
@@ -142,9 +143,9 @@ const BurgerIcon = styled.div<{ opened: boolean }>`
 
   ${({ opened }) => opened
     && css`
-      span {
+      /* span {
         background: white;
-      }
+      } */
       span:nth-child(1) {
         top: 18px;
         width: 0%;
@@ -191,12 +192,6 @@ const SearchButton = styled.div<{ searchIcon: string }>`
   }
 `;
 
-// const AccountButton = styled(SearchButton)<{
-//   accountIcon: String;
-// }>`
-//   background-image: url(${accountIcon});
-// `;
-
 const AccountButton = styled.div<{ accountIcon: string }>`
   position: absolute;
   top: 50%;
@@ -219,6 +214,84 @@ const AccountButton = styled.div<{ accountIcon: string }>`
   }
 `;
 
+const SideMenu = styled.div<{ opened: boolean }>`
+position:fixed;
+top:0;
+left:0;
+margin-top:90px;
+width:400px;
+height:calc(100vh - 90px);
+background-color: white;
+transition:transform .3s ease-in-out;
+transform: ${({ opened }) => (opened ? null : 'translateX(-100%)')};
+`;
+
+const SearchBar = styled.input`
+display:block;
+width:80%;
+margin:15px auto;
+border:1px solid lightgrey;
+border-radius:15px;
+padding:10px 5px 7px 15%;
+background-image: url(${searchIcon});
+background-repeat: no-repeat;
+background-position: 5% 50%;
+&:focus{
+  outline:none;
+ }
+`;
+
+const SideLinksContainer = styled.div`
+width:100%;
+display:flex;
+flex-direction:column;
+`;
+
+const SideLink = styled(Link)`
+display:block;
+width:80%;
+margin:10px auto;
+height:50px;
+font-size:${({ theme }) => theme.size.font.md};
+border-bottom:1px solid lightgray;
+text-decoration:none;
+color:black;
+line-height:50px;
+font-weight:${({ theme }) => theme.size.weight.medium};
+padding-left:50px;
+background-image: url(${folderIcon});
+background-repeat: no-repeat;
+background-position: 0 50%;
+transition:all .3s ease-in-out;
+&:hover{
+  padding-left:60px;
+}
+`;
+
+const SideButtonsContainer = styled.div`
+position:absolute;
+bottom:0;
+width:100%;
+padding:0 5%;
+margin:0 auto 25px;
+display:flex;
+justify-content:space-around;
+`;
+
+const SideButton = styled(Link)`
+font-size:${({ theme }) => theme.size.font.md};
+font-weight:${({ theme }) => theme.size.weight.medium};
+color:blue;
+padding:8px 16px;
+text-decoration:none;
+text-transform:uppercase;
+transition:all .3s ease-in-out;
+border-radius:5px;
+&:hover{
+  background-color: #E1EBFD;
+}
+`;
+
 const renderNavLinks = () => NAV_ITEMS.map((item) => (
   <NavbarLink key={item.label} exact={item.exact} to={item.to}>
     {item.label}
@@ -226,7 +299,7 @@ const renderNavLinks = () => NAV_ITEMS.map((item) => (
 ));
 
 const Navbar: FC = () => {
-  const [isMenuOpen, openMenu] = useState(false);
+  const [isMenuOpen, openMenu] = useState(true);
 
   return (
     <StyledNavigation opened={isMenuOpen}>
@@ -246,6 +319,22 @@ const Navbar: FC = () => {
         <span />
         <span />
       </BurgerIcon>
+      <SideMenu opened={isMenuOpen}>
+        <SearchBar />
+        <SideLinksContainer>
+          {SIDE_NAV_ITEMS.map((item) => (
+            <SideLink to={item.to}>
+              {item.label}
+              {' '}
+            </SideLink>
+          ))}
+        </SideLinksContainer>
+        <SideButtonsContainer>
+          <SideButton to="/signin">sign in</SideButton>
+          <SideButton to="/download">download</SideButton>
+          <SideButton to="/register">register</SideButton>
+        </SideButtonsContainer>
+      </SideMenu>
     </StyledNavigation>
   );
 };
