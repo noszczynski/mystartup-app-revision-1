@@ -11,6 +11,7 @@ import About from './About';
 import EditProject from './EditProject';
 import Settings from './Settings';
 import User from './User';
+import Faq from './Faq';
 
 export {
   Home,
@@ -26,4 +27,5 @@ export {
   EditProject,
   Settings,
   User,
+  Faq,
 };

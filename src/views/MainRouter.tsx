@@ -17,6 +17,7 @@ import {
   EditProject,
   Settings,
   User,
+  Faq,
 } from './index';
 
 const MainRouter: FC = () => (
@@ -32,6 +33,7 @@ const MainRouter: FC = () => (
         <Route path="/about" component={About} />
         <Route path="/user/:id" component={User} />
         <Route exact path="/project/:id" component={Project} />
+        <Route path="/faq" component={Faq} />
         <ProtectedRoute
           restrictedPath="/project/:id/settings"
           authenticationPath="/"
