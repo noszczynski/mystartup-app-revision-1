@@ -2,8 +2,8 @@ import {
   Category, MonetizationOn, PlayArrow, FiberNew,
 } from '@material-ui/icons';
 import React from 'react';
-import theme from '../theme/theme';
-import { AdvantagesArray, CommentArray } from './interfaces';
+import theme, { colors } from '../theme/theme';
+import { AdvantagesArray, CommentArray, ObjectOfStrings } from './interfaces';
 
 const ADVANTAGES_ITEMS: AdvantagesArray = [
   {
@@ -34,6 +34,7 @@ const ADVANTAGES_ITEMS: AdvantagesArray = [
 
 const COMMENTS: CommentArray = [
   {
+    id: 'id_1',
     author: 'John doe',
     signature: 'Works in Google as Frontend developer',
     avatar: 'https://api.adorable.io/avatars/120/random',
@@ -44,6 +45,7 @@ const COMMENTS: CommentArray = [
          `,
   },
   {
+    id: 'id_2',
     author: 'John doe',
     signature: 'Works in Google as Frontend developer',
     avatar: 'https://api.adorable.io/avatars/120/random',
@@ -54,6 +56,7 @@ const COMMENTS: CommentArray = [
          `,
   },
   {
+    id: 'id_3',
     author: 'John doe',
     signature: 'Works in Google as Frontend developer',
     avatar: 'https://api.adorable.io/avatars/120/random',
@@ -64,6 +67,7 @@ const COMMENTS: CommentArray = [
          `,
   },
   {
+    id: 'id_4',
     author: 'John doe',
     signature: 'Works in Google as Frontend developer',
     avatar: 'https://api.adorable.io/avatars/120/random',
@@ -74,6 +78,7 @@ const COMMENTS: CommentArray = [
          `,
   },
   {
+    id: 'id_5',
     author: 'John doe',
     signature: 'Works in Google as Frontend developer',
     avatar: 'https://api.adorable.io/avatars/120/random',
@@ -85,7 +90,40 @@ const COMMENTS: CommentArray = [
   },
 ];
 
+const CATEGORY_COLORS: ObjectOfStrings = {
+  EVENTS: colors.blue,
+  CULTURE_AND_ART: colors.yellow,
+  BUSINESS: colors.green,
+  POLITICS: colors.gray900,
+  HEALTH: colors.red,
+  SPORT: colors.blue,
+  GAMES: colors.green,
+  MUSIC: colors.red,
+  FOOD_AND_CRAFT: colors.yellow,
+  DESIGN_AND_TECH: colors.ocean,
+  FILM_AND_COMICS: colors.ocean,
+};
+
+const CATEGORY_LABELS: ObjectOfStrings = {
+  EVENTS: 'Events',
+  CULTURE_AND_ART: 'Culture and Art',
+  BUSINESS: 'Business',
+  POLITICS: 'Politics',
+  HEALTH: 'Health',
+  SPORT: 'Sport',
+  GAMES: 'Games',
+  MUSIC: 'Music',
+  FOOD_AND_CRAFT: 'Food and Craft',
+  DESIGN_AND_TECH: 'Design and tech',
+  FILM_AND_COMICS: 'Film and Comics',
+};
+
+const ARTICLE_THUMBNAIL_MAX_LENGTH = 200;
+
 export {
   ADVANTAGES_ITEMS,
   COMMENTS,
+  CATEGORY_COLORS,
+  CATEGORY_LABELS,
+  ARTICLE_THUMBNAIL_MAX_LENGTH,
 };

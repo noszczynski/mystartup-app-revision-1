@@ -7,6 +7,7 @@ import {
   StyledContent,
 } from './Comment.styles';
 import Signature from '../Signature/Signature';
+import { defaultHover } from '../../utils/animations';
 
 interface Props {
   image: string,
@@ -21,11 +22,7 @@ const Comment: FC<Props> = ({
   signature,
 }) => (
   <StyledWrapper
-    whileHover={{
-      y: -4,
-      backgroundColor: '#fff',
-      boxShadow: '0 5px 15px -8px rgba(0,0,0,.5)',
-    }}
+    whileHover={defaultHover}
     transition={{
       filter: { delay: 0.1 },
     }}
@@ -39,7 +36,7 @@ const Comment: FC<Props> = ({
         {children}
         &#34;
       </StyledContent>
-      <Signature image={image} name={name}>
+      <Signature image={image} name={name} id="user_2">
         {signature}
       </Signature>
     </StyledWrapperInner>

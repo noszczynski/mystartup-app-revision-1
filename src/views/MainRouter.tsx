@@ -3,18 +3,21 @@ import {
   Route, BrowserRouter as Router, Switch,
 } from 'react-router-dom';
 import { ProtectedRoute } from './ProtectedRoute';
-import Home from './Home';
-import Category from './Category';
-import Categories from './Categories';
-import News from './News';
-import Results from './Results';
-import Article from './Article';
-import Project from './Project';
-import NoRoute from './NoRoute';
-import Layout from '../components/Layout/Layout';
-import About from './About';
-import EditProject from './EditProject';
-import Settings from './Settings';
+import {
+  Home,
+  Category,
+  Categories,
+  News,
+  Results,
+  Article,
+  Project,
+  NoRoute,
+  Layout,
+  About,
+  EditProject,
+  Settings,
+  User,
+} from './index';
 
 const MainRouter: FC = () => (
   <Router>
@@ -27,6 +30,7 @@ const MainRouter: FC = () => (
         <Route path="/news/:id" component={Article} />
         <Route path="/results/:search" component={Results} />
         <Route path="/about" component={About} />
+        <Route path="/user/:id" component={User} />
         <Route exact path="/project/:id" component={Project} />
         <ProtectedRoute
           restrictedPath="/project/:id/settings"

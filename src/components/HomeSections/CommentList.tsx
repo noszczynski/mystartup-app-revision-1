@@ -62,18 +62,18 @@ const CommentList: FC = () => (
       </Title>
       <BigCommentsRow>
         {COMMENTS.slice(0, 2).map(({
-          avatar, content, signature, author,
+          avatar, content, signature, author, id,
         }) => (
-          <Comment image={avatar} name={author} signature={signature}>
+          <Comment image={avatar} name={author} signature={signature} key={id}>
             {content}
           </Comment>
         ))}
       </BigCommentsRow>
       <RegularCommentsRow>
         {COMMENTS.slice(2, 5).map(({
-          avatar, content, signature, author,
+          avatar, content, signature, author, id,
         }) => (
-          <Comment image={avatar} name={author} signature={signature}>
+          <Comment image={avatar} name={author} signature={signature} key={id}>
             {content}
           </Comment>
         ))}

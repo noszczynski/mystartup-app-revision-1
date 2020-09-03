@@ -5,6 +5,7 @@ import Title from '../Title/Title';
 import mq from '../../theme/breakpoints';
 import { ADVANTAGES_ITEMS } from '../../utils/constants';
 import Container from '../Layout/Container';
+import { colors } from '../../theme/theme';
 
 const StyledSection = styled.section`
   display: flex;
@@ -108,7 +109,7 @@ const Advantages: FC = () => (
           >
             <StyledIcon>{icon}</StyledIcon>
             <StyledContent>
-              <Title component="h3">{title}</Title>
+              <Title component="h3" color={colors.white}>{title}</Title>
               <StyledDescription>{description}</StyledDescription>
             </StyledContent>
           </StyledArticle>

@@ -80,6 +80,25 @@ const GlobalStyle = createGlobalStyle`
     margin-inline-end: initial;
   }
   
+  a {
+    text-decoration: none;
+    color: ${({ theme }) => theme.color.dark};
+    
+    :hover {
+      text-decoration: none;
+    }
+  }
+  
+  button {
+    border: 0;
+    background-color: ${({ theme }) => theme.color.light};
+    color: ${({ theme }) => theme.color.dark};
+    
+    :focus {
+      outline: 1px solid ${({ theme }) => theme.color.dark};
+    }
+  }
+  
 `;
 
 export default GlobalStyle;

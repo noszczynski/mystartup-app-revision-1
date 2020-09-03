@@ -57,4 +57,10 @@ const theme: ObjectOfAny = {
   gradient: gradients,
 };
 
+export {
+  colors,
+  gradients,
+  sizes,
+};
+
 export default theme;

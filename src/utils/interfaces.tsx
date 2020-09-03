@@ -14,6 +14,7 @@ type ArrayOfJSX = Array<JSX.Element>;
 type ArrayOfAny = Array<any>;
 
 type CommentArray = {
+  id: string,
   author: string
   signature: string
   avatar: string
