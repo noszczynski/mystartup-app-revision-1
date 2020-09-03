@@ -22,16 +22,16 @@ const Title: FC<Props> = ({
   const renderHeadline = () => {
     switch (component) {
       case 'h1':
-        return <h1 style={{ color: `${color}` }}>{children}</h1>;
+        return <h1 style={{ color }}>{children}</h1>;
       case 'h3':
-        return <h3 style={{ color: `${color}` }}>{children}</h3>;
+        return <h3 style={{ color }}>{children}</h3>;
       case 'h4':
-        return <h4 style={{ color: `${color}` }}>{children}</h4>;
+        return <h4 style={{ color }}>{children}</h4>;
       case 'h5':
-        return <h5 style={{ color: `${color}` }}>{children}</h5>;
+        return <h5 style={{ color }}>{children}</h5>;
       case 'h6':
-        return <h6 style={{ color: `${color}` }}>{children}</h6>;
-      default: return <h2 style={{ color: `${color}` }}>{children}</h2>;
+        return <h6 style={{ color }}>{children}</h6>;
+      default: return <h2 style={{ color }}>{children}</h2>;
     }
   };
 
