@@ -1,13 +1,29 @@
 import { ObjectOfStrings, ObjectOfAny, ThemeSizes } from '../interfaces';
 
 const colors: ObjectOfStrings = {
-  light: '#FFFFFF',
-  dark: '#464A5F',
-  primary: '#6C63FF',
-  secondary: '#FFD037',
-  primary10: 'rgba(108, 99, 255, .1)',
-  primary30: 'rgba(108, 99, 255, .3)',
-  lightGray: '#9C9CA1',
+  light: '#FCF3D7',
+  dark: '#212121',
+  white: '#FFFFFF',
+  black: '#000000',
+  blue: '#367BF5',
+  yellow: '#F3AA18',
+  green: '#2FA84F',
+  red: '#FA5D50',
+  ocean: '#069697',
+  gray900: '#3E4345',
+  gray700: '#5E6366',
+  gray500: '#919699',
+  gray300: '#C6CACC',
+  gray100: '#E3E5E6',
+  gray50: '#F8F8F8',
+};
+
+const gradients: ObjectOfStrings = {
+  orange: 'linear-gradient(to right, #F2Af8C, #E6753A)',
+  green: 'linear-gradient(to right, #57CBAF, #2FA84F)',
+  rose: 'linear-gradient(to right, #F4977B, #F9567E)',
+  blue: 'linear-gradient(to right, #9BAAFA, #367BF5)',
+  violet: 'linear-gradient(to right, #4F586A, #367BF5)',
 };
 
 const sizes: ThemeSizes = {
@@ -38,6 +54,7 @@ const sizes: ThemeSizes = {
 const theme: ObjectOfAny = {
   color: colors,
   size: sizes,
+  gradient: gradients,
 };
 
 export default theme;

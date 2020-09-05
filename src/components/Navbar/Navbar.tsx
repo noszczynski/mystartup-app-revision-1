@@ -9,10 +9,12 @@ import folderIcon from '../../assets/folder.svg';
 import mq from '../../theme/breakpoints';
 
 const Wrapper = styled.div`
-position:fixed;
-top:0;
-left:0;
-width:100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: ${({ theme }) => theme.color.white};
+  z-index: 9999;
 `;
 
 const StyledNavigation = styled.div<{ isOpen: boolean }>`
@@ -20,19 +22,18 @@ const StyledNavigation = styled.div<{ isOpen: boolean }>`
   flex-wrap: wrap;
   justify-content: space-between;
   max-width: 1280px;
-  margin: ${({ theme }) => theme.size.space.md} auto 0;
+  margin: ${({ theme }) => theme.size.space.sm} auto 0;
   position: relative;
-  ${mq.desktopS}{
+  ${mq.desktopS} {
     margin: ${({ theme }) => theme.size.space.md} ${({ theme }) => theme.size.space.lg} 0;
   }
-
 `;
 
 const NavLinksContainer = styled.nav`
   display: flex;
   justify-content: space-between;
-  margin:0 5% 0 25%;
-  `;
+  margin: 0 5% 0 25%;
+`;
 
 const Logo = styled.img`
   height: 64px;
@@ -65,7 +66,7 @@ const NavbarLink = styled(NavLink)`
       height: 100%;
       position: absolute;
       background: rgba(241, 243, 244, 0.6);
-      opacity:0;
+      opacity: 0;
       width: 100%;
       z-index: -1;
       left: 0;
@@ -80,7 +81,7 @@ const BurgerIcon = styled.div<{ isOpen: boolean }>`
   z-index: 99;
   width: 25px;
   height: 25px;
-    margin: 25px 10px 0 10px;
+  margin: 25px 10px 0 10px;
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
   -o-transform: rotate(0deg);
@@ -96,7 +97,7 @@ const BurgerIcon = styled.div<{ isOpen: boolean }>`
     position: absolute;
     height: 3px;
     width: 100%;
-    background: ${({ theme }) => theme.color.primary};
+    background: ${({ theme }) => theme.color.blue};
     border-radius: 9px;
     opacity: 1;
     left: 0;
@@ -123,9 +124,10 @@ const BurgerIcon = styled.div<{ isOpen: boolean }>`
     top: 18px;
   }
 
-  ${({ isOpen }) => isOpen
-    && css`
-          span:nth-child(1) {
+  ${({ isOpen }) =>
+    isOpen &&
+    css`
+      span:nth-child(1) {
         top: 18px;
         width: 0%;
         left: 50%;
@@ -156,7 +158,7 @@ const SearchButton = styled.div<{ searchIcon: string }>`
   width: 52px;
   background-repeat: no-repeat;
   background-position: 50% 50%;
-   margin:10px 20px 10px auto;
+  margin: 10px 20px 10px auto;
   background-color: rgba(108, 99, 255, 0.3);
   border-radius: 100%;
   cursor: pointer;
@@ -167,13 +169,13 @@ const SearchButton = styled.div<{ searchIcon: string }>`
 `;
 
 const AccountButton = styled.div<{ accountIcon: string }>`
-   height: 52px;
+  height: 52px;
   width: 52px;
   background-image: url(${accountIcon});
   background-repeat: no-repeat;
   background-position: 50% 50%;
-  margin:10px 20px;
-   background-color: rgba(108, 99, 255, 0.3);
+  margin: 10px 20px;
+  background-color: rgba(108, 99, 255, 0.3);
   border-radius: 100%;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
@@ -183,88 +185,89 @@ const AccountButton = styled.div<{ accountIcon: string }>`
 `;
 
 const SideMenu = styled.div<{ isOpen: boolean }>`
-position:fixed;
-top:0;
-left:0;
-margin-top:100px;
-width:400px;
-height:calc(100vh - 90px);
-background-color: white;
-transition:transform .3s ease-in-out;
-transform: ${({ isOpen }) => (isOpen ? null : 'translateX(-100%)')};
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin-top: 100px;
+  width: 400px;
+  height: calc(100vh - 90px);
+  background-color: white;
+  transition: transform 0.3s ease-in-out;
+  transform: ${({ isOpen }) => (isOpen ? null : 'translateX(-100%)')};
 `;
 
 const SearchBar = styled.input`
-display:block;
-width:80%;
-margin:15px auto;
-border:1px solid lightgrey;
-border-radius:15px;
-padding:10px 5px 7px 15%;
-background-image: url(${searchIcon});
-background-repeat: no-repeat;
-background-position: 5% 50%;
-&:focus{
-  outline:none;
- }
+  display: block;
+  width: 80%;
+  margin: 15px auto;
+  border: 1px solid lightgrey;
+  border-radius: 15px;
+  padding: 10px 5px 7px 15%;
+  background-image: url(${searchIcon});
+  background-repeat: no-repeat;
+  background-position: 5% 50%;
+  &:focus {
+    outline: none;
+  }
 `;
 
 const SideLinksContainer = styled.nav`
-width:100%;
-display:flex;
-flex-direction:column;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 `;
 
 const SideLink = styled(Link)`
-display:block;
-width:80%;
-margin:10px auto;
-height:50px;
-font-size:${({ theme }) => theme.size.font.md};
-border-bottom:1px solid ${({ theme }) => theme.color.lightGray};
-text-decoration:none;
-color:black;
-line-height:50px;
-font-weight:${({ theme }) => theme.size.weight.medium};
-padding-left:50px;
-background-image: url(${folderIcon});
-background-repeat: no-repeat;
-background-position: 0 50%;
-transition:all .3s ease-in-out;
-&:hover{
-  padding-left:60px;
-}
+  display: block;
+  width: 80%;
+  margin: 10px auto;
+  height: 50px;
+  font-size: ${({ theme }) => theme.size.font.md};
+  border-bottom: 1px solid ${({ theme }) => theme.color.lightGray};
+  text-decoration: none;
+  color: black;
+  line-height: 50px;
+  font-weight: ${({ theme }) => theme.size.weight.medium};
+  padding-left: 50px;
+  background-image: url(${folderIcon});
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    padding-left: 60px;
+  }
 `;
 
 const SideButtonsContainer = styled.nav`
-position:absolute;
-bottom:0;
-width:100%;
-padding:0 5%;
-margin:0 auto ${({ theme }) => theme.size.font.lg};
-display:flex;
-justify-content:space-around;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 0 5%;
+  margin: 0 auto ${({ theme }) => theme.size.font.lg};
+  display: flex;
+  justify-content: space-around;
 `;
 
 const SideButton = styled(Link)`
-font-size:${({ theme }) => theme.size.font.md};
-font-weight:${({ theme }) => theme.size.weight.medium};
-color:${({ theme }) => theme.color.primary};
-padding:${({ theme }) => theme.size.space.sm} ${({ theme }) => theme.size.space.md};;
-text-decoration:none;
-text-transform:uppercase;
-transition:all .3s ease-in-out;
-border-radius:${({ theme }) => theme.size.space.sm};;
-&:hover{
-  background-color: #E1EBFD;
-}
+  font-size: ${({ theme }) => theme.size.font.md};
+  font-weight: ${({ theme }) => theme.size.weight.medium};
+  color: ${({ theme }) => theme.color.primary};
+  padding: ${({ theme }) => theme.size.space.sm} ${({ theme }) => theme.size.space.md};
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+  border-radius: ${({ theme }) => theme.size.space.sm};
+  &:hover {
+    background-color: #e1ebfd;
+  }
 `;
 
-const renderNavLinks = () => NAV_ITEMS.map((item) => (
-  <NavbarLink key={item.label} exact={item.exact} to={item.to}>
-    {item.label}
-  </NavbarLink>
-));
+const renderNavLinks = () =>
+  NAV_ITEMS.map((item) => (
+    <NavbarLink key={item.label} exact={item.exact} to={item.to}>
+      {item.label}
+    </NavbarLink>
+  ));
 
 const Navbar: FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -279,10 +282,7 @@ const Navbar: FC = () => {
         <NavLinksContainer>{renderNavLinks()}</NavLinksContainer>
         <SearchButton searchIcon={searchIcon} />
         <AccountButton accountIcon={accountIcon} />
-        <BurgerIcon
-          isOpen={isMenuOpen}
-          onClick={toggleMenu}
-        >
+        <BurgerIcon isOpen={isMenuOpen} onClick={toggleMenu}>
           <span />
           <span />
           <span />
@@ -292,10 +292,7 @@ const Navbar: FC = () => {
           <SearchBar />
           <SideLinksContainer>
             {SIDE_NAV_ITEMS.map((item) => (
-              <SideLink to={item.to}>
-                {item.label}
-                {' '}
-              </SideLink>
+              <SideLink to={item.to}>{item.label} </SideLink>
             ))}
           </SideLinksContainer>
           <SideButtonsContainer>
