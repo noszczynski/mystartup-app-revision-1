@@ -5,19 +5,11 @@ import Description from '../Description/Description';
 import blob from '../../assets/blob.svg';
 import macbook from '../../assets/macbook.png';
 import mockup from '../../assets/aplication-mockup.png';
-import {
-  StyledHero,
-  StyledButtonWrapper,
-  StyledBlob,
-  StyledMacbookImage,
-  StyledAppImage,
-  StyledImageWrapper,
-  StyledContent,
-} from './Hero.styles';
+import Element from './Hero.styles';
 
 const Hero: FC = () => (
-  <StyledHero>
-    <StyledContent>
+  <Element>
+    <Element.Content>
       <Title component="h1">
         Find a project You want to support
       </Title>
@@ -25,17 +17,17 @@ const Hero: FC = () => (
         here you will find lists of startups that you can support
         as an investor or set up your own startup profile
       </Description>
-      <StyledButtonWrapper>
+      <Element.ButtonWrapper>
         <Button>Get started</Button>
-        <StyledBlob src={blob} alt="" />
+        <Element.Blob src={blob} alt="" />
         <Button>Get started</Button>
-      </StyledButtonWrapper>
-    </StyledContent>
-    <StyledImageWrapper>
-      <StyledMacbookImage src={macbook} alt="apple macbook showing the appearance of the application" />
-      <StyledAppImage src={mockup} alt="application mockup" />
-    </StyledImageWrapper>
-  </StyledHero>
+      </Element.ButtonWrapper>
+    </Element.Content>
+    <Element.ImageWrapper>
+      <Element.MacbookImage src={macbook} alt="apple macbook showing the appearance of the application" />
+      <Element.AppImage src={mockup} alt="application mockup" />
+    </Element.ImageWrapper>
+  </Element>
 );
 
 export default Hero;

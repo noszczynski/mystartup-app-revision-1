@@ -22,7 +22,7 @@
     "sourceType": "module",
     "project": "./tsconfig.json"
   },
-  "plugins": ["react", "@typescript-eslint"],
+  "plugins": ["react", "@typescript-eslint", "import"],
   "rules": {
     "no-restricted-syntax": ["off"],
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
@@ -45,7 +45,8 @@
         "extensions": [".tsx", ".ts"]
       }
     ],
-    "import/prefer-default-export": "off"
+    "import/prefer-default-export": "off",
+    "import/no-cycle": [2, { "ignoreExternal": true }]
   },
   "settings": {
     "import/resolver": {

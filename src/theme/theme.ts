@@ -1,5 +1,33 @@
-import { ObjectOfStrings, ObjectOfAny, ThemeSizes } from '../interfaces';
 import { boxShadows, buttonSizes } from './constants';
+import { ObjectOfStrings, ObjectOfAny, ThemeSizes, ObjectOfNumbers } from '../utils/interfaces';
+
+const breakpoints: ObjectOfNumbers = {
+  mobileS: 375,
+  mobileM: 425,
+  mobileL: 576,
+  tabletS: 768,
+  tablet: 1024,
+  laptopS: 1280,
+  laptopM: 1440,
+  laptopL: 1600,
+  desktopS: 1920,
+  desktopM: 2560,
+  desktopL: 3840,
+};
+
+const mq: ObjectOfStrings = {
+  mobileS: `@media screen and (min-width: ${breakpoints.mobileS}px)`,
+  mobileM: `@media screen and (min-width: ${breakpoints.mobileM}px)`,
+  mobileL: `@media screen and (min-width: ${breakpoints.mobileL}px)`,
+  tabletS: `@media screen and (min-width: ${breakpoints.tabletS}px)`,
+  tablet: `@media screen and (min-width: ${breakpoints.tablet}px)`,
+  laptopS: `@media screen and (min-width: ${breakpoints.laptopS}px)`,
+  laptopM: `@media screen and (min-width: ${breakpoints.laptopM}px)`,
+  laptopL: `@media screen and (min-width: ${breakpoints.laptopL}px)`,
+  desktopS: `@media screen and (min-width: ${breakpoints.desktopS}px)`,
+  desktopM: `@media screen and (min-width: ${breakpoints.desktopM}px)`,
+  desktopL: `@media screen and (min-width: ${breakpoints.desktopL}px)`,
+};
 
 const colors: ObjectOfStrings = {
   light: '#FCF3D7',
@@ -52,13 +80,15 @@ const sizes: ThemeSizes = {
   },
 };
 
-const createBoxShadow = (levels:string[]):string => {
-  const shadows: string[][] = levels.map((name:string) => (!boxShadows[name] ? [name] : boxShadows[name]));
+const createBoxShadow = (levels: string[]): string => {
+  const shadows: string[][] = levels.map((name: string) =>
+    !boxShadows[name] ? [name] : boxShadows[name],
+  );
   return ([] as string[]).concat(...shadows).join(', ');
 };
 
-const utils:ObjectOfAny = {
-  createBoxShadow
+const utils: ObjectOfAny = {
+  createBoxShadow,
 };
 
 const theme: ObjectOfAny = {
@@ -67,6 +97,10 @@ const theme: ObjectOfAny = {
   color: colors,
   size: sizes,
   gradient: gradients,
+  breakpoint: breakpoints,
+  mq,
 };
+
+export { colors, gradients, sizes, mq, breakpoints };
 
 export default theme;

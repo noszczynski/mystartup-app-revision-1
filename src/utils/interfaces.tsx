@@ -14,6 +14,7 @@ type ArrayOfJSX = Array<JSX.Element>;
 type ArrayOfAny = Array<any>;
 
 type CommentArray = {
+  id: string,
   author: string
   signature: string
   avatar: string
@@ -25,6 +26,23 @@ type AdvantagesArray = {
   description: string,
   icon: JSX.Element,
   background: string
+}[];
+
+type ArticlesArray = {
+  article: {
+    image: string,
+    imageAlt: string,
+    category: string,
+    time: string,
+    title: string,
+    id: string,
+  },
+  signature: {
+    title: string,
+    content: string,
+    image: string,
+  },
+  content: string,
 }[];
 
 interface ThemeSizes {
@@ -42,4 +60,5 @@ export type {
   ArrayOfAny,
   CommentArray,
   AdvantagesArray,
+  ArticlesArray,
 };
