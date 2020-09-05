@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import { Button } from 'components';
 import Title from '../Title/Title';
 import Description from '../Description/Description';
 import blob from '../../assets/blob.svg';
@@ -17,9 +18,9 @@ const Hero: FC = () => (
         as an investor or set up your own startup profile
       </Description>
       <Element.ButtonWrapper>
-        <button style={{ zIndex: 1 }} type="button">Get started</button>
+        <Button>Get started</Button>
         <Element.Blob src={blob} alt="" />
-        <button style={{ zIndex: 1 }} type="button">Get started</button>
+        <Button>Get started</Button>
       </Element.ButtonWrapper>
     </Element.Content>
     <Element.ImageWrapper>

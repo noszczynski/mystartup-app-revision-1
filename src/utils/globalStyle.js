@@ -79,6 +79,22 @@ const GlobalStyle = createGlobalStyle`
     margin-inline-start: initial;
     margin-inline-end: initial;
   }
+<<<<<<< HEAD:src/globalStyle.js
+  button {
+		cursor: pointer;
+		border: none;
+		margin: 0;
+		padding: 0;
+		width: auto;
+		overflow: visible;
+		background: transparent;
+		color: inherit;
+		font: inherit;
+		text-align: inherit;
+		line-height: inherit;
+		-webkit-appearance: none;
+	}
+=======
   
   a {
     text-decoration: none;
@@ -99,6 +115,7 @@ const GlobalStyle = createGlobalStyle`
     }
   }
   
+>>>>>>> develop:src/utils/globalStyle.js
 `;
 
 export default GlobalStyle;

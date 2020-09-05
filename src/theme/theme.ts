@@ -1,6 +1,5 @@
-import {
-  ObjectOfStrings, ObjectOfAny, ThemeSizes, ObjectOfNumbers,
-} from '../utils/interfaces';
+import { boxShadows, buttonSizes } from './constants';
+import { ObjectOfStrings, ObjectOfAny, ThemeSizes, ObjectOfNumbers } from '../utils/interfaces';
 
 const breakpoints: ObjectOfNumbers = {
   mobileS: 375,
@@ -81,7 +80,20 @@ const sizes: ThemeSizes = {
   },
 };
 
+const createBoxShadow = (levels: string[]): string => {
+  const shadows: string[][] = levels.map((name: string) =>
+    !boxShadows[name] ? [name] : boxShadows[name],
+  );
+  return ([] as string[]).concat(...shadows).join(', ');
+};
+
+const utils: ObjectOfAny = {
+  createBoxShadow,
+};
+
 const theme: ObjectOfAny = {
+  utils,
+  buttonSizes,
   color: colors,
   size: sizes,
   gradient: gradients,
@@ -89,12 +101,6 @@ const theme: ObjectOfAny = {
   mq,
 };
 
-export {
-  colors,
-  gradients,
-  sizes,
-  mq,
-  breakpoints,
-};
+export { colors, gradients, sizes, mq, breakpoints };
 
 export default theme;

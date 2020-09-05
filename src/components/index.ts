@@ -12,6 +12,7 @@ import Navbar from './Navbar/Navbar';
 import Signature from './Signature/Signature';
 import Theme from './Theme/Theme';
 import Title from './Title/Title';
+import Button from './Button/Button';
 
 export {
   Advantages,
@@ -28,4 +29,5 @@ export {
   Signature,
   Theme,
   Title,
+  Button,
 };
