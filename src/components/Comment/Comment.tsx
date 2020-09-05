@@ -1,11 +1,6 @@
 import React, { FC } from 'react';
 import Image from '../Image/Image';
-import {
-  StyledWrapper,
-  StyledAvatar,
-  StyledWrapperInner,
-  StyledContent,
-} from './Comment.styles';
+import Element from './Comment.styles';
 import Signature from '../Signature/Signature';
 import { defaultHover } from '../../utils/animations';
 
@@ -21,26 +16,26 @@ const Comment: FC<Props> = ({
   name,
   signature,
 }) => (
-  <StyledWrapper
+  <Element
     whileHover={defaultHover}
     transition={{
       filter: { delay: 0.1 },
     }}
   >
-    <StyledAvatar>
+    <Element.Avatar>
       <Image src={image} alt="comment author avatar" />
-    </StyledAvatar>
-    <StyledWrapperInner>
-      <StyledContent>
+    </Element.Avatar>
+    <Element.WrapperInner>
+      <Element.Content>
         &#34;
         {children}
         &#34;
-      </StyledContent>
+      </Element.Content>
       <Signature image={image} name={name} id="user_2">
         {signature}
       </Signature>
-    </StyledWrapperInner>
-  </StyledWrapper>
+    </Element.WrapperInner>
+  </Element>
 );
 
 export default Comment;

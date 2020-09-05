@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Image from '../Image/Image';
 
-const StyledHero = styled.header`
+const Hero: any = styled.header`
   min-height: calc(100vh - ${({ theme }) => theme.size.space.xxl});
   background-color: ${({ theme }) => theme.color.white};
   display: grid;
@@ -14,7 +14,7 @@ const StyledHero = styled.header`
   }
 `;
 
-const StyledContent = styled.section`
+const Content = styled.section`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -34,7 +34,7 @@ const StyledContent = styled.section`
   
 `;
 
-const StyledImageWrapper = styled.section`
+const ImageWrapper = styled.section`
   display: none;
   position: absolute;
   top: 50%;
@@ -51,11 +51,11 @@ const StyledImageWrapper = styled.section`
   }
 `;
 
-const StyledMacbookImage = styled(Image)`
+const MacbookImage = styled(Image)`
   max-width: none;
 `;
 
-const StyledAppImage = styled(Image)`
+const AppImage = styled(Image)`
   z-index: -1;
   position: absolute;
   top: 52px;
@@ -66,13 +66,13 @@ const StyledAppImage = styled(Image)`
   object-fit: cover;
 `;
 
-const StyledButtonWrapper = styled.section`
+const ButtonWrapper = styled.section`
   display: flex;
   gap: 1rem;
   position: relative;
 `;
 
-const StyledBlob = styled(Image)`
+const Blob = styled(Image)`
   position: absolute;
   left: 50%;
   top: 50%;
@@ -83,12 +83,11 @@ const StyledBlob = styled(Image)`
   opacity: .18;
 `;
 
-export {
-  StyledHero,
-  StyledContent,
-  StyledImageWrapper,
-  StyledMacbookImage,
-  StyledAppImage,
-  StyledButtonWrapper,
-  StyledBlob,
-};
+Hero.Content = Content;
+Hero.ImageWrapper = ImageWrapper;
+Hero.MacbookImage = MacbookImage;
+Hero.AppImage = AppImage;
+Hero.ButtonWrapper = ButtonWrapper;
+Hero.Blob = Blob;
+
+export default Hero;
