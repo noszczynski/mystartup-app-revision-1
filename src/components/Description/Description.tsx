@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
-import mq from '../../theme/breakpoints';
 
 interface Props {
   small?: boolean
@@ -22,7 +21,7 @@ const StyledParagraph = styled.p<StyledProps>`
   display: block;
   font-family: Poppins, serif;
   
-  ${mq.tablet} {
+  ${({ theme }) => theme.mq.tablet} {
     font-size: ${({ theme, small }) => (small ? theme.size.font.md : theme.size.font.lg)};
   }
 `;

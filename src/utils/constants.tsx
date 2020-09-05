@@ -3,7 +3,108 @@ import {
 } from '@material-ui/icons';
 import React from 'react';
 import theme, { colors } from '../theme/theme';
-import { AdvantagesArray, CommentArray, ObjectOfStrings } from './interfaces';
+import {
+  AdvantagesArray, CommentArray, ObjectOfStrings, ArticlesArray,
+} from './interfaces';
+
+const ARTICLES_ITEMS: ArticlesArray = [
+  {
+    article: {
+      image: 'https://picsum.photos/800',
+      imageAlt: 'random image from picsum photos',
+      category: 'EVENTS',
+      time: 'A year ago',
+      title: 'New app to acquire street sellers into a team',
+      id: 'id_1',
+    },
+    signature: {
+      title: 'Edward Pawłowski',
+      content: 'Lorem ipsum dolor sit amet',
+      image: 'https://picsum.photos/64',
+    },
+    content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos doloremque eaque nam soluta tenetur! Accusamus aperiam dicta dolore enim excepturi, hic ipsam, laboriosam, magnam neque quae quam quisquam tempore voluptate.',
+  },
+  {
+    article: {
+      image: 'https://picsum.photos/800',
+      imageAlt: 'random image from picsum photos',
+      category: 'EVENTS',
+      time: 'A year ago',
+      title: 'New app to acquire street sellers into a team',
+      id: 'id_2',
+    },
+    signature: {
+      title: 'Edward Pawłowski',
+      content: 'Lorem ipsum dolor sit amet',
+      image: 'https://picsum.photos/64',
+    },
+    content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos doloremque eaque nam soluta tenetur! Accusamus aperiam dicta dolore enim excepturi, hic ipsam, laboriosam, magnam neque quae quam quisquam tempore voluptate.',
+  },
+  {
+    article: {
+      image: 'https://picsum.photos/800',
+      imageAlt: 'random image from picsum photos',
+      category: 'EVENTS',
+      time: 'A year ago',
+      title: 'New app to acquire street sellers into a team',
+      id: 'id_3',
+    },
+    signature: {
+      title: 'Edward Pawłowski',
+      content: 'Lorem ipsum dolor sit amet',
+      image: 'https://picsum.photos/64',
+    },
+    content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos doloremque eaque nam soluta tenetur! Accusamus aperiam dicta dolore enim excepturi, hic ipsam, laboriosam, magnam neque quae quam quisquam tempore voluptate.',
+  },
+  {
+    article: {
+      image: 'https://picsum.photos/800',
+      imageAlt: 'random image from picsum photos',
+      category: 'EVENTS',
+      time: 'A year ago',
+      title: 'New app to acquire street sellers into a team',
+      id: 'id_4',
+    },
+    signature: {
+      title: 'Edward Pawłowski',
+      content: 'Lorem ipsum dolor sit amet',
+      image: 'https://picsum.photos/64',
+    },
+    content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos doloremque eaque nam soluta tenetur! Accusamus aperiam dicta dolore enim excepturi, hic ipsam, laboriosam, magnam neque quae quam quisquam tempore voluptate.',
+  },
+  {
+    article: {
+      image: 'https://picsum.photos/800',
+      imageAlt: 'random image from picsum photos',
+      category: 'EVENTS',
+      time: 'A year ago',
+      title: 'New app to acquire street sellers into a team',
+      id: 'id_5',
+    },
+    signature: {
+      title: 'Edward Pawłowski',
+      content: 'Lorem ipsum dolor sit amet',
+      image: 'https://picsum.photos/64',
+    },
+    content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos doloremque eaque nam soluta tenetur! Accusamus aperiam dicta dolore enim excepturi, hic ipsam, laboriosam, magnam neque quae quam quisquam tempore voluptate.',
+  },
+  {
+    article: {
+      image: 'https://picsum.photos/800',
+      imageAlt: 'random image from picsum photos',
+      category: 'EVENTS',
+      time: 'A year ago',
+      title: 'New app to acquire street sellers into a team',
+      id: 'id_6',
+    },
+    signature: {
+      title: 'Edward Pawłowski',
+      content: 'Lorem ipsum dolor sit amet',
+      image: 'https://picsum.photos/64',
+    },
+    content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos doloremque eaque nam soluta tenetur! Accusamus aperiam dicta dolore enim excepturi, hic ipsam, laboriosam, magnam neque quae quam quisquam tempore voluptate.',
+  },
+];
 
 const ADVANTAGES_ITEMS: AdvantagesArray = [
   {
@@ -122,6 +223,7 @@ const ARTICLE_THUMBNAIL_MAX_LENGTH = 200;
 
 export {
   ADVANTAGES_ITEMS,
+  ARTICLES_ITEMS,
   COMMENTS,
   CATEGORY_COLORS,
   CATEGORY_LABELS,

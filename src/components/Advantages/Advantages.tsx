@@ -2,7 +2,6 @@ import React, { FC } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import Title from '../Title/Title';
-import mq from '../../theme/breakpoints';
 import { ADVANTAGES_ITEMS } from '../../utils/constants';
 import Container from '../Layout/Container';
 import { colors } from '../../theme/theme';
@@ -23,11 +22,11 @@ const StyledWrapper = styled.div`
   justify-content: center;
   margin: 0 auto;
   
-  ${mq.mobileL} {
+  ${({ theme }) => theme.mq.mobileL} {
     grid-template-columns: repeat(2, 1fr);
   }
   
-  ${mq.tablet} {
+  ${({ theme }) => theme.mq.tablet} {
     grid-template-columns: repeat(4, 1fr);
   }
 `;
@@ -73,19 +72,19 @@ const StyledDescription = styled.p`
   font-size: 12px;
   color: ${({ theme }) => theme.color.lightGray}
   
-  ${mq.tabletS} {
+  ${({ theme }) => theme.mq.tabletS} {
     font-size: 13px;
   }
   
-  ${mq.laptopS} {
+  ${({ theme }) => theme.mq.laptopS} {
     font-size: 14px;
   }
   
-  ${mq.laptopL} {
+  ${({ theme }) => theme.mq.laptopL} {
     font-size: 15px;
   }
   
-  ${mq.desktopS} {
+  ${({ theme }) => theme.mq.desktopS} {
     font-size: 16px;
   }
 `;

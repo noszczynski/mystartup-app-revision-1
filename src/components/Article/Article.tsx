@@ -1,15 +1,5 @@
 import React, { FC } from 'react';
-import {
-  StyledBottom,
-  StyledTop,
-  StyledWrapper,
-  StyledHead,
-  StyledCategory,
-  StyledTimeStamp,
-  StyledBody,
-  StyledDescription,
-  StyledBodyInner,
-} from './Article.styles';
+import Element from './Article.styles';
 import Signature from '../Signature/Signature';
 import Title from '../Title/Title';
 import Image from '../Image/Image';
@@ -54,14 +44,14 @@ const Article: FC<Props> = ({
   } = article;
 
   return (
-    <StyledWrapper columns={columns} whileHover={defaultHover}>
-      <StyledTop>
+    <Element columns={columns} whileHover={defaultHover}>
+      <Element.BodyTop>
         <Image src={image} alt={imageAlt} />
-      </StyledTop>
-      <StyledBottom>
+      </Element.BodyTop>
+      <Element.BodyBottom>
         <div>
-          <StyledHead>
-            <StyledCategory>
+          <Element.Head>
+            <Element.Category>
               <Title
                 component="h6"
                 color={CATEGORY_COLORS[category]}
@@ -69,25 +59,25 @@ const Article: FC<Props> = ({
               >
                 {CATEGORY_LABELS[category]}
               </Title>
-            </StyledCategory>
-            <StyledTimeStamp>
+            </Element.Category>
+            <Element.Time>
               {time}
-            </StyledTimeStamp>
-          </StyledHead>
-          <StyledBody>
-            <StyledBodyInner>
+            </Element.Time>
+          </Element.Head>
+          <Element.Body>
+            <Element.BodyInner>
               <Title component="h3" color={colors.dark} linkTo={`/news/${id}`}>{title}</Title>
-              <StyledDescription>
+              <Element.Description>
                 {children}
-              </StyledDescription>
-            </StyledBodyInner>
-          </StyledBody>
+              </Element.Description>
+            </Element.BodyInner>
+          </Element.Body>
         </div>
         <Signature name={signature.title} image={signature.image} id="user_1">
           {signature.content}
         </Signature>
-      </StyledBottom>
-    </StyledWrapper>
+      </Element.BodyBottom>
+    </Element>
   );
 };
 

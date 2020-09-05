@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import mq from '../../theme/breakpoints';
 import Image from '../Image/Image';
 
 const StyledHero = styled.header`
@@ -10,7 +9,7 @@ const StyledHero = styled.header`
   align-items: center;
   padding-top: ${({ theme }) => theme.size.space.xxl};
   
-  ${mq.tablet} {
+  ${({ theme }) => theme.mq.tablet} {
     grid-template-columns: 60% 40%;
   }
 `;
@@ -24,12 +23,12 @@ const StyledContent = styled.section`
   width: 90%;
   margin: 0 auto;
   
-  ${mq.tablet} {
+  ${({ theme }) => theme.mq.tablet} {
     gap: ${({ theme }) => theme.size.space.xl};
     width: 80%;
   }
   
-  ${mq.laptopM} {
+  ${({ theme }) => theme.mq.laptopM} {
     width: 70%;
   }
   
@@ -47,7 +46,7 @@ const StyledImageWrapper = styled.section`
   align-items: center;
   overflow: hidden;
     
-  ${mq.tablet} {
+  ${({ theme }) => theme.mq.tablet} {
     display: flex;
   }
 `;

@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import mq from '../../theme/breakpoints';
 
-const StyledWrapper = styled(motion.article)<{columns: string | undefined}>`
+const Article: any = styled(motion.article)<{columns: string | undefined}>`
   border-radius: .5rem;
   display: flex;
   flex-direction: column;
@@ -10,12 +9,12 @@ const StyledWrapper = styled(motion.article)<{columns: string | undefined}>`
   background-color: ${({ theme }) => theme.color.gray50};
   overflow: hidden;
   
-  ${mq.tablet} {
+  ${({ theme }) => theme.mq.tablet} {
     ${({ columns }) => columns && `grid-column: ${columns}`};
   }
 `;
 
-const StyledTop = styled.div`
+const Top = styled.div`
   height: 200px;
   
   img {
@@ -23,7 +22,7 @@ const StyledTop = styled.div`
   }
 `;
 
-const StyledBottom = styled.div`
+const Bottom = styled.div`
   padding: ${({ theme }) => theme.size.space.md};
   height: 100%;
   display: flex;
@@ -32,14 +31,14 @@ const StyledBottom = styled.div`
   gap: 2rem;
 `;
 
-const StyledHead = styled.div`
+const Head = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: ${({ theme }) => theme.size.space.md};
 `;
 
-const StyledCategory = styled.div`
+const Category = styled.div`
   text-transform: uppercase;
   color: ${({ theme }) => theme.color.blue};
   font-size: ${({ theme }) => theme.size.font.md};
@@ -49,11 +48,11 @@ const StyledCategory = styled.div`
   }
 `;
 
-const StyledTimeStamp = styled.p`
+const TimeStamp = styled.p`
   font-size: ${({ theme }) => theme.size.font.xs};
 `;
 
-const StyledBody = styled.div`
+const Body = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -61,25 +60,24 @@ const StyledBody = styled.div`
   gap: 1rem;
 `;
 
-const StyledBodyInner = styled.div`
+const BodyInner = styled.div`
   min-height: 100%;
   display: flex;
   flex-direction: column;
   gap: 2rem;
 `;
 
-const StyledDescription = styled.div`
+const Description = styled.div`
 
 `;
 
-export {
-  StyledWrapper,
-  StyledTop,
-  StyledBottom,
-  StyledHead,
-  StyledCategory,
-  StyledTimeStamp,
-  StyledBody,
-  StyledDescription,
-  StyledBodyInner,
-};
+Article.Head = Head;
+Article.BodyTop = Top;
+Article.BodyBottom = Bottom;
+Article.Body = Body;
+Article.BodyInner = BodyInner;
+Article.Description = Description;
+Article.Time = TimeStamp;
+Article.Category = Category;
+
+export default Article;

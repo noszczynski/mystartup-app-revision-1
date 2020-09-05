@@ -28,6 +28,23 @@ type AdvantagesArray = {
   background: string
 }[];
 
+type ArticlesArray = {
+  article: {
+    image: string,
+    imageAlt: string,
+    category: string,
+    time: string,
+    title: string,
+    id: string,
+  },
+  signature: {
+    title: string,
+    content: string,
+    image: string,
+  },
+  content: string,
+}[];
+
 interface ThemeSizes {
   space: {[key: string]: string}
   font: {[key: string]: string}
@@ -43,4 +60,5 @@ export type {
   ArrayOfAny,
   CommentArray,
   AdvantagesArray,
+  ArticlesArray,
 };
