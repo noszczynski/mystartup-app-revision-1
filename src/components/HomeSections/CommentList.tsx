@@ -1,8 +1,7 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
 import Comment from '../Comment/Comment';
-import mq from '../../theme/breakpoints';
-import { COMMENTS } from '../../constants';
+import { COMMENTS } from '../../utils/constants';
 import Title from '../Title/Title';
 import Container from '../Layout/Container';
 
@@ -15,7 +14,7 @@ const StyledWrapper = styled.section`
 const BigCommentsRow = styled.div`
   display: none;
   
-  ${mq.laptopS} {
+  ${({ theme }) => theme.mq.laptopS} {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
@@ -37,7 +36,7 @@ const RegularCommentsRow = styled.div`
     box-shadow: 0 5px 15px -8px rgba(0,0,0,.5);
   }
   
-  ${mq.laptopS} {
+  ${({ theme }) => theme.mq.laptopS} {
     grid-template-columns: repeat(3, 1fr);
     
     article:nth-child(1) {
@@ -62,18 +61,18 @@ const CommentList: FC = () => (
       </Title>
       <BigCommentsRow>
         {COMMENTS.slice(0, 2).map(({
-          avatar, content, signature, author,
+          avatar, content, signature, author, id,
         }) => (
-          <Comment image={avatar} name={author} signature={signature}>
+          <Comment image={avatar} name={author} signature={signature} key={id}>
             {content}
           </Comment>
         ))}
       </BigCommentsRow>
       <RegularCommentsRow>
         {COMMENTS.slice(2, 5).map(({
-          avatar, content, signature, author,
+          avatar, content, signature, author, id,
         }) => (
-          <Comment image={avatar} name={author} signature={signature}>
+          <Comment image={avatar} name={author} signature={signature} key={id}>
             {content}
           </Comment>
         ))}
