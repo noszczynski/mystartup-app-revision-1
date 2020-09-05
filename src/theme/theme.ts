@@ -1,4 +1,5 @@
 import { ObjectOfStrings, ObjectOfAny, ThemeSizes } from '../interfaces';
+import { boxShadows } from './declares';
 
 const colors: ObjectOfStrings = {
   light: '#FCF3D7',
@@ -51,7 +52,17 @@ const sizes: ThemeSizes = {
   },
 };
 
+const createBoxShadow = (levels:string[]):string => {
+  const shadows: string[][] = levels.map((name:string) => (!boxShadows[name] ? [name] : boxShadows[name]));
+  return ([] as string[]).concat(...shadows).join(', ');
+};
+
+const utils:ObjectOfAny = {
+  createBoxShadow
+};
+
 const theme: ObjectOfAny = {
+  utils,
   color: colors,
   size: sizes,
   gradient: gradients,
