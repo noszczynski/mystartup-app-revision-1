@@ -79,7 +79,7 @@ const GlobalStyle = createGlobalStyle`
     margin-inline-start: initial;
     margin-inline-end: initial;
   }
-<<<<<<< HEAD:src/globalStyle.js
+  
   button {
 		cursor: pointer;
 		border: none;
@@ -94,7 +94,6 @@ const GlobalStyle = createGlobalStyle`
 		line-height: inherit;
 		-webkit-appearance: none;
 	}
-=======
   
   a {
     text-decoration: none;
@@ -104,18 +103,6 @@ const GlobalStyle = createGlobalStyle`
       text-decoration: none;
     }
   }
-  
-  button {
-    border: 0;
-    background-color: ${({ theme }) => theme.color.light};
-    color: ${({ theme }) => theme.color.dark};
-    
-    :focus {
-      outline: 1px solid ${({ theme }) => theme.color.dark};
-    }
-  }
-  
->>>>>>> develop:src/utils/globalStyle.js
 `;
 
 export default GlobalStyle;
