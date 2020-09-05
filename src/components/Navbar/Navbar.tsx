@@ -6,6 +6,7 @@ import logoImg from '../../assets/logo.svg';
 import searchIcon from '../../assets/search.svg';
 import accountIcon from '../../assets/account.svg';
 import folderIcon from '../../assets/folder.svg';
+import mq from '../../theme/breakpoints';
 
 const Wrapper = styled.div`
 position:fixed;
@@ -14,19 +15,24 @@ left:0;
 width:100%;
 `;
 
-const StyledNavigation = styled.nav<{ opened: boolean }>`
+const StyledNavigation = styled.div<{ isOpen: boolean }>`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   max-width: 1280px;
-  margin:${({ theme }) => (`${theme.size.space.md} auto 0`)};
+  margin: ${({ theme }) => theme.size.space.md} auto 0;
   position: relative;
-  @media (max-width: 1280px) {
-    margin-left: ${({ theme }) => theme.size.space.lg};
-    margin-right: ${({ theme }) => theme.size.space.lg};
+  ${mq.desktopS}{
+    margin: ${({ theme }) => theme.size.space.md} ${({ theme }) => theme.size.space.lg} 0;
   }
- 
+
 `;
+
+const NavLinksContainer = styled.nav`
+  display: flex;
+  justify-content: space-between;
+  margin:0 5% 0 25%;
+  `;
 
 const Logo = styled.img`
   height: 64px;
@@ -34,11 +40,11 @@ const Logo = styled.img`
 
 const appear = keyframes`
   from {
-       background: rgba(108, 99, 255, 0);
+       opacity:0;
   }
 
   to {
-       background: rgba(241, 243, 244, 0.6);
+       opacity:0.6;
   }
 `;
 
@@ -49,15 +55,17 @@ const NavbarLink = styled(NavLink)`
   text-decoration: none;
   position: relative;
   padding: 5px 25px;
-  border-radius: 5px;
-  margin: 0px 5px;
-  color: black;
+  border-radius: ${({ theme }) => theme.size.space.sm};
+  margin: 20px 5px;
+  color: ${({ theme }) => theme.color.dark};
 
   &.active {
     ::after {
       content: '';
       height: 100%;
       position: absolute;
+      background: rgba(241, 243, 244, 0.6);
+      opacity:0;
       width: 100%;
       z-index: -1;
       left: 0;
@@ -68,23 +76,11 @@ const NavbarLink = styled(NavLink)`
   }
 `;
 
-const NavLinksContainer = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-    display: flex;
-  justify-content: space-between;
-  `;
-
-const BurgerIcon = styled.div<{ opened: boolean }>`
+const BurgerIcon = styled.div<{ isOpen: boolean }>`
   z-index: 99;
   width: 25px;
   height: 25px;
-  position: absolute;
-  top: 0%;
-  right: 0%;
-  margin: 25px auto;
+    margin: 25px 10px 0 10px;
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
   -o-transform: rotate(0deg);
@@ -127,12 +123,9 @@ const BurgerIcon = styled.div<{ opened: boolean }>`
     top: 18px;
   }
 
-  ${({ opened }) => opened
+  ${({ isOpen }) => isOpen
     && css`
-      /* span {
-        background: white;
-      } */
-      span:nth-child(1) {
+          span:nth-child(1) {
         top: 18px;
         width: 0%;
         left: 50%;
@@ -158,17 +151,12 @@ const BurgerIcon = styled.div<{ opened: boolean }>`
 `;
 
 const SearchButton = styled.div<{ searchIcon: string }>`
-  position: absolute;
   background-image: url(${searchIcon});
-  top: 50%;
-  right: 0px;
-    transform: translate(-50%, -50%);
   height: 52px;
   width: 52px;
   background-repeat: no-repeat;
   background-position: 50% 50%;
-  margin-left: auto;
-  margin-right: 130px;
+   margin:10px 20px 10px auto;
   background-color: rgba(108, 99, 255, 0.3);
   border-radius: 100%;
   cursor: pointer;
@@ -179,19 +167,13 @@ const SearchButton = styled.div<{ searchIcon: string }>`
 `;
 
 const AccountButton = styled.div<{ accountIcon: string }>`
-  position: absolute;
-  top: 50%;
-  right: 0px;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  height: 52px;
+   height: 52px;
   width: 52px;
   background-image: url(${accountIcon});
   background-repeat: no-repeat;
   background-position: 50% 50%;
-  margin-left: auto;
-  margin-right: 40px;
-  background-color: rgba(108, 99, 255, 0.3);
+  margin:10px 20px;
+   background-color: rgba(108, 99, 255, 0.3);
   border-radius: 100%;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
@@ -200,16 +182,16 @@ const AccountButton = styled.div<{ accountIcon: string }>`
   }
 `;
 
-const SideMenu = styled.div<{ opened: boolean }>`
+const SideMenu = styled.div<{ isOpen: boolean }>`
 position:fixed;
 top:0;
 left:0;
-margin-top:90px;
+margin-top:100px;
 width:400px;
 height:calc(100vh - 90px);
 background-color: white;
 transition:transform .3s ease-in-out;
-transform: ${({ opened }) => (opened ? null : 'translateX(-100%)')};
+transform: ${({ isOpen }) => (isOpen ? null : 'translateX(-100%)')};
 `;
 
 const SearchBar = styled.input`
@@ -227,7 +209,7 @@ background-position: 5% 50%;
  }
 `;
 
-const SideLinksContainer = styled.div`
+const SideLinksContainer = styled.nav`
 width:100%;
 display:flex;
 flex-direction:column;
@@ -239,7 +221,7 @@ width:80%;
 margin:10px auto;
 height:50px;
 font-size:${({ theme }) => theme.size.font.md};
-border-bottom:1px solid lightgray;
+border-bottom:1px solid ${({ theme }) => theme.color.lightGray};
 text-decoration:none;
 color:black;
 line-height:50px;
@@ -254,12 +236,12 @@ transition:all .3s ease-in-out;
 }
 `;
 
-const SideButtonsContainer = styled.div`
+const SideButtonsContainer = styled.nav`
 position:absolute;
 bottom:0;
 width:100%;
 padding:0 5%;
-margin:0 auto 25px;
+margin:0 auto ${({ theme }) => theme.size.font.lg};
 display:flex;
 justify-content:space-around;
 `;
@@ -267,12 +249,12 @@ justify-content:space-around;
 const SideButton = styled(Link)`
 font-size:${({ theme }) => theme.size.font.md};
 font-weight:${({ theme }) => theme.size.weight.medium};
-color:blue;
-padding:8px 16px;
+color:${({ theme }) => theme.color.primary};
+padding:${({ theme }) => theme.size.space.sm} ${({ theme }) => theme.size.space.md};;
 text-decoration:none;
 text-transform:uppercase;
 transition:all .3s ease-in-out;
-border-radius:5px;
+border-radius:${({ theme }) => theme.size.space.sm};;
 &:hover{
   background-color: #E1EBFD;
 }
@@ -285,28 +267,28 @@ const renderNavLinks = () => NAV_ITEMS.map((item) => (
 ));
 
 const Navbar: FC = () => {
-  const [isMenuOpen, openMenu] = useState(true);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const toggleMenu = () => setIsMenuOpen((prevState) => !prevState);
 
   return (
     <Wrapper>
-      <StyledNavigation opened={isMenuOpen}>
+      <StyledNavigation isOpen={isMenuOpen}>
         <Link to="/">
           <Logo src={logoImg} alt="logo" />
-          {' '}
         </Link>
         <NavLinksContainer>{renderNavLinks()}</NavLinksContainer>
         <SearchButton searchIcon={searchIcon} />
         <AccountButton accountIcon={accountIcon} />
         <BurgerIcon
-          opened={isMenuOpen}
-          onClick={() => openMenu((prevState) => !prevState)}
+          isOpen={isMenuOpen}
+          onClick={toggleMenu}
         >
           <span />
           <span />
           <span />
           <span />
         </BurgerIcon>
-        <SideMenu opened={isMenuOpen}>
+        <SideMenu isOpen={isMenuOpen}>
           <SearchBar />
           <SideLinksContainer>
             {SIDE_NAV_ITEMS.map((item) => (
@@ -317,9 +299,9 @@ const Navbar: FC = () => {
             ))}
           </SideLinksContainer>
           <SideButtonsContainer>
-            <SideButton to="/signin">sign in</SideButton>
-            <SideButton to="/download">download</SideButton>
-            <SideButton to="/register">register</SideButton>
+            <SideButton to="#">sign in</SideButton>
+            <SideButton to="#">download</SideButton>
+            <SideButton to="#">register</SideButton>
           </SideButtonsContainer>
         </SideMenu>
       </StyledNavigation>
