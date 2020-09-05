@@ -1,23 +1,25 @@
 import React, { FC } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const Wrapper = styled.button.attrs(({ type }) => ({
   type:  type || 'button'
 }))`
+  ${({ theme })=> css`
   z-index: 999;
-  background-color: ${({ theme }) => theme.color.blue};
-  padding: 0.5rem 1rem;
-  border-radius:0.25rem;
-  color: ${({ theme }) => theme.color.white};
-  box-shadow: ${({ theme }) => theme.utils.createBoxShadow([
+  background-color: ${theme.color.blue};
+  padding: ${theme.buttonSizes.lg.padding};
+  border-radius: ${theme.buttonSizes.lg.borderRadius};
+  color: ${theme.color.white};
+  box-shadow: ${theme.utils.createBoxShadow([
     'minimal'
   ])};
+  `}
 `;
 
-const Btn: FC = ({children}) => (
+const Button: FC = ({children}) => (
   <Wrapper>
     {children}
   </Wrapper>
 );
 
-export default Btn;
+export default Button;

@@ -1,5 +1,5 @@
 import { ObjectOfStrings, ObjectOfAny, ThemeSizes } from '../interfaces';
-import { boxShadows } from './declares';
+import { boxShadows, buttonSizes } from './constants';
 
 const colors: ObjectOfStrings = {
   light: '#FCF3D7',
@@ -63,6 +63,7 @@ const utils:ObjectOfAny = {
 
 const theme: ObjectOfAny = {
   utils,
+  buttonSizes,
   color: colors,
   size: sizes,
   gradient: gradients,
