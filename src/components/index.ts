@@ -6,6 +6,7 @@ import CommentList from './HomeSections/CommentList';
 import Description from './Description/Description';
 import Hero from './Hero/Hero';
 import Image from './Image/Image';
+// eslint-disable-next-line import/no-cycle
 import Layout from './Layout/Layout';
 import Container from './Layout/Container';
 import Navbar from './Navbar/Navbar';
@@ -13,6 +14,9 @@ import Signature from './Signature/Signature';
 import Theme from './Theme/Theme';
 import Title from './Title/Title';
 import Button from './Button/Button';
+import SocialIcon from './SocialIcon/SocialIcon';
+// eslint-disable-next-line import/no-cycle
+import Footer from './Footer/Footer';
 
 export {
   Advantages,
@@ -30,4 +34,6 @@ export {
   Theme,
   Title,
   Button,
+  Footer,
+  SocialIcon
 };

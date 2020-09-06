@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import styled, { css } from 'styled-components';
+import { hot } from 'react-hot-loader/root';
 
 const Wrapper = styled.button.attrs(({ type }) => ({
   type: type || 'button',
@@ -12,9 +13,8 @@ const Wrapper = styled.button.attrs(({ type }) => ({
     color: ${theme.color.white};
     font-size: ${theme.buttonSizes.lg.fontSize};
     box-shadow: ${theme.utils.createBoxShadow(['minimal'])};
-  `}
-`;
+  `}`;
 
 const Button: FC = ({ children }) => <Wrapper>{children}</Wrapper>;
 
-export default Button;
+export default hot(Button);
