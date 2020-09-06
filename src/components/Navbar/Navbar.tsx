@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import styled, { keyframes, css } from 'styled-components';
-import { NAV_ITEMS, SIDE_NAV_ITEMS } from '../../constants';
+import { NAV_ITEMS, SIDE_NAV_ITEMS } from '../../utils/constants';
 import logoImg from '../../assets/logo.svg';
 import searchIcon from '../../assets/search.svg';
 import accountIcon from '../../assets/account.svg';
