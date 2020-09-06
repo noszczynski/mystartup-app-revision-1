@@ -228,10 +228,6 @@ const SideLink = styled(Link)`
   color: black;
   line-height: 50px;
   font-weight: ${({ theme }) => theme.size.weight.medium};
-  /* padding-left: 50px;
-  background-image: url(${folderIcon});
-  background-repeat: no-repeat;
-  background-position: 0 50%; */
   transition: all 0.3s ease-in-out;
   &:hover {
     transform: translateX(10px);
