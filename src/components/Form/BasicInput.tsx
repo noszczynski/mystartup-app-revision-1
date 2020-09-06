@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components';
 const Element: any = styled.input<{noBorder: boolean}>`
   ${({ theme, noBorder }) => css`
     padding: ${theme.size.space.sm};
-    border: ${noBorder ? 'none' : `1px solid ${theme.color.dark}`};
+    border: ${noBorder ? 'none' : `1px solid ${theme.color.gray500}`};
   `}`;
 
 interface Props {
