@@ -218,7 +218,7 @@ const SideLinksContainer = styled.nav`
 `;
 
 const SideLink = styled(Link)`
-  display: block;
+  display: flex;
   width: 80%;
   margin: 10px auto;
   height: 50px;
@@ -228,13 +228,13 @@ const SideLink = styled(Link)`
   color: black;
   line-height: 50px;
   font-weight: ${({ theme }) => theme.size.weight.medium};
-  padding-left: 50px;
+  /* padding-left: 50px;
   background-image: url(${folderIcon});
   background-repeat: no-repeat;
-  background-position: 0 50%;
+  background-position: 0 50%; */
   transition: all 0.3s ease-in-out;
   &:hover {
-    padding-left: 60px;
+    transform: translateX(10px);
   }
 `;
 
@@ -262,15 +262,31 @@ const SideButton = styled(Link)`
   }
 `;
 
+const StyledIcon = styled.div`
+  border-radius: 100%;
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    width: 50%;
+    height: 50%;
+    transform: translateY(-25%);
+    color: ${({ theme }) => theme.color.blue};
+  }
+`;
+
 const renderNavLinks = () =>
-  NAV_ITEMS.map((item) => (
+  NAV_ITEMS.map((item: any) => (
     <NavbarLink key={item.label} exact={item.exact} to={item.to}>
       {item.label}
     </NavbarLink>
   ));
 
 const Navbar: FC = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(true);
   const toggleMenu = () => setIsMenuOpen((prevState) => !prevState);
 
   return (
@@ -292,7 +308,10 @@ const Navbar: FC = () => {
           <SearchBar />
           <SideLinksContainer>
             {SIDE_NAV_ITEMS.map((item) => (
-              <SideLink to={item.to}>{item.label} </SideLink>
+              <SideLink to={item.to}>
+                <StyledIcon>{item.icon}</StyledIcon>
+                {item.label}
+              </SideLink>
             ))}
           </SideLinksContainer>
           <SideButtonsContainer>

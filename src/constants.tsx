@@ -1,7 +1,15 @@
-import { Category, MonetizationOn, PlayArrow, FiberNew } from '@material-ui/icons';
+import {
+  Category,
+  MonetizationOn,
+  PlayArrow,
+  FiberNew,
+  Announcement,
+  Score,
+  AccountTree,
+} from '@material-ui/icons';
 import React from 'react';
 import theme from './theme/theme';
-import { AdvantagesArray, CommentArray } from './interfaces';
+import { AdvantagesArray, CommentArray, NavItemsArray, SideNavItemsArray } from './interfaces';
 
 const ADVANTAGES_ITEMS: AdvantagesArray = [
   {
@@ -81,7 +89,7 @@ const COMMENTS: CommentArray = [
          `,
   },
 ];
-const NAV_ITEMS: { label: string; to: string; exact: boolean }[] = [
+const NAV_ITEMS: NavItemsArray = [
   {
     label: 'Home',
     to: '/',
@@ -104,30 +112,36 @@ const NAV_ITEMS: { label: string; to: string; exact: boolean }[] = [
   },
 ];
 
-const SIDE_NAV_ITEMS: { label: string; to: string }[] = [
+const SIDE_NAV_ITEMS: SideNavItemsArray = [
   {
     label: 'Getting Started',
     to: '/gettingstarted',
+    icon: <PlayArrow />,
   },
   {
     label: 'News',
     to: '/news',
+    icon: <Announcement />,
   },
   {
     label: 'Category',
     to: '/category',
+    icon: <Category />,
   },
   {
     label: 'Results',
     to: '/results',
+    icon: <Score />,
   },
   {
     label: 'Project',
     to: '/project',
+    icon: <AccountTree />,
   },
   {
     label: 'Settings',
     to: '/settings',
+    icon: <Category />,
   },
 ];
 
