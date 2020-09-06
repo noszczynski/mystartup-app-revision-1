@@ -1,14 +1,8 @@
 import React, { FC } from 'react';
 import Image from '../Image/Image';
-import Title from '../Title/Title';
-import {
-  StyledWrapper,
-  StyledAvatar,
-  StyledWrapperInner,
-  StyledContent,
-  StyledSignature,
-  StyledSignatureInner,
-} from './Comment.styles';
+import Element from './Comment.styles';
+import Signature from '../Signature/Signature';
+import { defaultHover } from '../../utils/animations';
 
 interface Props {
   image: string,
@@ -22,36 +16,26 @@ const Comment: FC<Props> = ({
   name,
   signature,
 }) => (
-  <StyledWrapper
-    whileHover={{
-      y: -4,
-      backgroundColor: '#fff',
-      boxShadow: '0 5px 15px -8px rgba(0,0,0,.5)',
-    }}
+  <Element
+    whileHover={defaultHover}
     transition={{
       filter: { delay: 0.1 },
     }}
   >
-    <StyledAvatar>
+    <Element.Avatar>
       <Image src={image} alt="comment author avatar" />
-    </StyledAvatar>
-    <StyledWrapperInner>
-      <StyledContent>
+    </Element.Avatar>
+    <Element.WrapperInner>
+      <Element.Content>
         &#34;
         {children}
         &#34;
-      </StyledContent>
-      <StyledSignature>
-        <Image src={image} alt="start-up cover" />
-        <StyledSignatureInner>
-          <Title component="h5">{name}</Title>
-          <Title component="h6">
-            {signature}
-          </Title>
-        </StyledSignatureInner>
-      </StyledSignature>
-    </StyledWrapperInner>
-  </StyledWrapper>
+      </Element.Content>
+      <Signature image={image} name={name} id="user_2">
+        {signature}
+      </Signature>
+    </Element.WrapperInner>
+  </Element>
 );
 
 export default Comment;

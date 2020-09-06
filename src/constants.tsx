@@ -9,7 +9,12 @@ import {
 } from '@material-ui/icons';
 import React from 'react';
 import theme from './theme/theme';
-import { AdvantagesArray, CommentArray, NavItemsArray, SideNavItemsArray } from './interfaces';
+import {
+  AdvantagesArray,
+  CommentArray,
+  NavItemsArray,
+  SideNavItemsArray,
+} from './utils/interfaces';
 
 const ADVANTAGES_ITEMS: AdvantagesArray = [
   {

@@ -80,6 +80,29 @@ const GlobalStyle = createGlobalStyle`
     margin-inline-end: initial;
   }
   
+  button {
+		cursor: pointer;
+		border: none;
+		margin: 0;
+		padding: 0;
+		width: auto;
+		overflow: visible;
+		background: transparent;
+		color: inherit;
+		font: inherit;
+		text-align: inherit;
+		line-height: inherit;
+		-webkit-appearance: none;
+	}
+  
+  a {
+    text-decoration: none;
+    color: ${({ theme }) => theme.color.dark};
+    
+    :hover {
+      text-decoration: none;
+    }
+  }
 `;
 
 export default GlobalStyle;

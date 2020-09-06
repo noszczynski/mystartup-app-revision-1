@@ -14,6 +14,7 @@ type ArrayOfJSX = Array<JSX.Element>;
 type ArrayOfAny = Array<any>;
 
 type CommentArray = {
+  id: string;
   author: string;
   signature: string;
   avatar: string;
@@ -39,6 +40,23 @@ type SideNavItemsArray = {
   icon: JSX.Element;
 }[];
 
+type ArticlesArray = {
+  article: {
+    image: string;
+    imageAlt: string;
+    category: string;
+    time: string;
+    title: string;
+    id: string;
+  };
+  signature: {
+    title: string;
+    content: string;
+    image: string;
+  };
+  content: string;
+}[];
+
 interface ThemeSizes {
   space: { [key: string]: string };
   font: { [key: string]: string };
@@ -56,4 +74,5 @@ export type {
   AdvantagesArray,
   NavItemsArray,
   SideNavItemsArray,
+  ArticlesArray,
 };

@@ -5,8 +5,7 @@ import { NAV_ITEMS, SIDE_NAV_ITEMS } from '../../constants';
 import logoImg from '../../assets/logo.svg';
 import searchIcon from '../../assets/search.svg';
 import accountIcon from '../../assets/account.svg';
-import folderIcon from '../../assets/folder.svg';
-import mq from '../../theme/breakpoints';
+import { mq } from '../../theme/theme';
 
 const Wrapper = styled.div`
   position: fixed;
@@ -303,7 +302,7 @@ const Navbar: FC = () => {
         <SideMenu isOpen={isMenuOpen}>
           <SearchBar />
           <SideLinksContainer>
-            {SIDE_NAV_ITEMS.map((item) => (
+            {SIDE_NAV_ITEMS.map((item: any) => (
               <SideLink to={item.to}>
                 <StyledIcon>{item.icon}</StyledIcon>
                 {item.label}

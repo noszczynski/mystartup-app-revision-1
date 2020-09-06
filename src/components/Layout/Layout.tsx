@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
-import mq, { breakpoints } from '../../theme/breakpoints';
+import { mq, breakpoints } from '../../theme/theme';
 import Navbar from '../Navbar/Navbar';
 
 const setContainerMedia = () => {
@@ -28,7 +28,7 @@ const StyledContainer = styled.article`
   max-width: 100%;
   padding: 0 ${({ theme }) => theme.size.space.md};
 
-  ${mq.tablet} {
+  ${({ theme }) => theme.mq.tablet} {
     padding: 0 ${({ theme }) => theme.size.space.lg};
   }
 

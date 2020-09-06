@@ -1,8 +1,7 @@
 import styled from 'styled-components';
-import mq from '../../theme/breakpoints';
 import Image from '../Image/Image';
 
-const StyledHero = styled.header`
+const Hero: any = styled.header`
   min-height: calc(100vh - ${({ theme }) => theme.size.space.xxl});
   background-color: ${({ theme }) => theme.color.white};
   display: grid;
@@ -10,12 +9,12 @@ const StyledHero = styled.header`
   align-items: center;
   padding-top: ${({ theme }) => theme.size.space.xxl};
   
-  ${mq.tablet} {
+  ${({ theme }) => theme.mq.tablet} {
     grid-template-columns: 60% 40%;
   }
 `;
 
-const StyledContent = styled.section`
+const Content = styled.section`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -24,18 +23,18 @@ const StyledContent = styled.section`
   width: 90%;
   margin: 0 auto;
   
-  ${mq.tablet} {
+  ${({ theme }) => theme.mq.tablet} {
     gap: ${({ theme }) => theme.size.space.xl};
     width: 80%;
   }
   
-  ${mq.laptopM} {
+  ${({ theme }) => theme.mq.laptopM} {
     width: 70%;
   }
   
 `;
 
-const StyledImageWrapper = styled.section`
+const ImageWrapper = styled.section`
   display: none;
   position: absolute;
   top: 50%;
@@ -47,16 +46,16 @@ const StyledImageWrapper = styled.section`
   align-items: center;
   overflow: hidden;
     
-  ${mq.tablet} {
+  ${({ theme }) => theme.mq.tablet} {
     display: flex;
   }
 `;
 
-const StyledMacbookImage = styled(Image)`
+const MacbookImage = styled(Image)`
   max-width: none;
 `;
 
-const StyledAppImage = styled(Image)`
+const AppImage = styled(Image)`
   z-index: -1;
   position: absolute;
   top: 52px;
@@ -67,13 +66,13 @@ const StyledAppImage = styled(Image)`
   object-fit: cover;
 `;
 
-const StyledButtonWrapper = styled.section`
+const ButtonWrapper = styled.section`
   display: flex;
   gap: 1rem;
   position: relative;
 `;
 
-const StyledBlob = styled(Image)`
+const Blob = styled(Image)`
   position: absolute;
   left: 50%;
   top: 50%;
@@ -84,12 +83,11 @@ const StyledBlob = styled(Image)`
   opacity: .18;
 `;
 
-export {
-  StyledHero,
-  StyledContent,
-  StyledImageWrapper,
-  StyledMacbookImage,
-  StyledAppImage,
-  StyledButtonWrapper,
-  StyledBlob,
-};
+Hero.Content = Content;
+Hero.ImageWrapper = ImageWrapper;
+Hero.MacbookImage = MacbookImage;
+Hero.AppImage = AppImage;
+Hero.ButtonWrapper = ButtonWrapper;
+Hero.Blob = Blob;
+
+export default Hero;

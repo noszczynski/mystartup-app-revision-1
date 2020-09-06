@@ -1,33 +1,43 @@
 import React, { FC } from 'react';
+import { Link } from 'react-router-dom';
+import { colors } from '../../theme/theme';
 
 type Headings = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
 interface Props {
   component?: Headings,
+  color?: string,
+  linkTo?: string
 }
 
 const defaultProps = {
   component: undefined,
+  color: colors.blue,
+  linkTo: undefined,
 };
 
-const Title: FC<Props> = ({ component, children }) => {
+const Title: FC<Props> = ({
+  component, color, linkTo, children,
+}) => {
   const renderHeadline = () => {
     switch (component) {
       case 'h1':
-        return <h1>{children}</h1>;
+        return <h1 style={{ color }}>{children}</h1>;
       case 'h3':
-        return <h3>{children}</h3>;
+        return <h3 style={{ color }}>{children}</h3>;
       case 'h4':
-        return <h4>{children}</h4>;
+        return <h4 style={{ color }}>{children}</h4>;
       case 'h5':
-        return <h5>{children}</h5>;
+        return <h5 style={{ color }}>{children}</h5>;
       case 'h6':
-        return <h6>{children}</h6>;
-      default: return <h2>{children}</h2>;
+        return <h6 style={{ color }}>{children}</h6>;
+      default: return <h2 style={{ color }}>{children}</h2>;
     }
   };
 
-  return renderHeadline();
+  return linkTo
+    ? <Link to={linkTo}>{renderHeadline()}</Link>
+    : renderHeadline();
 };
 
 Title.defaultProps = defaultProps;

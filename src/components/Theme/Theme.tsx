@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { ThemeProvider } from 'styled-components';
-import GlobalStyle from '../../globalStyle';
+import GlobalStyle from '../../utils/globalStyle';
 import theme from '../../theme/theme';
 
 const Theme: FC = ({ children }) => (

@@ -10,7 +10,8 @@
     "plugin:@typescript-eslint/recommended",
     "airbnb",
     "airbnb-base",
-    "airbnb-typescript"
+    "airbnb-typescript",
+    "prettier"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -21,8 +22,9 @@
     "sourceType": "module",
     "project": "./tsconfig.json"
   },
-  "plugins": ["react", "@typescript-eslint"],
+  "plugins": ["react", "@typescript-eslint", "import"],
   "rules": {
+    "no-restricted-syntax": ["off"],
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
     "react/jsx-props-no-spreading": "off",
     "import/extensions": [
@@ -40,31 +42,17 @@
     "react/jsx-filename-extension": [
       1,
       {
-        "extensions": [".tsx"]
+        "extensions": [".tsx", ".ts"]
       }
     ],
-    "rules": {
-      "no-restricted-syntax": ["off"],
-      "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
-      "react/jsx-props-no-spreading": "off",
-      "import/extensions": [
-        "error",
-        "ignorePackages",
-        {
-          "js": "never",
-          "mjs": "never",
-          "jsx": "never",
-          "ts": "never",
-          "tsx": "never"
-        }
-      ],
-      "react/prop-types": 0,
-      "react/jsx-filename-extension": [
-        1,
-        {
-          "extensions": [".tsx", ".ts"]
-        }
-      ]
+    "import/prefer-default-export": "off",
+    "import/no-cycle": [2, { "ignoreExternal": true }]
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src"]
+      }
     }
   }
 }
