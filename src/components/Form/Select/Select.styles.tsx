@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import styled, { css } from 'styled-components';
 
-const Input:any = styled(motion.div)`
+const Select:any = styled(motion.div)`
   ${({ theme }) => css`
     position: relative;
     padding: 0 12px;
@@ -22,7 +22,7 @@ const Input:any = styled(motion.div)`
   `}`;
 
 const Label = styled.label`
-  ${({theme}) => css`
+  ${({ theme }) => css`
     position: absolute;
     top: 0;
     left: 0;
@@ -45,7 +45,7 @@ const Label = styled.label`
   `}`;
 
 const Text = styled.input<{valid: boolean}>`
-  ${({theme, valid}) => css`
+  ${({ theme, valid }) => css`
     width: 100%;
     height: 100%;
     color: ${theme.color.dark};
@@ -53,25 +53,56 @@ const Text = styled.input<{valid: boolean}>`
     font-size: ${theme.size.font.md};
     border: none;
     outline: none;
+    cursor: pointer;
     ${valid && css` padding-right: 1.5rem; `}
   `}`;
 
-const Icon = styled.span`
-  ${({theme}) => css`
+const Icon = styled.span<{isOpen: boolean}>`
+  ${({ theme, isOpen }) => css`
     position: absolute;
     top: 50%;
     right: 12px;
-    transform: translateY(-50%);
+    transition: transform .2s ease-in-out;
+    transform: translateY(-50%) ${isOpen && 'rotate(180deg)'};
+    display: flex;
     
     svg {
-      width: 1rem;
-      height: 1rem;
-      color: ${theme.color.green};
+      width: 1.5rem;
+      height: 1.5rem;
+      color: ${theme.color.gray500};
     }
   `}`;
 
-Input.Label = Label;
-Input.Input = Text;
-Input.Icon = Icon;
+const Options = styled.div`
+  ${({ theme }) => css`
+    position: absolute;
+    top: 130%;
+    width: 100%;
+    padding-top: ${theme.size.space.md};
+    left: 0;
+    border-radius: .25rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: ${theme.utils.createBoxShadow(['medium'])};
+    background-color: ${theme.color.white};
+    z-index: 100;
+  `}`;
 
-export default Input;
+const Option = styled.button<{isActive: boolean}>`
+  ${({ theme, isActive }) => css`
+    background-color: ${isActive ? theme.color.blue : theme.color.white};
+    color: ${isActive ? theme.color.white : theme.color.dark};
+    padding: ${theme.size.space.sm} ${theme.size.space.md};
+    margin-bottom: 1px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  `}`;
+
+Select.Label = Label;
+Select.Input = Text;
+Select.Icon = Icon;
+Select.Options = Options;
+Select.Option = Option;
+
+export default Select;

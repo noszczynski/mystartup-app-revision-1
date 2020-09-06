@@ -1,23 +1,30 @@
 import React, {FC} from 'react';
 import styled, { css } from 'styled-components';
 
-const Element = styled.input`
-  ${({ theme }) => css`
+const Element: any = styled.input<{noBorder: boolean}>`
+  ${({ theme, noBorder }) => css`
     padding: ${theme.size.space.sm};
+    border: ${noBorder ? 'none' : `1px solid ${theme.color.dark}`};
   `}`;
 
 interface Props {
   name: string,
   change: any,
-  type: 'text' | 'password' | 'email' | 'number'
+  type: 'text' | 'password' | 'email' | 'number',
+  invisible?: boolean,
   // ...rest
   [key: string]: any
 }
+
+const defaultProps = {
+  invisible: false,
+};
 
 const BasicInput: FC<Props> = ({
   name,
   change,
   type,
+  invisible,
   ...rest
 }) => {
   return (
@@ -25,9 +32,12 @@ const BasicInput: FC<Props> = ({
       type="text"
       name={name}
       onChange={change}
+      noBorder={invisible}
       {...rest}
     />
   );
 };
+
+BasicInput.defaultProps = defaultProps;
 
 export default BasicInput;

@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import { Done } from '@material-ui/icons';
 import Element from './InputV2.styles';
 
 type InputTypes = 'text' | 'password' | 'email' | 'number';
@@ -6,6 +7,7 @@ type InputTypes = 'text' | 'password' | 'email' | 'number';
 interface Props {
   type: InputTypes,
   optional?: boolean,
+  valid?: boolean,
   change: any,
   // value: string | number,
   name: string,
@@ -16,9 +18,10 @@ interface Props {
 
 const defaultProps = {
   optional: false,
+  valid: false,
 };
 
-const InputV2: FC<Props> = ({type, label, name, optional, change, ...props}) => {
+const InputV2: FC<Props> = ({type, label, name, valid, optional, change, ...props}) => {
   return (
     <Element>
       <Element.Input
@@ -26,12 +29,18 @@ const InputV2: FC<Props> = ({type, label, name, optional, change, ...props}) => 
         type={type}
         required={!optional}
         onChange={change}
-        // value={value}
+        autoComplete="off"
+        valid={valid}
         {...props}
       />
       <Element.Label htmlFor={name}>
         <span>{label}</span>
       </Element.Label>
+      {valid && (
+        <Element.Icon>
+          <Done />
+        </Element.Icon>
+      )}
     </Element>
   );
 };
