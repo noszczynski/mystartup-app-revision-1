@@ -13,6 +13,7 @@ import Signature from './Signature/Signature';
 import Theme from './Theme/Theme';
 import Title from './Title/Title';
 import Button from './Button/Button';
+import Box from './Box/Box';
 
 export {
   Advantages,
@@ -30,4 +31,5 @@ export {
   Theme,
   Title,
   Button,
+  Box,
 };
