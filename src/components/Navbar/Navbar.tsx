@@ -282,7 +282,7 @@ const renderNavLinks = () =>
   ));
 
 const Navbar: FC = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(true);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const toggleMenu = () => setIsMenuOpen((prevState) => !prevState);
 
   return (
