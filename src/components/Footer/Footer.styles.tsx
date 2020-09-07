@@ -52,6 +52,10 @@ const Section = styled.section`
     ${theme.mq.tabletS} {
       grid-template-columns: repeat(3, 1fr);
     }
+    
+    article:first-child nav:last-child {
+      background-color: ${theme.color.yellow}40;
+    }
   `}`;
 
 const Column = styled.article`
@@ -80,13 +84,14 @@ const NavItem = styled(motion.li)`
     display: inline-block;
     position: relative;
     font-size: ${theme.size.font.s};
+    color: ${theme.color.gray900};
     
     ::after {
       content: '';
       position: absolute;
-      height: 1px;
-      width: 1px;
-      background-color: ${theme.color.dark};
+      height: 2px;
+      width: 2px;
+      background-color: ${theme.color.gray900};
       border-radius: 100%;
       left: -0.5rem;
       top: 50%;
