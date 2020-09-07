@@ -10,8 +10,8 @@ import logoDarkRight from './logos/logo-right-text-black.svg';
 import logoDarkBottom from './logos/logo-bottom-text-black.svg';
 import logoDarkBottomWithRed from './logos/logo-bottom-text-black-with-red.svg';
 import logoDarkRightWithRed from './logos/logo-right-text-black-with-red.svg';
-import logoLightBottomWithBlue from './logos/logo-bottom-text-white-with-blue.svg';
-import logoLightRightWithBlue from './logos/logo-right-text-white-with-blue.svg';
+import logoLightBottomWithRed from './logos/logo-bottom-text-white-with-red.svg';
+import logoLightRightWithRed from './logos/logo-right-text-white-with-red.svg';
 
 export {
   mockup,
@@ -26,6 +26,6 @@ export {
   logoDarkBottom,
   logoDarkBottomWithRed,
   logoDarkRightWithRed,
-  logoLightBottomWithBlue,
-  logoLightRightWithBlue,
+  logoLightBottomWithRed,
+  logoLightRightWithRed,
 };
