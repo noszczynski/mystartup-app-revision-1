@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import Title from '../Title/Title';
 import { ADVANTAGES_ITEMS } from '../../utils/constants';
 import Container from '../Layout/Container';
-import { colors } from '../../theme/theme';
+import colors from '../../theme/colors';
 
 const StyledSection = styled.section`
   display: flex;

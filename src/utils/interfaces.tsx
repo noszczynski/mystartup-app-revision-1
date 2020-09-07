@@ -28,6 +28,16 @@ type AdvantagesArray = {
   background: string
 }[];
 
+type FooterNavigationItem = {
+  title: string,
+  items: {
+    label: string,
+    to: string,
+  }[]
+};
+
+type FooterNavigationArray = FooterNavigationItem[][];
+
 type ArticlesArray = {
   article: {
     image: string,
@@ -61,4 +71,5 @@ export type {
   CommentArray,
   AdvantagesArray,
   ArticlesArray,
+  FooterNavigationArray,
 };

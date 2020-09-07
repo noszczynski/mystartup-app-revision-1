@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
 import { mq, breakpoints } from '../../theme/theme';
-// eslint-disable-next-line import/no-cycle
 import { Footer } from '../index';
 
 const setContainerMedia = () => {

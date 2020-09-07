@@ -5,7 +5,7 @@ import Title from '../Title/Title';
 import Image from '../Image/Image';
 import { defaultHover } from '../../utils/animations';
 import { CATEGORY_COLORS, CATEGORY_LABELS } from '../../utils/constants';
-import { colors } from '../../theme/theme';
+import colors from '../../theme/colors';
 
 interface Props {
   article: {

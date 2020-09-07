@@ -2,9 +2,10 @@ import {
   Category, MonetizationOn, PlayArrow, FiberNew,
 } from '@material-ui/icons';
 import React from 'react';
-import theme, { colors } from '../theme/theme';
+import colors from 'theme/colors';
+import theme from 'theme/theme';
 import {
-  AdvantagesArray, CommentArray, ObjectOfStrings, ArticlesArray,
+  AdvantagesArray, CommentArray, ObjectOfStrings, ArticlesArray, FooterNavigationArray,
 } from './interfaces';
 
 const ARTICLES_ITEMS: ArticlesArray = [
@@ -191,20 +192,6 @@ const COMMENTS: CommentArray = [
   },
 ];
 
-const CATEGORY_COLORS: ObjectOfStrings = {
-  EVENTS: colors.blue,
-  CULTURE_AND_ART: colors.yellow,
-  BUSINESS: colors.green,
-  POLITICS: colors.gray900,
-  HEALTH: colors.red,
-  SPORT: colors.blue,
-  GAMES: colors.green,
-  MUSIC: colors.red,
-  FOOD_AND_CRAFT: colors.yellow,
-  DESIGN_AND_TECH: colors.ocean,
-  FILM_AND_COMICS: colors.ocean,
-};
-
 const CATEGORY_LABELS: ObjectOfStrings = {
   EVENTS: 'Events',
   CULTURE_AND_ART: 'Culture and Art',
@@ -219,21 +206,77 @@ const CATEGORY_LABELS: ObjectOfStrings = {
   FILM_AND_COMICS: 'Film and Comics',
 };
 
+const BOTTOM_NAV_ITEMS: FooterNavigationArray = [
+  [{
+    title: 'USER',
+    items: [
+      {label: 'Help', to: '/'},
+      {label: 'Categories', to: '/'},
+      {label: 'New', to: '/'},
+    ]
+  }, {
+    title: 'PROJECTS',
+    items: [
+      {label: 'Help', to: '/'},
+      {label: 'Categories', to: '/'},
+      {label: 'New', to: '/'},
+      {label: 'Contracts', to: '/'},
+      {label: 'Comments', to: '/'},
+      {label: 'Lorem', to: '/'},
+      {label: 'Ipsum', to: '/'},
+      {label: 'Dolor sit', to: '/'},
+    ]
+  }], [{
+    title: 'SUPPORT',
+    items: [
+      {label: 'Help', to: '/'},
+      {label: 'Categories', to: '/'},
+      {label: 'New', to: '/'},
+      {label: 'Lorem', to: '/'},
+      {label: 'Ipsum', to: '/'},
+      {label: 'Dolor sit', to: '/'},
+    ]
+  }, {
+    title: 'NEWS',
+    items: [
+      {label: 'Help', to: '/'},
+      {label: 'Categories', to: '/'},
+      {label: 'New', to: '/'},
+      {label: 'Contracts', to: '/'},
+    ]
+  }], [{
+    title: 'NAVIGATION',
+    items: [
+      {label: 'Help', to: '/'},
+      {label: 'Categories', to: '/'},
+      {label: 'New', to: '/'},
+      {label: 'News', to: '/'},
+    ]
+  }, {
+    title: 'OTHERS',
+    items: [
+      {label: 'Help', to: '/'},
+      {label: 'Categories', to: '/'},
+      {label: 'New', to: '/'},
+      {label: 'News', to: '/'},
+    ]
+  }]
+];
+
 const ARTICLE_THUMBNAIL_MAX_LENGTH = 200;
 
-const SOCIAL_COLORS: ObjectOfStrings = {
-  FACEBOOK: '#1877f2',
-  TWITTER: '#1da1f2',
-  INSTAGRAM: '#4c5fd7',
-  GOOGLE: '#4285f4',
-  GOOGLE_BLUE: '#4285f4',
-  GOOGLE_RED: '#ea4335',
-  GOOGLE_GREEN: '#34a853',
-  GOOGLE_YELLOW: '#fbbc05',
-  GITHUB: '#333333',
-  YOUTUBE: '#ff0000',
-  LINKEDIN: '#007bb5',
-  SPOTIFY: '#1ed760'
+const CATEGORY_COLORS: ObjectOfStrings = {
+  EVENTS: colors.blue,
+  CULTURE_AND_ART: colors.yellow,
+  BUSINESS: colors.green,
+  POLITICS: colors.gray900,
+  HEALTH: colors.red,
+  SPORT: colors.blue,
+  GAMES: colors.green,
+  MUSIC: colors.red,
+  FOOD_AND_CRAFT: colors.yellow,
+  DESIGN_AND_TECH: colors.ocean,
+  FILM_AND_COMICS: colors.ocean,
 };
 
 export {
@@ -243,5 +286,5 @@ export {
   CATEGORY_COLORS,
   CATEGORY_LABELS,
   ARTICLE_THUMBNAIL_MAX_LENGTH,
-  SOCIAL_COLORS,
+  BOTTOM_NAV_ITEMS,
 };

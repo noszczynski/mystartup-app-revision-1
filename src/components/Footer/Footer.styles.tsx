@@ -3,13 +3,14 @@ import { motion } from 'framer-motion';
 
 const Footer: any = styled.footer`
   ${({ theme }) => css`
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     padding: ${theme.size.space.xl} 0;
     width: 100%;
     gap: 2rem;
     
     ${theme.mq.tablet} {
+      display: grid;
       grid-template-columns: 7fr 3fr;
     }
     
@@ -48,7 +49,7 @@ const Section = styled.section`
       order: 1;
     }
     
-    ${theme.mq.tabletL} {
+    ${theme.mq.tabletS} {
       grid-template-columns: repeat(3, 1fr);
     }
   `}`;
@@ -111,16 +112,30 @@ const Rights = styled.div`
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    color: ${theme.color.gray700};
+  `}`;
+
+const Newsletter = styled.div`
+  ${({ theme }) => css`
+    font-size: ${theme.size.font.xs};
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    color: ${theme.color.gray700};
+    
+    ${theme.mq.tabletS} {
+      font-size: ${theme.size.font.s};
+    }
   `}`;
 
 const NewsletterForm = styled.div`
     display: flex;
+    flex-direction: column;
     gap: 1rem;
-`;
-
-const SocialWrapper = styled.div`
-    display: flex;
-    gap: .5rem;
+    
+    ${({theme}) => theme.mq.mobileM} {
+      flex-direction: row;
+    }
 `;
 
 const Spacer = styled.div`
@@ -136,8 +151,8 @@ Footer.Nav = Navigation;
 Footer.Logo = Logo;
 Footer.Rights = Rights;
 Footer.NewsletterForm = NewsletterForm;
-Footer.SocialWrapper = SocialWrapper;
 Footer.NavItem = NavItem;
 Footer.Spacer = Spacer;
+Footer.Newsletter = Newsletter;
 
 export default Footer;

@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import styled from 'styled-components';
 import Image from '../Image/Image';
 import Title from '../Title/Title';
-import { colors } from '../../theme/theme';
+import colors from '../../theme/colors';
 
 const StyledSignature = styled.div`
   display: flex;
