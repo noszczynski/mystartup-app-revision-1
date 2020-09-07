@@ -1,11 +1,12 @@
 import React, { FC, useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import styled, { keyframes, css } from 'styled-components';
-import { NAV_ITEMS, SIDE_NAV_ITEMS } from '../../utils/constants';
-import logoImg from '../../assets/logo.svg';
-import searchIcon from '../../assets/search.svg';
-import accountIcon from '../../assets/account.svg';
-import { mq } from '../../theme/theme';
+import {
+  Search,
+  AccountCircle
+} from '@material-ui/icons';
+import logoImg from 'assets/logo.svg';
+import { NAV_ITEMS, SIDE_NAV_ITEMS } from 'utils/constants';
 
 const Wrapper = styled.div`
   position: fixed;
@@ -14,7 +15,7 @@ const Wrapper = styled.div`
   width: 100%;
   background-color: ${({ theme }) => theme.color.white};
   z-index: 9999;
-`;
+  `;
 
 const StyledNavigation = styled.div<{ isOpen: boolean }>`
   display: flex;
@@ -23,10 +24,7 @@ const StyledNavigation = styled.div<{ isOpen: boolean }>`
   max-width: 1280px;
   margin: ${({ theme }) => theme.size.space.sm} auto 0;
   position: relative;
-  ${mq.desktopS} {
-    margin: ${({ theme }) => theme.size.space.md} ${({ theme }) => theme.size.space.lg} 0;
-  }
-`;
+ `;
 
 const NavLinksContainer = styled.nav`
   display: flex;
@@ -77,111 +75,58 @@ const NavbarLink = styled(NavLink)`
 `;
 
 const BurgerIcon = styled.div<{ isOpen: boolean }>`
-  z-index: 99;
-  width: 25px;
-  height: 25px;
-  margin: 25px 10px 0 10px;
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
-  transform: rotate(0deg);
-  -webkit-transition: 0.5s ease-in-out;
-  -moz-transition: 0.5s ease-in-out;
-  -o-transition: 0.5s ease-in-out;
-  transition: 0.5s ease-in-out;
-  cursor: pointer;
+  width: 30px;
+  margin: 15px;
+  cursor:pointer;
+   
+&:after,
+&:before,
+div
+{
+  background-color: ${({theme})=>theme.color.blue};
+  border-radius: 3px;
+  content: '';
+  display: block;
+  height: 5px;
+  margin: 7px 0;
+  transition: all .2s ease-in-out;
+}
 
-  span {
-    display: block;
-    position: absolute;
-    height: 3px;
-    width: 100%;
-    background: ${({ theme }) => theme.color.blue};
-    border-radius: 9px;
-    opacity: 1;
-    left: 0;
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-    -webkit-transition: 0.25s ease-in-out;
-    -moz-transition: 0.25s ease-in-out;
-    -o-transition: 0.25s ease-in-out;
-    transition: 0.25s ease-in-out;
-  }
-
-  span:nth-child(1) {
-    top: 0px;
-  }
-
-  span:nth-child(2),
-  span:nth-child(3) {
-    top: 9px;
-  }
-
-  span:nth-child(4) {
-    top: 18px;
-  }
-
-  ${({ isOpen }) =>
+${({ isOpen }) =>
     isOpen &&
     css`
-      span:nth-child(1) {
-        top: 18px;
-        width: 0%;
-        left: 50%;
-      }
-      span:nth-child(2) {
-        -webkit-transform: rotate(45deg);
-        -moz-transform: rotate(45deg);
-        -o-transform: rotate(45deg);
-        transform: rotate(45deg);
-      }
-      span:nth-child(3) {
-        -webkit-transform: rotate(-45deg);
-        -moz-transform: rotate(-45deg);
-        -o-transform: rotate(-45deg);
-        transform: rotate(-45deg);
-      }
-      span:nth-child(4) {
-        top: 18px;
-        width: 0%;
-        left: 50%;
-      }
+    div {
+  transform: scale(0);
+  ;}
+    &:before {
+  transform: translateY(12px) rotate(135deg);
+    }
+  &:after {
+  transform: translateY(-12px) rotate(-135deg);
+  }
     `}
 `;
 
-const SearchButton = styled.div<{ searchIcon: string }>`
-  background-image: url(${searchIcon});
+const SearchButton = styled.div`
   height: 52px;
+  line-height:57px;
+  font-size:${({theme})=>theme.size.font.lg};
+  text-align:center;
+  color:${({theme})=>theme.color.blue};
   width: 52px;
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
   margin: 10px 20px 10px auto;
-  background-color: rgba(108, 99, 255, 0.3);
+  background-color: rgba(54, 123, 245, 0.2);
   border-radius: 100%;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
   &:hover {
-    background-color: rgba(108, 99, 255, 0.5);
+    background-color: rgba(54, 123, 245, 0.125);
   }
 `;
 
-const AccountButton = styled.div<{ accountIcon: string }>`
-  height: 52px;
-  width: 52px;
-  background-image: url(${accountIcon});
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  margin: 10px 20px;
-  background-color: rgba(108, 99, 255, 0.3);
-  border-radius: 100%;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  &:hover {
-    background-color: rgba(108, 99, 255, 0.5);
-  }
-`;
+const AccountButton = styled(SearchButton)`
+    margin: 10px 20px;
+  `;
 
 const SideMenu = styled.div<{ isOpen: boolean }>`
   position: fixed;
@@ -195,18 +140,25 @@ const SideMenu = styled.div<{ isOpen: boolean }>`
   transform: ${({ isOpen }) => (isOpen ? null : 'translateX(-100%)')};
 `;
 
-const SearchBar = styled.input`
-  display: block;
+const SearchBar = styled.div`
+  display: flex;
   width: 80%;
   margin: 15px auto;
   border: 1px solid lightgrey;
   border-radius: 15px;
-  padding: 10px 5px 7px 15%;
-  background-image: url(${searchIcon});
-  background-repeat: no-repeat;
-  background-position: 5% 50%;
+  padding: ${({theme})=>theme.size.space.sm};
+   
   &:focus {
+    border:2px solid red;
+  }
+  input{
+    width:90%;
+    margin-left:${({theme})=>theme.size.space.sm};
+    border:none;
+    font-size:${({theme})=>theme.size.font.s} ;
+    &:focus {
     outline: none;
+          }
   }
 `;
 
@@ -274,9 +226,9 @@ const StyledIcon = styled.div`
 `;
 
 const renderNavLinks = () =>
-  NAV_ITEMS.map((item: any) => (
-    <NavbarLink key={item.label} exact={item.exact} to={item.to}>
-      {item.label}
+  NAV_ITEMS.map(({label, exact, to}) => (
+    <NavbarLink key={label} exact={exact} to={to}>
+      {label}
     </NavbarLink>
   ));
 
@@ -291,21 +243,25 @@ const Navbar: FC = () => {
           <Logo src={logoImg} alt="logo" />
         </Link>
         <NavLinksContainer>{renderNavLinks()}</NavLinksContainer>
-        <SearchButton searchIcon={searchIcon} />
-        <AccountButton accountIcon={accountIcon} />
+        <SearchButton>
+          <Search />
+        </SearchButton>
+        <AccountButton>
+          <AccountCircle />
+        </AccountButton> 
         <BurgerIcon isOpen={isMenuOpen} onClick={toggleMenu}>
-          <span />
-          <span />
-          <span />
-          <span />
+          <div />
         </BurgerIcon>
         <SideMenu isOpen={isMenuOpen}>
-          <SearchBar />
+          <SearchBar>
+            <Search />
+            <input type="text" />
+          </SearchBar>
           <SideLinksContainer>
-            {SIDE_NAV_ITEMS.map((item: any) => (
-              <SideLink to={item.to}>
-                <StyledIcon>{item.icon}</StyledIcon>
-                {item.label}
+            {SIDE_NAV_ITEMS.map(({to, icon, label}) => (
+              <SideLink to={to}>
+                <StyledIcon>{icon}</StyledIcon>
+                {label}
               </SideLink>
             ))}
           </SideLinksContainer>
