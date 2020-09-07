@@ -8,6 +8,7 @@ import {
   AccountTree,
 } from '@material-ui/icons';
 import React from 'react';
+import { NavbarLink, SideLink, StyledIcon } from 'components/Navbar/Navbar.styles';
 import theme, { colors } from '../theme/theme';
 import {
   AdvantagesArray,
@@ -239,24 +240,26 @@ const NAV_ITEMS: NavItemsArray = [
   {
     label: 'Home',
     to: '/',
-    exact: true,
   },
   {
     label: 'News',
     to: '/news',
-    exact: false,
   },
   {
     label: 'Category',
     to: '/category',
-    exact: false,
   },
   {
     label: 'About',
     to: '/about',
-    exact: false,
   },
 ];
+
+const NAV_ITEMS_MAPPED = NAV_ITEMS.map(({label, to}) => (
+  <NavbarLink key={label} to={to}>
+    {label}
+  </NavbarLink>
+));
 
 const SIDE_NAV_ITEMS: SideNavItemsArray = [
   {
@@ -291,6 +294,13 @@ const SIDE_NAV_ITEMS: SideNavItemsArray = [
   },
 ];
 
+const SIDE_NAV_ITEMS_MAPPED = SIDE_NAV_ITEMS.map(({to, icon, label}) => (
+  <SideLink key={to} to={to}>
+    <StyledIcon>{icon}</StyledIcon>
+    {label}
+  </SideLink>
+));
+
 const ARTICLE_THUMBNAIL_MAX_LENGTH = 200;
 
 export {
@@ -299,7 +309,7 @@ export {
   COMMENTS,
   CATEGORY_COLORS,
   CATEGORY_LABELS,
-  NAV_ITEMS,
-  SIDE_NAV_ITEMS,
+  NAV_ITEMS_MAPPED,
+  SIDE_NAV_ITEMS_MAPPED,
   ARTICLE_THUMBNAIL_MAX_LENGTH,
 };

@@ -72,31 +72,32 @@ const BurgerIcon = styled.div<{ isOpen: boolean }>`
   margin: 15px;
   cursor:pointer;
    
-&:after,
-&:before,
-div
-{
-  background-color: ${({theme})=>theme.color.blue};
-  border-radius: 3px;
-  content: '';
-  display: block;
-  height: 5px;
-  margin: 7px 0;
-  transition: all .2s ease-in-out;
-}
+  &:after,
+  &:before,
+  div{
+    background-color: ${({theme})=>theme.color.blue};
+    border-radius: 3px;
+    content: '';
+    display: block;
+    height: 5px;
+    margin: 7px 0;
+    transition: all .2s ease-in-out;
+  }
 
-${({ isOpen }) =>
+  ${({ isOpen }) =>
     isOpen &&
     css`
-    div {
-  transform: scale(0);
-  ;}
-    &:before {
-  transform: translateY(12px) rotate(135deg);
-    }
-  &:after {
-  transform: translateY(-12px) rotate(-135deg);
-  }
+       div {
+       transform: scale(0);
+       }
+
+       &:before {
+       transform: translateY(12px) rotate(135deg);
+       }
+
+       &:after {
+       transform: translateY(-12px) rotate(-135deg);
+        }
     `}
 `;
 
@@ -112,13 +113,14 @@ const SearchButton = styled.div`
   border-radius: 100%;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
+
   &:hover {
     background-color: rgba(54, 123, 245, 0.125);
   }
 `;
 
 const AccountButton = styled(SearchButton)`
-    margin: 10px 20px;
+  margin: 10px 20px;
   `;
 
 const SideMenu = styled.div<{ isOpen: boolean }>`
@@ -144,14 +146,16 @@ const SearchBar = styled.div`
   &:focus {
     border:2px solid red;
   }
+
   input{
     width:90%;
     margin-left:${({theme})=>theme.size.space.sm};
     border:none;
     font-size:${({theme})=>theme.size.font.s} ;
+
     &:focus {
     outline: none;
-          }
+    }
   }
 `;
 
@@ -173,6 +177,7 @@ const SideLink = styled(Link)`
   line-height: 50px;
   font-weight: ${({ theme }) => theme.size.weight.medium};
   transition: all 0.3s ease-in-out;
+
   &:hover {
     transform: translateX(10px);
   }
@@ -197,6 +202,7 @@ const SideButton = styled(Link)`
   text-transform: uppercase;
   transition: all 0.3s ease-in-out;
   border-radius: ${({ theme }) => theme.size.space.sm};
+
   &:hover {
     background-color: #e1ebfd;
   }

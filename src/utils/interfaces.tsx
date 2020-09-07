@@ -31,7 +31,6 @@ type AdvantagesArray = {
 type NavItemsArray = {
   label: string;
   to: string;
-  exact: boolean;
 }[];
 
 type SideNavItemsArray = {

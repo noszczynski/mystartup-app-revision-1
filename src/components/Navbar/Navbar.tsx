@@ -1,37 +1,25 @@
 import React, { FC, useState } from 'react';
-import {Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import {
   Wrapper,
   StyledNavigation,
   NavLinksContainer,
   Logo,
-  NavbarLink,
   BurgerIcon,
   SearchButton,
   AccountButton,
   SideMenu,
   SearchBar,
   SideLinksContainer,
-  SideLink,
   SideButtonsContainer,
   SideButton,
-  StyledIcon
 } from 'components/Navbar/Navbar.styles';
 import {
   Search,
   AccountCircle
 } from '@material-ui/icons';
 import logoImg from 'assets/logo.svg';
-import { NAV_ITEMS, SIDE_NAV_ITEMS } from 'utils/constants';
-
-
-
-const renderNavLinks = () =>
-  NAV_ITEMS.map(({label, exact, to}) => (
-    <NavbarLink key={label} exact={exact} to={to}>
-      {label}
-    </NavbarLink>
-  ));
+import { SIDE_NAV_ITEMS_MAPPED, NAV_ITEMS_MAPPED } from 'utils/constants';
 
 const Navbar: FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -43,7 +31,7 @@ const Navbar: FC = () => {
         <Link to="/">
           <Logo src={logoImg} alt="logo" />
         </Link>
-        <NavLinksContainer>{renderNavLinks()}</NavLinksContainer>
+        <NavLinksContainer>{NAV_ITEMS_MAPPED}</NavLinksContainer>
         <SearchButton>
           <Search />
         </SearchButton>
@@ -59,17 +47,12 @@ const Navbar: FC = () => {
             <input type="text" />
           </SearchBar>
           <SideLinksContainer>
-            {SIDE_NAV_ITEMS.map(({to, icon, label}) => (
-              <SideLink key={to} to={to}>
-                <StyledIcon>{icon}</StyledIcon>
-                {label}
-              </SideLink>
-            ))}
+            {SIDE_NAV_ITEMS_MAPPED}
           </SideLinksContainer>
           <SideButtonsContainer>
-            <SideButton to="#">sign in</SideButton>
-            <SideButton to="#">download</SideButton>
-            <SideButton to="#">register</SideButton>
+            <SideButton to="/">sign in</SideButton>
+            <SideButton to="/">download</SideButton>
+            <SideButton to="/">register</SideButton>
           </SideButtonsContainer>
         </SideMenu>
       </StyledNavigation>
