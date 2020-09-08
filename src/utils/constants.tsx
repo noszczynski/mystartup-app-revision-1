@@ -3,12 +3,8 @@ import {
   MonetizationOn,
   PlayArrow,
   FiberNew,
-  Announcement,
-  Score,
-  AccountTree,
 } from '@material-ui/icons';
 import React from 'react';
-import { NavbarLink, SideLink, StyledIcon } from 'components/Navbar/Navbar.styles';
 import theme, { colors } from '../theme/theme';
 import {
   AdvantagesArray,
@@ -16,7 +12,6 @@ import {
   ObjectOfStrings,
   ArticlesArray,
   NavItemsArray,
-  SideNavItemsArray,
 } from './interfaces';
 
 const ARTICLES_ITEMS: ArticlesArray = [
@@ -240,68 +235,28 @@ const NAV_ITEMS: NavItemsArray = [
   {
     label: 'Home',
     to: '/',
+    alt: 'nav link',
+    exact: true,
   },
   {
     label: 'News',
     to: '/news',
+    alt: 'nav link',
+    exact: false,
   },
   {
     label: 'Category',
     to: '/category',
+    alt: 'nav link',
+    exact: false,
   },
   {
     label: 'About',
     to: '/about',
+    alt: 'nav link',
+    exact: false,
   },
 ];
-
-const NAV_ITEMS_MAPPED = NAV_ITEMS.map(({label, to}) => (
-  <NavbarLink key={label} to={to}>
-    {label}
-  </NavbarLink>
-));
-
-const SIDE_NAV_ITEMS: SideNavItemsArray = [
-  {
-    label: 'Getting Started',
-    to: '/gettingstarted',
-    icon: <PlayArrow />,
-  },
-  {
-    label: 'News',
-    to: '/news',
-    icon: <Announcement />,
-  },
-  {
-    label: 'Category',
-    to: '/category',
-    icon: <Category />,
-  },
-  {
-    label: 'Results',
-    to: '/results',
-    icon: <Score />,
-  },
-  {
-    label: 'Project',
-    to: '/project',
-    icon: <AccountTree />,
-  },
-  {
-    label: 'Settings',
-    to: '/settings',
-    icon: <Category />,
-  },
-];
-
-const SIDE_NAV_ITEMS_MAPPED = SIDE_NAV_ITEMS.map(({to, icon, label}) => (
-  <SideLink key={to} to={to}>
-    <StyledIcon>{icon}</StyledIcon>
-    {label}
-  </SideLink>
-));
-
-const ARTICLE_THUMBNAIL_MAX_LENGTH = 200;
 
 export {
   ADVANTAGES_ITEMS,
@@ -309,7 +264,5 @@ export {
   COMMENTS,
   CATEGORY_COLORS,
   CATEGORY_LABELS,
-  NAV_ITEMS_MAPPED,
-  SIDE_NAV_ITEMS_MAPPED,
-  ARTICLE_THUMBNAIL_MAX_LENGTH,
+  NAV_ITEMS,
 };

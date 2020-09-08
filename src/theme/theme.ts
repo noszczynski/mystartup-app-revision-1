@@ -57,6 +57,8 @@ const gradients: ObjectOfStrings = {
 
 const sizes: ThemeSizes = {
   space: {
+    xxs: '.125rem', // 2px
+    xs: '.25rem', // 4px
     sm: '.5rem', // 8px
     md: '1rem', // 16px
     lg: '2rem', // 32px
