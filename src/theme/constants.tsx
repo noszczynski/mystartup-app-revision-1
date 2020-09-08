@@ -40,6 +40,7 @@ interface BoxShadows{
 
 const boxShadows: BoxShadows = {
   'minimal': ['-1px 0 2px 0 rgba(0, 0, 0, 0.12)', '1px 0 2px 0 rgba(0, 0, 0, 0.12)', '0 1px 1px 0 rgba(0, 0, 0, 0.24)'],
+  'medium': ['0 5px 15px -8px rgba(0,0,0,.5)'],
 };
 
 export { buttonSizes, boxShadows };

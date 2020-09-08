@@ -12,8 +12,7 @@ const Wrapper = styled.button.attrs(({ type }) => ({
     color: ${theme.color.white};
     font-size: ${theme.buttonSizes.lg.fontSize};
     box-shadow: ${theme.utils.createBoxShadow(['minimal'])};
-  `}
-`;
+  `}`;
 
 const Button: FC = ({ children }) => <Wrapper>{children}</Wrapper>;
 
