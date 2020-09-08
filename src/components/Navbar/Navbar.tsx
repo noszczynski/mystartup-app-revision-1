@@ -1,29 +1,59 @@
-import React, { FC } from 'react';
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+import React, { FC, useEffect, useRef, useState } from 'react';
+import Element from 'components/Navbar/Navbar.styles';
+import { Search, AccountCircle } from '@material-ui/icons';
+import logo from 'assets/logo-right-text.svg';
+import * as _ from 'lodash';
+// eslint-disable-next-line import/no-cycle
+import { Image, Container } from '../index';
+import { NAV_ITEMS } from '../../utils/constants';
+import HamburgerMenu from './HamburgerMenu';
 
-const StyledNavigation = styled.nav`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  width: 900px;
-  margin: 0 auto;
-`;
+interface Props {
+  toggle: any;
+  open: boolean;
+}
 
-const Navbar: FC = () => (
-  <div>
-    <StyledNavigation>
-      <Link to="/">Home</Link>
-      <Link to="/category">Categories</Link>
-      <Link to="/category/test_id_1">Category with id test_id_1</Link>
-      <Link to="/news">News</Link>
-      <Link to="/news/123">News #1</Link>
-      <Link to="/about">About</Link>
-      <Link to="/results/search+string">Search results</Link>
-      <Link to="/project/123">Start-up</Link>
-    </StyledNavigation>
-  </div>
-);
+const Navbar: FC<Props> = ({toggle, open}) => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const wrapper = useRef(null);
+
+  useEffect(() => {
+    const fn = _.debounce(function () {
+      setIsScrolled(window.scrollY > 200);
+    }, 60);
+
+    window.addEventListener('scroll', fn);
+
+    return () => {
+      window.removeEventListener('scroll', fn, true);
+    };
+  }, []);
+
+  return (
+    <Element isOpen={open} scrolled={isScrolled} ref={wrapper}>
+      <Container>
+        <Element.Navigation>
+          <Element.LogoWrapper>
+            <Image src={logo} alt="logo" linkTo="/" />
+          </Element.LogoWrapper>
+          <Element.NavigationInner>
+            {NAV_ITEMS.map(({label, to, exact, alt}) => (
+              <Element.Item exact={exact} to={to} alt={alt} key={label}>{label}</Element.Item>
+            ))}
+          </Element.NavigationInner>
+          <Element.ButtonWrapper>
+            <Element.SearchButton>
+              <Search />
+            </Element.SearchButton>
+            <Element.UserButton to="/settings/:id">
+              <AccountCircle />
+            </Element.UserButton>
+            <HamburgerMenu open={open} toggle={toggle} />
+          </Element.ButtonWrapper>
+        </Element.Navigation>
+      </Container>
+    </Element>
+  );
+};
 
 export default Navbar;
