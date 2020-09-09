@@ -12,6 +12,7 @@ import logoDarkBottomWithRed from './logos/logo-bottom-text-black-with-red.svg';
 import logoDarkRightWithRed from './logos/logo-right-text-black-with-red.svg';
 import logoLightBottomWithRed from './logos/logo-bottom-text-white-with-red.svg';
 import logoLightRightWithRed from './logos/logo-right-text-white-with-red.svg';
+import hero from './hero.svg'
 
 export {
   mockup,
@@ -28,4 +29,5 @@ export {
   logoDarkRightWithRed,
   logoLightBottomWithRed,
   logoLightRightWithRed,
+  hero,
 };

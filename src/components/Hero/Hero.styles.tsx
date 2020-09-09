@@ -10,7 +10,7 @@ const Hero: any = styled.header`
   padding-top: ${({ theme }) => theme.size.space.xxl};
   
   ${({ theme }) => theme.mq.tablet} {
-    grid-template-columns: 60% 40%;
+    grid-template-columns: 50% 50%;
   }
 `;
 
@@ -36,34 +36,21 @@ const Content = styled.section`
 
 const ImageWrapper = styled.section`
   display: none;
-  position: absolute;
-  top: 50%;
-  right: 0;
-  width: 40%;
-  transform: translateY(-50%);
   height: 80%;
   justify-content: flex-start;
   align-items: center;
-  overflow: hidden;
+    
+    svg {
+      transform: scale(0.8);
+    }
     
   ${({ theme }) => theme.mq.tablet} {
     display: flex;
   }
 `;
 
-const MacbookImage = styled(Image)`
-  max-width: none;
-`;
-
-const AppImage = styled(Image)`
-  z-index: -1;
-  position: absolute;
-  top: 52px;
-  left: 146px;
-  height: 63vh;
-  width: 40vw;
-  max-width: none;
-  object-fit: cover;
+const HeroImage = styled(Image)`
+  
 `;
 
 const ButtonWrapper = styled.section`
@@ -72,22 +59,9 @@ const ButtonWrapper = styled.section`
   position: relative;
 `;
 
-const Blob = styled(Image)`
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  min-height: 128px;
-  min-width: 128px;
-  z-index: 0;
-  opacity: .18;
-`;
-
 Hero.Content = Content;
 Hero.ImageWrapper = ImageWrapper;
-Hero.MacbookImage = MacbookImage;
-Hero.AppImage = AppImage;
+Hero.HeroImage = HeroImage;
 Hero.ButtonWrapper = ButtonWrapper;
-Hero.Blob = Blob;
 
 export default Hero;
