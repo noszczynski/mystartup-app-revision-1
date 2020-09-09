@@ -20,8 +20,8 @@ const Wrapper = styled.div<{background?: string | undefined}>`
     }
     
     ${theme.mq.laptopS} {
-      height: 3rem;
-      width: 3rem;
+      height: 40px;
+      width: 40px;
       
       svg {
         width: 1.5rem;

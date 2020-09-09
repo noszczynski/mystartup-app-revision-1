@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import styled, { css } from 'styled-components';
+import { useNavbarContext } from '../../contexts/NavbarContext';
 
 const hamburgerBarMixin = () => css`
   background-color: ${({theme}) => theme.color.dark};
@@ -9,7 +10,7 @@ const hamburgerBarMixin = () => css`
   width: 16px;
 `;
 
-const Element = styled.button<{ isOpen: boolean }>`
+const Element = styled.button<{ isOpen: boolean | undefined }>`
   ${({ theme }) => css`
     cursor:pointer;
     padding: ${theme.size.space.sm};
@@ -45,14 +46,11 @@ const Element = styled.button<{ isOpen: boolean }>`
     }
   `}`;
 
-interface Props {
-  open: boolean;
-  toggle: any;
-}
+const HamburgerMenu: FC = () => {
+  const {isMenuOpen, toggleMenuOpen} = useNavbarContext()
 
-const HamburgerMenu: FC<Props> = ({open, toggle}) => {
   return (
-    <Element isOpen={open} onClick={toggle}>
+    <Element isOpen={isMenuOpen} onClick={toggleMenuOpen}>
       <span />
     </Element>
   );
