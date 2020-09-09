@@ -18,14 +18,19 @@ const defaultProps = {
 };
 
 const Image: FC<Props> = ({
-  src, alt, linkTo, ...props
-}) => (linkTo ? (
-  <Link to={linkTo}>
-    <StyledImage src={src} alt={alt} {...props} />
-  </Link>
-) : (
-  <StyledImage src={src} alt={alt} {...props} />
-));
+  src,
+  alt,
+  linkTo,
+  ...props
+}) => {
+  //
+  return linkTo
+    ? (
+      <Link to={linkTo}>
+        <StyledImage src={src} alt={alt} {...props} />
+      </Link>
+    ) : <StyledImage src={src} alt={alt} {...props} />;
+};
 
 Image.defaultProps = defaultProps;
 
