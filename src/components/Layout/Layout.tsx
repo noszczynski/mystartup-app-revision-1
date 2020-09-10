@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { FC } from 'react';
 import styled, {css} from 'styled-components';
 // eslint-disable-next-line import/no-cycle
 import ResponsiveMenu from 'components/Navbar/ResponsiveMenu';

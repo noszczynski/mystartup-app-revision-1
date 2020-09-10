@@ -12,7 +12,8 @@ import {
   CommentArray,
   ObjectOfStrings,
   ArticlesArray,
-  NavItemsArray, FooterNavigationArray,
+  NavItemsArray,
+  FooterNavigationArray,
 } from './interfaces';
 
 const ARTICLES_ITEMS: ArticlesArray = [
@@ -302,8 +303,6 @@ const BOTTOM_NAV_ITEMS: FooterNavigationArray = [
   }]
 ];
 
-const ARTICLE_THUMBNAIL_MAX_LENGTH = 200;
-
 const CATEGORY_COLORS: ObjectOfStrings = {
   EVENTS: colors.blue,
   CULTURE_AND_ART: colors.yellow,
@@ -322,7 +321,7 @@ const THEME: ObjectOfStrings ={
   LIGHT: 'LIGHT',
   DARK: 'DARK',
   CONTRAST: 'CONTRAST',
-}
+};
 
 export {
   ADVANTAGES_ITEMS,
