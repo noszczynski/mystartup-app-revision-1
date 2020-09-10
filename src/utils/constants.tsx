@@ -317,6 +317,12 @@ const CATEGORY_COLORS: ObjectOfStrings = {
   FILM_AND_COMICS: colors.ocean,
 };
 
+const THEME: ObjectOfStrings ={
+  LIGHT: 'LIGHT',
+  DARK: 'DARK',
+  CONTRAST: 'CONTRAST',
+};
+
 export {
   ADVANTAGES_ITEMS,
   ARTICLES_ITEMS,
@@ -325,4 +331,5 @@ export {
   CATEGORY_LABELS,
   NAV_ITEMS,
   BOTTOM_NAV_ITEMS,
+  THEME,
 };
