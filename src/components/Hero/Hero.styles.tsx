@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Image from '../Image/Image';
+import SmoothShowItems from '../SmoothShowItems';
 
 const Hero: any = styled.header`
   min-height: calc(100vh - ${({ theme }) => theme.size.space.xxl});
@@ -14,7 +15,7 @@ const Hero: any = styled.header`
   }
 `;
 
-const Content = styled.section`
+const Content = styled(SmoothShowItems)`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -53,7 +54,7 @@ const HeroImage = styled(Image)`
   
 `;
 
-const ButtonWrapper = styled.section`
+const ButtonWrapper = styled(SmoothShowItems)`
   display: flex;
   gap: 1rem;
   position: relative;

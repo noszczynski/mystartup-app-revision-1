@@ -1,5 +1,6 @@
 import { Link, NavLink } from 'react-router-dom';
 import styled, { css } from 'styled-components';
+import SmoothShowItems from '../SmoothShowItems';
 
 const Navigation: any = styled.div<{isOpen: boolean, scrolled: boolean}>`
   ${({ theme, scrolled }) => css`
@@ -51,7 +52,7 @@ const Wrapper = styled.div`
   padding: ${({ theme }) => theme.size.space.md};
 `;
 
-const NavigationInner = styled.nav<{isOpen: boolean}>`
+const NavigationInner = styled(SmoothShowItems)<{isOpen: boolean}>`
   ${({ theme }) => css`
     display: none;
     justify-content: space-between;

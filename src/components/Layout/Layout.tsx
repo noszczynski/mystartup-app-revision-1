@@ -21,14 +21,16 @@ const Wrapper = styled.main<{isMenuOpen: boolean | undefined}>`
 const StyledContainer = styled.article`
   ${({ theme }) => css`
   padding: 0 ${theme.size.space.md};
+  gap: ${theme.size.space.lg};
 
   ${theme.mq.tablet} {
     padding: 0 ${theme.size.space.lg};
+    gap: ${theme.size.space.xxxl};
   }
 `}`;
 
 const Layout: FC = ({ children }) => {
-  const {isMenuOpen} = useNavbarContext()
+  const {isMenuOpen} = useNavbarContext();
 
   return (
     <NavbarContextProvider>

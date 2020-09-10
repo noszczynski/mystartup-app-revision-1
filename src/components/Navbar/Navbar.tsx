@@ -32,7 +32,7 @@ const Navbar: FC = () => {
           <Element.LogoWrapper>
             <Image src={logo} alt="logo" linkTo="/" />
           </Element.LogoWrapper>
-          <Element.NavigationInner>
+          <Element.NavigationInner startHeight="-=100" duration={0.75}>
             {NAV_ITEMS.map(({label, to, exact, alt}) => (
               <Element.Item exact={exact} to={to} alt={alt} key={label}>{label}</Element.Item>
             ))}

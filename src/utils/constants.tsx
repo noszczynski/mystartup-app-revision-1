@@ -102,23 +102,6 @@ const ARTICLES_ITEMS: ArticlesArray = [
     content:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos doloremque eaque nam soluta tenetur! Accusamus aperiam dicta dolore enim excepturi, hic ipsam, laboriosam, magnam neque quae quam quisquam tempore voluptate.',
   },
-  {
-    article: {
-      image: 'https://picsum.photos/800',
-      imageAlt: 'random image from picsum photos',
-      category: 'EVENTS',
-      time: 'A year ago',
-      title: 'New app to acquire street sellers into a team',
-      id: 'id_6',
-    },
-    signature: {
-      title: 'Edward Pawłowski',
-      content: 'Lorem ipsum dolor sit amet',
-      image: 'https://picsum.photos/64',
-    },
-    content:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos doloremque eaque nam soluta tenetur! Accusamus aperiam dicta dolore enim excepturi, hic ipsam, laboriosam, magnam neque quae quam quisquam tempore voluptate.',
-  },
 ];
 
 const ADVANTAGES_ITEMS: AdvantagesArray = [
@@ -201,6 +184,26 @@ const COMMENTS: CommentArray = [
     content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit.
             Corporis culpa et eveniet exercitationem facere id, ipsam praesentium quae quasi quo?
             Blanditiis cumque cupiditate earum error iusto praesentium quasi rerum vero 5?
+         `,
+  },
+  {
+    id: 'id_6',
+    author: 'John doe',
+    signature: 'Works in Google as Frontend developer',
+    avatar: 'https://api.adorable.io/avatars/120/random',
+    content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Corporis culpa et eveniet exercitationem facere id, ipsam praesentium quae quasi quo?
+            Blanditiis cumque cupiditate earum error iusto praesentium quasi rerum vero 6?
+         `,
+  },
+  {
+    id: 'id_7',
+    author: 'John doe',
+    signature: 'Works in Google as Frontend developer',
+    avatar: 'https://api.adorable.io/avatars/120/random',
+    content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Corporis culpa et eveniet exercitationem facere id, ipsam praesentium quae quasi quo?
+            Blanditiis cumque cupiditate earum error iusto praesentium quasi rerum vero 7?
          `,
   },
 ];

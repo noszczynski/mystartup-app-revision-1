@@ -1,51 +1,58 @@
 import React, { FC } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { Button } from 'components';
 import Article from '../Article/Article';
 import Container from '../Layout/Container';
 import Title from '../Title/Title';
 import { ARTICLES_ITEMS } from '../../utils/constants';
+import SmoothShowItems from '../SmoothShowItems';
 
 const StyledWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  align-items: center;
+  gap: ${({ theme }) => theme.size.space.xl};
 `;
 
-const StyledGridWrapper = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-  
-  article:first-child,
-  article:last-child {
-    background-color: ${({ theme }) => theme.color.white};
-    box-shadow: 0 5px 15px -8px rgba(0,0,0,.5);
-  }
-  
-  article:nth-child(1),
-  article:nth-child(2),
-  article:nth-child(3) {
-    display: none;
-  }
-  
-  ${({ theme }) => theme.mq.tablet} {
-    grid-template-columns: repeat(2, 1fr);
+const StyledGridWrapper = styled(SmoothShowItems)`
+  ${({ theme }) => css`
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
     
+    article:first-child,
+    article:last-child {
+      background-color: ${theme.color.white};
+      box-shadow: 0 5px 15px -8px rgba(0,0,0,.5);
+    }
+    
+    article:nth-child(1),
     article:nth-child(2),
     article:nth-child(3) {
-      display: flex;
+      display: none;
     }
-  }
-  
-  ${({ theme }) => theme.mq.laptopS} {
-    grid-template-columns: repeat(3, 1fr);
     
-    article:nth-child(1) {
-      display: flex;
+    ${theme.mq.tablet} {
+      grid-template-columns: repeat(2, 1fr);
+      
+      article:nth-child(2),
+      article:nth-child(3) {
+        display: flex;
+      }
     }
-  }
-  
-`;
+    
+    ${theme.mq.laptopS} {
+      grid-template-columns: repeat(3, 1fr);
+      
+      article:nth-child(1) {
+        display: flex;
+      }
+      
+      article:nth-child(5) {
+        grid-column: 2 / 4;
+      }
+    }
+  `}`;
 
 const ArticleList: FC = () => (
   <Container>
@@ -60,6 +67,7 @@ const ArticleList: FC = () => (
           </Article>
         ))}
       </StyledGridWrapper>
+      <Button>More news here</Button>
     </StyledWrapper>
   </Container>
 );

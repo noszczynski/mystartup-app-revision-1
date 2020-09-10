@@ -47,6 +47,7 @@ const sizes: ThemeSizes = {
     lg: '2rem', // 32px
     xl: '4rem', // 64px
     xxl: '8rem', // 128px
+    xxxl: '16rem', // 256px
   },
   font: {
     xxs: '9px',
@@ -58,7 +59,6 @@ const sizes: ThemeSizes = {
     xxl: '64px',
   },
   weight: {
-    light: '300',
     regular: '400',
     medium: '500',
     bold: '700',
