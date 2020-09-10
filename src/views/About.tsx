@@ -1,9 +1,10 @@
 import React, { FC } from 'react';
+import Page from 'components/Page';
 
 const About: FC = () => (
-  <div>
+  <Page>
     About
-  </div>
+  </Page>
 );
 
 export default About;

@@ -5,8 +5,9 @@ import Hero from '../components/Hero/Hero';
 import CommentList from '../components/HomeSections/CommentList';
 import Advantages from '../components/Advantages/Advantages';
 import ArticleList from '../components/ArticleList/ArticleList';
+import Page from '../components/Page';
 
-const StyledWrapper = styled.article`
+const StyledWrapper = styled(Page)`
   display: flex;
   flex-direction: column;
   row-gap: ${({ theme }) => theme.size.space.xxl};

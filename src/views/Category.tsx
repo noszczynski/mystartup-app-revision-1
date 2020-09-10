@@ -1,15 +1,17 @@
 import React, { FC } from 'react';
 import { useParams, withRouter } from 'react-router-dom';
+import Page from 'components/Page';
 
 const Category: FC = () => {
   const { id } = useParams();
 
   return (
-    <div>
-      Category view id:
-      {' '}
-      {id}
-    </div>
+    <Page>
+      <p>
+        Category view id:
+        {id}
+      </p>
+    </Page>
   );
 };
 

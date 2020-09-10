@@ -1,9 +1,11 @@
 import React, { FC } from 'react';
+import Page from 'components/Page';
+import { ArticleList } from '../components';
 
 const News: FC = () => (
-  <div>
-    News
-  </div>
+  <Page>
+    <ArticleList />
+  </Page>
 );
 
 export default News;
