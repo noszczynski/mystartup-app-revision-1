@@ -13,6 +13,7 @@ import {
   ObjectOfStrings,
   ArticlesArray,
   NavItemsArray,
+  FooterNavigationArray,
 } from './interfaces';
 
 const ARTICLES_ITEMS: ArticlesArray = [
