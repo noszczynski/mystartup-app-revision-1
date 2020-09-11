@@ -11,14 +11,16 @@ const StyledWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: ${({ theme }) => theme.size.space.xl};
+  row-gap: ${({ theme }) => theme.size.space.xl};
+  column-gap: ${({ theme }) => theme.size.space.xl};
 `;
 
 const StyledGridWrapper = styled(SmoothShowItems)`
   ${({ theme }) => css`
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2rem;
+    row-gap: 2rem;
+    column-gap: 2rem;
     
     article:first-child,
     article:last-child {

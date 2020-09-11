@@ -11,6 +11,7 @@ const StyledWrapper = styled(Page)`
   display: flex;
   flex-direction: column;
   row-gap: ${({ theme }) => theme.size.space.xxl};
+  column-gap: ${({ theme }) => theme.size.space.xxl};
   padding-bottom: ${({theme}) => theme.size.space.lg};
 `;
 

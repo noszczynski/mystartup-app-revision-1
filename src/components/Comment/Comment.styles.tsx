@@ -8,7 +8,8 @@ const Comment: any = styled(motion.article)`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 2rem;
+  row-gap: 2rem;
+  column-gap: 2rem;
 `;
 
 const Avatar = styled.figure`
@@ -31,7 +32,8 @@ const WrapperInner = styled.div`
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  gap: 2rem;
+  row-gap: 2rem;
+  column-gap: 2rem;
 `;
 
 Comment.Avatar = Avatar;

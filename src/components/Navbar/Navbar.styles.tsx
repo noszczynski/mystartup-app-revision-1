@@ -57,7 +57,8 @@ const NavigationInner = styled(SmoothShowItems)<{isOpen: boolean}>`
     display: none;
     justify-content: space-between;
     align-items: center;
-    gap: 1rem;
+    row-gap: 1rem;
+    column-gap: 1rem;
     transition: transform .3s ease-in-out;
     flex-direction: row;
     position: relative;
@@ -75,10 +76,12 @@ const ButtonWrapper = styled.div`
   width: 240px;
   align-items: center;
   justify-content: flex-end;
-  gap: .5rem;
+  row-gap: .5rem;
+  column-gap: .5rem;
   
   ${({theme}) => theme.mq.mobileL} {
-    gap: 1rem;
+    row-gap: 1rem;
+    column-gap: 1rem;
   }
 `;
 

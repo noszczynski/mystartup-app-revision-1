@@ -20,12 +20,14 @@ const Content = styled.header`
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  gap: ${({ theme }) => theme.size.space.md};
+  row-gap: ${({ theme }) => theme.size.space.md};
+  column-gap: ${({ theme }) => theme.size.space.md};
   width: 100%;
   margin: 0 auto;
   
   ${({ theme }) => theme.mq.tablet} {
-    gap: ${({ theme }) => theme.size.space.xl};
+    row-gap: ${({ theme }) => theme.size.space.xl};
+    column-gap: ${({ theme }) => theme.size.space.xl};
     width: 90%;
   }
   
@@ -56,7 +58,8 @@ const HeroImage = styled(Image)`
 
 const ButtonWrapper = styled.div`
   display: flex;
-  gap: 1rem;
+  row-gap: 1rem;
+  column-gap: 1rem;
   position: relative;
 `;
 

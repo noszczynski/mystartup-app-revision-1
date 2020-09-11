@@ -5,7 +5,8 @@ import { SocialIcon } from './index';
 
 const Element = styled.div`
   display: flex;
-  gap: .5rem;
+  row-gap: .5rem;
+  column-gap: .5rem;
 `;
 
 const SocialWrapper: FC = () => {
