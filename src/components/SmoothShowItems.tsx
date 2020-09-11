@@ -34,7 +34,7 @@ const SmoothShowItems: FC<Props> = ({
 }) => {
   const parent = useRef(null);
 
-  useEffect(() => {
+  const animate = () => {
     if (parent !== null) {
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
@@ -57,8 +57,9 @@ const SmoothShowItems: FC<Props> = ({
           },
         });
     }
+  };
 
-  }, []);
+  useEffect(animate, []);
 
   return (
     <div ref={parent} {...props}>
