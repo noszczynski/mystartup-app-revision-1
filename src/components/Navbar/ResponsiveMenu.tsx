@@ -71,7 +71,11 @@ const MenuItem = styled(NavLink)`
   `}`;
 
 const ResponsiveMenu: FC = () => {
-  const {isMenuOpen} = useNavbarContext()
+  const { isMenuOpen, toggleMenuOpen } = useNavbarContext()
+
+  const handleLinkClick = () => {
+    toggleMenuOpen()
+  };
 
   return (
     <Wrapper isOpen={isMenuOpen}>
@@ -83,7 +87,7 @@ const ResponsiveMenu: FC = () => {
         </HamburgerWrapper>
         <MenuWrapper>
           {NAV_ITEMS.map(({label, to, exact}) => (
-            <MenuItem exact={exact} to={to} key={label}>
+            <MenuItem exact={exact} to={to} key={label} onClick={handleLinkClick}>
               {label}
             </MenuItem>
           ))}

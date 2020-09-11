@@ -11,6 +11,7 @@ type Props = {
   duration?: number | undefined,
   easing?: string | undefined,
   start?: string | undefined,
+  markers?: boolean | undefined,
 };
 
 const defaultProps = {
@@ -20,6 +21,7 @@ const defaultProps = {
   duration: 2,
   easing: 'Power3.easeOut',
   start: 'top 80%', // when the top of the trigger hits the 80% of the viewport from top (or 20% from bottom)
+  markers: false,
 };
 
 const SmoothShowItems: FC<Props> = ({
@@ -29,6 +31,7 @@ const SmoothShowItems: FC<Props> = ({
   duration,
   easing,
   start,
+  markers,
   children,
   ...props
 }) => {
@@ -54,6 +57,7 @@ const SmoothShowItems: FC<Props> = ({
           scrollTrigger: {
             trigger: section,
             start,
+            markers,
           },
         });
     }

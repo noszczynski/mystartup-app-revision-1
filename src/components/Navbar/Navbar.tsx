@@ -1,13 +1,13 @@
 import React, { FC, useEffect, useRef, useState } from 'react';
 import Element from 'components/Navbar/Navbar.styles';
 import { Search, AccountCircle, Brightness7, Brightness4 } from '@material-ui/icons';
-import logo from 'assets/logo-right-text.svg';
 import * as _ from 'lodash';
 import gsap from 'gsap';
 import { Image, Container } from '../index';
 import { NAV_ITEMS, THEME } from '../../utils/constants';
 import HamburgerMenu from './HamburgerMenu';
 import { useNavbarContext } from '../../contexts/NavbarContext';
+import { logoRight as logo } from 'assets';
 
 const Navbar: FC = () => {
   const { isMenuOpen, theme, toggleTheme } = useNavbarContext();

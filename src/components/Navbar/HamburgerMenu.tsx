@@ -5,21 +5,30 @@ import { useNavbarContext } from '../../contexts/NavbarContext';
 const hamburgerBarMixin = () => css`
   background-color: ${({theme}) => theme.color.dark};
   display: block;
-  border-radius: 3px;
+  border-radius: 8px;
   height: .125rem;
-  width: 16px;
+  width: 80%;
 `;
 
 const Element = styled.button<{ isOpen: boolean | undefined }>`
   ${({ theme }) => css`
     cursor:pointer;
-    padding: ${theme.size.space.sm};
+    padding: 0.4rem;
     display: flex;
     align-items:center;
     justify-content:center;
     height: 32px;
     width: 32px;
     z-index: 1000;
+    
+    ${theme.mq.mobileL} {
+      height: 48px;
+      width: 48px;
+      
+      svg {
+        font-size:${theme.size.font.md};
+      }
+    }
     
     span {
       ${hamburgerBarMixin()};
@@ -37,11 +46,11 @@ const Element = styled.button<{ isOpen: boolean | undefined }>`
       }
       
       ::after {
-        top: 4px;
+        top: 5px;
       }
       
       ::before {
-        top: -4px;
+        top: -5px;
       }
     }
   `}`;

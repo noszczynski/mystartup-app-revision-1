@@ -60,7 +60,7 @@ const ArticleList: FC = () => (
       <Title component="h2">
         Happy start-up Owners are here!
       </Title>
-      <StyledGridWrapper>
+      <StyledGridWrapper start={'top 90%'}>
         {ARTICLES_ITEMS.map(({ article, content, signature }) => (
           <Article article={article} signature={signature} key={article.id}>
             {content}

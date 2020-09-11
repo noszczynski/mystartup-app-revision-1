@@ -67,7 +67,7 @@ const BodyInner = styled.div`
   gap: 2rem;
 `;
 
-const Description = styled.div`
+const Description = styled.p`
 
 `;
 

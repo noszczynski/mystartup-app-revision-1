@@ -1,51 +1,51 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import Image from '../Image/Image';
 import SmoothShowItems from '../SmoothShowItems';
 
-const Hero: any = styled.header`
-  min-height: calc(100vh - ${({ theme }) => theme.size.space.xxl});
-  background-color: ${({ theme }) => theme.color.white};
-  display: grid;
-  grid-template-columns: 1fr;
-  align-items: center;
-  padding-top: ${({ theme }) => theme.size.space.xxl};
-  
-  ${({ theme }) => theme.mq.tablet} {
-    grid-template-columns: 50% 50%;
-  }
-`;
+const Hero: any = styled.section`
+${({ theme }) => css`
+    min-height: calc(100vh - ${theme.size.space.xxl});
+    background-color: ${theme.color.white};
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    
+    ${theme.mq.laptopS} {
+      grid-template-columns: 45% 55%;
+    }
+  `}`;
 
-const Content = styled(SmoothShowItems)`
+const Content = styled.header`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
   gap: ${({ theme }) => theme.size.space.md};
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
   
   ${({ theme }) => theme.mq.tablet} {
     gap: ${({ theme }) => theme.size.space.xl};
-    width: 80%;
+    width: 90%;
   }
   
   ${({ theme }) => theme.mq.laptopM} {
-    width: 70%;
+    width: 80%;
   }
   
 `;
 
 const ImageWrapper = styled.section`
   display: none;
-  height: 80%;
+  height: 90%;
   justify-content: flex-start;
   align-items: center;
     
-    svg {
-      transform: scale(0.8);
-    }
+  svg {
+    transform: scale(0.8);
+  }
     
-  ${({ theme }) => theme.mq.tablet} {
+  ${({ theme }) => theme.mq.laptopS} {
     display: flex;
   }
 `;
@@ -54,7 +54,7 @@ const HeroImage = styled(Image)`
   
 `;
 
-const ButtonWrapper = styled(SmoothShowItems)`
+const ButtonWrapper = styled.div`
   display: flex;
   gap: 1rem;
   position: relative;

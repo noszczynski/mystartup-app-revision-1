@@ -11,7 +11,7 @@ const StyledWrapper = styled(Page)`
   display: flex;
   flex-direction: column;
   row-gap: ${({ theme }) => theme.size.space.xxl};
-  padding-bottom: 4rem;
+  padding-bottom: ${({theme}) => theme.size.space.lg};
 `;
 
 const Home: FC = () => {

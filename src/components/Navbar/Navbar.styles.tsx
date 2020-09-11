@@ -74,7 +74,7 @@ const ButtonWrapper = styled.div`
   display: flex;
   width: 240px;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   gap: .5rem;
   
   ${({theme}) => theme.mq.mobileL} {
@@ -98,8 +98,8 @@ const NavigationItem = styled(NavLink)`
 
 const iconMixin = () => css`
   ${({ theme }) => css`
-    height: 24px;
-    width: 24px;
+    height: 32px;
+    width: 32px;
     display: flex;
     align-items:center;
     justify-content:center;
@@ -110,7 +110,7 @@ const iconMixin = () => css`
     transition: opacity .1s ease-in-out;
     
     svg {
-      font-size:${theme.size.font.xs};
+      font-size:${theme.size.font.s};
     }
     
     :hover {
