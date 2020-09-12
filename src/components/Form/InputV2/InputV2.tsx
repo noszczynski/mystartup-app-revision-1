@@ -9,7 +9,6 @@ interface Props {
   optional?: boolean,
   valid?: boolean,
   change: any,
-  // value: string | number,
   name: string,
   label: string,
   // ...props
