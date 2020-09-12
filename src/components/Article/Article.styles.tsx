@@ -28,7 +28,8 @@ const Bottom = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 2rem;
+  row-gap: 2rem;
+  column-gap: 2rem;
 `;
 
 const Head = styled.div`
@@ -57,17 +58,19 @@ const Body = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 1rem;
+  row-gap: 1rem;
+  column-gap: 1rem;
 `;
 
 const BodyInner = styled.div`
   min-height: 100%;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  row-gap: 2rem;
+  column-gap: 2rem;
 `;
 
-const Description = styled.div`
+const Description = styled.p`
 
 `;
 

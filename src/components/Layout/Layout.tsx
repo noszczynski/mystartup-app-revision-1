@@ -1,12 +1,14 @@
-import React, { FC, useState } from 'react';
+import React, { FC } from 'react';
 import styled, {css} from 'styled-components';
 // eslint-disable-next-line import/no-cycle
 import ResponsiveMenu from 'components/Navbar/ResponsiveMenu';
 // eslint-disable-next-line import/no-cycle
 import Navbar from '../Navbar/Navbar';
 import ResponsiveContainer from './ResponsiveContainer';
+import { Footer } from '../index';
+import { NavbarContextProvider, useNavbarContext } from '../../contexts/NavbarContext';
 
-const Wrapper = styled.main<{isMenuOpen: boolean}>`
+const Wrapper = styled.main<{isMenuOpen: boolean | undefined}>`
   width: 100%;
   max-width: 100%;
   
@@ -19,29 +21,32 @@ const Wrapper = styled.main<{isMenuOpen: boolean}>`
 const StyledContainer = styled.article`
   ${({ theme }) => css`
   padding: 0 ${theme.size.space.md};
+  row-gap: ${theme.size.space.lg};
+  column-gap: ${theme.size.space.lg};
 
   ${theme.mq.tablet} {
     padding: 0 ${theme.size.space.lg};
+    row-gap: ${theme.size.space.xxxl};
+    column-gap: ${theme.size.space.xxxl};
   }
 `}`;
 
 const Layout: FC = ({ children }) => {
-  const [isMenuOpen, setMenuOpen] = useState(false);
-
-  const toggleMenu = (): void => {
-    setMenuOpen((prevState: boolean) => !prevState);
-  };
+  const {isMenuOpen} = useNavbarContext();
 
   return (
-    <Wrapper isMenuOpen={isMenuOpen} role="main">
-      <Navbar toggle={toggleMenu} open={isMenuOpen} />
-      <ResponsiveMenu open={isMenuOpen} toggle={toggleMenu} />
-      <ResponsiveContainer>
-        <StyledContainer>
-          {children}
-        </StyledContainer>
-      </ResponsiveContainer>
-    </Wrapper>
+    <NavbarContextProvider>
+      <Wrapper isMenuOpen={isMenuOpen} role="main">
+        <Navbar />
+        <ResponsiveMenu />
+        <ResponsiveContainer>
+          <StyledContainer>
+            {children}
+            <Footer />
+          </StyledContainer>
+        </ResponsiveContainer>
+      </Wrapper>
+    </NavbarContextProvider>
   );
 };
 

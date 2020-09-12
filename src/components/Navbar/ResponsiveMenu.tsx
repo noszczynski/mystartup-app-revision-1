@@ -4,8 +4,9 @@ import { NavLink } from 'react-router-dom';
 import { Container } from '../index';
 import HamburgerMenu from './HamburgerMenu';
 import { NAV_ITEMS } from '../../utils/constants';
+import { useNavbarContext } from '../../contexts/NavbarContext';
 
-const Wrapper = styled.div<{isOpen: boolean}>`
+const Wrapper = styled.div<{isOpen: boolean | undefined}>`
   ${({ theme, isOpen }) => css`
     z-index: 1000;
     position: fixed;
@@ -69,23 +70,24 @@ const MenuItem = styled(NavLink)`
     }
   `}`;
 
-interface Props {
-  open: boolean;
-  toggle: any;
-}
+const ResponsiveMenu: FC = () => {
+  const { isMenuOpen, toggleMenuOpen } = useNavbarContext()
 
-const ResponsiveMenu: FC<Props> = ({open, toggle}) => {
+  const handleLinkClick = () => {
+    toggleMenuOpen()
+  };
+
   return (
-    <Wrapper isOpen={open}>
+    <Wrapper isOpen={isMenuOpen}>
       <Container>
         <HamburgerWrapper style={{ height: '30%' }}>
           <HamburgerWrapperInner>
-            <HamburgerMenu open={open} toggle={toggle} />
+            <HamburgerMenu />
           </HamburgerWrapperInner>
         </HamburgerWrapper>
         <MenuWrapper>
           {NAV_ITEMS.map(({label, to, exact}) => (
-            <MenuItem exact={exact} to={to} key={label}>
+            <MenuItem exact={exact} to={to} key={label} onClick={handleLinkClick}>
               {label}
             </MenuItem>
           ))}

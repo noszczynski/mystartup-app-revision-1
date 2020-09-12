@@ -1,23 +1,28 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import Button from 'components/Button/Button';
 import Title from '../Title/Title';
 import { ADVANTAGES_ITEMS } from '../../utils/constants';
 import Container from '../Layout/Container';
-import { colors } from '../../theme/theme';
+import colors from '../../theme/colors';
+import SmoothShowItems from '../SmoothShowItems';
 
 const StyledSection = styled.section`
   display: flex;
   flex-direction: column;
-  row-gap: ${({ theme }) => theme.size.space.lg};
+  row-gap: ${({ theme }) => theme.size.space.xl};
+  column-gap: ${({ theme }) => theme.size.space.xl};
   text-align: center;
+  align-items: center;
 `;
 
-const StyledWrapper = styled.div`
+const StyledWrapper = styled(SmoothShowItems)`
   display: grid;
   grid-template-columns: 1fr;
   padding: ${({ theme }) => theme.size.space.sm};
-  gap: 2rem;
+  row-gap: 2rem;
+  column-gap: 2rem;
   align-items: center;
   justify-content: center;
   margin: 0 auto;
@@ -38,6 +43,7 @@ const StyledArticle = styled(motion.article)<{backgroundColor: string}>`
   justify-content: space-between;
   text-align: left;
   row-gap: 1rem;
+  column-gap: 1rem;
   max-width: 400px;
   border-radius: .5rem;
   height: 100%;
@@ -65,6 +71,7 @@ const StyledContent = styled.div`
   justify-content: flex-start;
   height: 100%;
   row-gap: 1rem;
+  column-gap: 1rem;
   color: ${({ theme }) => theme.color.light};
 `;
 
@@ -92,7 +99,7 @@ const StyledDescription = styled.p`
 const Advantages: FC = () => (
   <Container>
     <StyledSection>
-      <Title>Advantages</Title>
+      <Title>What we offer</Title>
       <StyledWrapper>
         {ADVANTAGES_ITEMS.map(({
           title, description, icon, background,
@@ -114,7 +121,7 @@ const Advantages: FC = () => (
           </StyledArticle>
         ))}
       </StyledWrapper>
-      <button type="button">Become an Investor</button>
+      <Button>Become an Investor</Button>
     </StyledSection>
   </Container>
 );

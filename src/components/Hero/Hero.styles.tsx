@@ -1,93 +1,71 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import Image from '../Image/Image';
+import SmoothShowItems from '../SmoothShowItems';
 
-const Hero: any = styled.header`
-  min-height: calc(100vh - ${({ theme }) => theme.size.space.xxl});
-  background-color: ${({ theme }) => theme.color.white};
-  display: grid;
-  grid-template-columns: 1fr;
-  align-items: center;
-  padding-top: ${({ theme }) => theme.size.space.xxl};
-  
-  ${({ theme }) => theme.mq.tablet} {
-    grid-template-columns: 60% 40%;
-  }
-`;
+const Hero: any = styled.section`
+${({ theme }) => css`
+    min-height: calc(100vh - ${theme.size.space.xxl});
+    background-color: ${theme.color.white};
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    
+    ${theme.mq.laptopS} {
+      grid-template-columns: 45% 55%;
+    }
+  `}`;
 
-const Content = styled.section`
+const Content = styled.header`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  gap: ${({ theme }) => theme.size.space.md};
-  width: 90%;
+  row-gap: ${({ theme }) => theme.size.space.md};
+  column-gap: ${({ theme }) => theme.size.space.md};
+  width: 100%;
   margin: 0 auto;
   
   ${({ theme }) => theme.mq.tablet} {
-    gap: ${({ theme }) => theme.size.space.xl};
-    width: 80%;
+    row-gap: ${({ theme }) => theme.size.space.xl};
+    column-gap: ${({ theme }) => theme.size.space.xl};
+    width: 90%;
   }
   
   ${({ theme }) => theme.mq.laptopM} {
-    width: 70%;
+    width: 80%;
   }
   
 `;
 
 const ImageWrapper = styled.section`
   display: none;
-  position: absolute;
-  top: 50%;
-  right: 0;
-  width: 40%;
-  transform: translateY(-50%);
-  height: 80%;
+  height: 90%;
   justify-content: flex-start;
   align-items: center;
-  overflow: hidden;
     
-  ${({ theme }) => theme.mq.tablet} {
+  svg {
+    transform: scale(0.8);
+  }
+    
+  ${({ theme }) => theme.mq.laptopS} {
     display: flex;
   }
 `;
 
-const MacbookImage = styled(Image)`
-  max-width: none;
+const HeroImage = styled(Image)`
+  
 `;
 
-const AppImage = styled(Image)`
-  z-index: -1;
-  position: absolute;
-  top: 52px;
-  left: 146px;
-  height: 63vh;
-  width: 40vw;
-  max-width: none;
-  object-fit: cover;
-`;
-
-const ButtonWrapper = styled.section`
+const ButtonWrapper = styled.div`
   display: flex;
-  gap: 1rem;
+  row-gap: 1rem;
+  column-gap: 1rem;
   position: relative;
-`;
-
-const Blob = styled(Image)`
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  min-height: 128px;
-  min-width: 128px;
-  z-index: 0;
-  opacity: .18;
 `;
 
 Hero.Content = Content;
 Hero.ImageWrapper = ImageWrapper;
-Hero.MacbookImage = MacbookImage;
-Hero.AppImage = AppImage;
+Hero.HeroImage = HeroImage;
 Hero.ButtonWrapper = ButtonWrapper;
-Hero.Blob = Blob;
 
 export default Hero;

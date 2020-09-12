@@ -2,13 +2,14 @@ import React, { FC } from 'react';
 import styled from 'styled-components';
 import Image from '../Image/Image';
 import Title from '../Title/Title';
-import { colors } from '../../theme/theme';
+import colors from '../../theme/colors';
 
 const StyledSignature = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 1rem;
+  row-gap: 1rem;
+  column-gap: 1rem;
   width: 100%;
   
   img {

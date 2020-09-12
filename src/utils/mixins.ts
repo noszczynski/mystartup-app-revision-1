@@ -1,5 +1,5 @@
 import { css } from 'styled-components';
-import { colors } from 'theme/theme'; // moze da sie jakoś dynamicznie propsy twozyc na podstawie tego obiektu??
+// import { colors } from 'theme/theme'; // moze da sie jakoś dynamicznie propsy twozyc na podstawie tego obiektu??
 
 export interface MarginableProps {
   p?: number;

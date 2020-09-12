@@ -12,8 +12,16 @@ import Navbar from './Navbar/Navbar';
 import Signature from './Signature/Signature';
 import Theme from './Theme/Theme';
 import Title from './Title/Title';
+import SocialWrapper from './SocialWrapper';
+import BottomNavigation from './Footer/BottomNavigation';
+import BasicInput from './Form/BasicInput';
 import Button from './Button/Button';
+<<<<<<< HEAD
 import Box from './Box/Box';
+=======
+import Footer from './Footer/Footer';
+import SocialIcon from './SocialIcon/SocialIcon';
+>>>>>>> develop
 
 export {
   Advantages,
@@ -30,6 +38,14 @@ export {
   Signature,
   Theme,
   Title,
+  SocialWrapper,
+  BottomNavigation,
+  BasicInput,
   Button,
+<<<<<<< HEAD
   Box,
+=======
+  Footer,
+  SocialIcon,
+>>>>>>> develop
 };
