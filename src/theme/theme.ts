@@ -1,5 +1,6 @@
 import { boxShadows, buttonSizes } from './constants';
 import { ObjectOfStrings, ObjectOfAny, ThemeSizes, ObjectOfNumbers } from '../utils/interfaces';
+import colors from './colors';
 
 const breakpoints: ObjectOfNumbers = {
   mobileS: 375,
@@ -29,24 +30,6 @@ const mq: ObjectOfStrings = {
   desktopL: `@media screen and (min-width: ${breakpoints.desktopL}px)`,
 };
 
-const colors: ObjectOfStrings = {
-  light: '#FCF3D7',
-  dark: '#212121',
-  white: '#FFFFFF',
-  black: '#000000',
-  blue: '#367BF5',
-  yellow: '#F3AA18',
-  green: '#2FA84F',
-  red: '#FA5D50',
-  ocean: '#069697',
-  gray900: '#3E4345',
-  gray700: '#5E6366',
-  gray500: '#919699',
-  gray300: '#C6CACC',
-  gray100: '#E3E5E6',
-  gray50: '#F8F8F8',
-};
-
 const gradients: ObjectOfStrings = {
   orange: 'linear-gradient(to right, #F2Af8C, #E6753A)',
   green: 'linear-gradient(to right, #57CBAF, #2FA84F)',
@@ -64,6 +47,7 @@ const sizes: ThemeSizes = {
     lg: '2rem', // 32px
     xl: '4rem', // 64px
     xxl: '8rem', // 128px
+    xxxl: '16rem', // 256px
   },
   font: {
     xxs: '9px',
@@ -75,7 +59,6 @@ const sizes: ThemeSizes = {
     xxl: '64px',
   },
   weight: {
-    light: '300',
     regular: '400',
     medium: '500',
     bold: '700',
@@ -103,6 +86,6 @@ const theme: ObjectOfAny = {
   mq,
 };
 
-export { colors, gradients, sizes, mq, breakpoints };
+export { gradients, sizes, mq, breakpoints };
 
 export default theme;

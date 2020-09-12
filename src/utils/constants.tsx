@@ -5,13 +5,15 @@ import {
   FiberNew,
 } from '@material-ui/icons';
 import React from 'react';
-import theme, { colors } from '../theme/theme';
+import colors from 'theme/colors';
+import theme from 'theme/theme';
 import {
   AdvantagesArray,
   CommentArray,
   ObjectOfStrings,
   ArticlesArray,
   NavItemsArray,
+  FooterNavigationArray,
 } from './interfaces';
 
 const ARTICLES_ITEMS: ArticlesArray = [
@@ -91,23 +93,6 @@ const ARTICLES_ITEMS: ArticlesArray = [
       time: 'A year ago',
       title: 'New app to acquire street sellers into a team',
       id: 'id_5',
-    },
-    signature: {
-      title: 'Edward Pawłowski',
-      content: 'Lorem ipsum dolor sit amet',
-      image: 'https://picsum.photos/64',
-    },
-    content:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos doloremque eaque nam soluta tenetur! Accusamus aperiam dicta dolore enim excepturi, hic ipsam, laboriosam, magnam neque quae quam quisquam tempore voluptate.',
-  },
-  {
-    article: {
-      image: 'https://picsum.photos/800',
-      imageAlt: 'random image from picsum photos',
-      category: 'EVENTS',
-      time: 'A year ago',
-      title: 'New app to acquire street sellers into a team',
-      id: 'id_6',
     },
     signature: {
       title: 'Edward Pawłowski',
@@ -201,21 +186,27 @@ const COMMENTS: CommentArray = [
             Blanditiis cumque cupiditate earum error iusto praesentium quasi rerum vero 5?
          `,
   },
+  {
+    id: 'id_6',
+    author: 'John doe',
+    signature: 'Works in Google as Frontend developer',
+    avatar: 'https://api.adorable.io/avatars/120/random',
+    content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Corporis culpa et eveniet exercitationem facere id, ipsam praesentium quae quasi quo?
+            Blanditiis cumque cupiditate earum error iusto praesentium quasi rerum vero 6?
+         `,
+  },
+  {
+    id: 'id_7',
+    author: 'John doe',
+    signature: 'Works in Google as Frontend developer',
+    avatar: 'https://api.adorable.io/avatars/120/random',
+    content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Corporis culpa et eveniet exercitationem facere id, ipsam praesentium quae quasi quo?
+            Blanditiis cumque cupiditate earum error iusto praesentium quasi rerum vero 7?
+         `,
+  },
 ];
-
-const CATEGORY_COLORS: ObjectOfStrings = {
-  EVENTS: colors.blue,
-  CULTURE_AND_ART: colors.yellow,
-  BUSINESS: colors.green,
-  POLITICS: colors.gray900,
-  HEALTH: colors.red,
-  SPORT: colors.blue,
-  GAMES: colors.green,
-  MUSIC: colors.red,
-  FOOD_AND_CRAFT: colors.yellow,
-  DESIGN_AND_TECH: colors.ocean,
-  FILM_AND_COMICS: colors.ocean,
-};
 
 const CATEGORY_LABELS: ObjectOfStrings = {
   EVENTS: 'Events',
@@ -258,6 +249,83 @@ const NAV_ITEMS: NavItemsArray = [
   },
 ];
 
+const BOTTOM_NAV_ITEMS: FooterNavigationArray = [
+  [{
+    title: 'USER',
+    items: [
+      {label: 'Help', to: '/'},
+      {label: 'Categories', to: '/'},
+      {label: 'New', to: '/'},
+    ]
+  }, {
+    title: 'PROJECTS',
+    items: [
+      {label: 'Help', to: '/'},
+      {label: 'Categories', to: '/'},
+      {label: 'New', to: '/'},
+      {label: 'Contracts', to: '/'},
+      {label: 'Comments', to: '/'},
+      {label: 'Lorem', to: '/'},
+      {label: 'Ipsum', to: '/'},
+      {label: 'Dolor sit', to: '/'},
+    ]
+  }], [{
+    title: 'SUPPORT',
+    items: [
+      {label: 'Help', to: '/'},
+      {label: 'Categories', to: '/'},
+      {label: 'New', to: '/'},
+      {label: 'Lorem', to: '/'},
+      {label: 'Ipsum', to: '/'},
+      {label: 'Dolor sit', to: '/'},
+    ]
+  }, {
+    title: 'NEWS',
+    items: [
+      {label: 'Help', to: '/'},
+      {label: 'Categories', to: '/'},
+      {label: 'New', to: '/'},
+      {label: 'Contracts', to: '/'},
+    ]
+  }], [{
+    title: 'NAVIGATION',
+    items: [
+      {label: 'Help', to: '/'},
+      {label: 'Categories', to: '/'},
+      {label: 'New', to: '/'},
+      {label: 'News', to: '/'},
+    ]
+  }, {
+    title: 'OTHERS',
+    items: [
+      {label: 'Help', to: '/'},
+      {label: 'Categories', to: '/'},
+      {label: 'New', to: '/'},
+      {label: 'News', to: '/'},
+    ]
+  }]
+];
+
+const CATEGORY_COLORS: ObjectOfStrings = {
+  EVENTS: colors.blue,
+  CULTURE_AND_ART: colors.yellow,
+  BUSINESS: colors.green,
+  POLITICS: colors.gray900,
+  HEALTH: colors.red,
+  SPORT: colors.blue,
+  GAMES: colors.green,
+  MUSIC: colors.red,
+  FOOD_AND_CRAFT: colors.yellow,
+  DESIGN_AND_TECH: colors.ocean,
+  FILM_AND_COMICS: colors.ocean,
+};
+
+const THEME: ObjectOfStrings ={
+  LIGHT: 'LIGHT',
+  DARK: 'DARK',
+  CONTRAST: 'CONTRAST',
+};
+
 export {
   ADVANTAGES_ITEMS,
   ARTICLES_ITEMS,
@@ -265,4 +333,6 @@ export {
   CATEGORY_COLORS,
   CATEGORY_LABELS,
   NAV_ITEMS,
+  BOTTOM_NAV_ITEMS,
+  THEME,
 };

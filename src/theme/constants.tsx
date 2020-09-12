@@ -29,7 +29,7 @@ const buttonSizes: ButtonSizes = {
   },
   xl: {
     fontSize: '1.25rem',
-    padding: '0.45remn1.25rem',
+    padding: '0.45rem 1.25rem',
     borderRadius: '0.35rem',
   },
 };

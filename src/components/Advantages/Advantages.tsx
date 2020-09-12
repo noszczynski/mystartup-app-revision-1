@@ -1,19 +1,22 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import Button from 'components/Button/Button';
 import Title from '../Title/Title';
 import { ADVANTAGES_ITEMS } from '../../utils/constants';
 import Container from '../Layout/Container';
-import { colors } from '../../theme/theme';
+import colors from '../../theme/colors';
+import SmoothShowItems from '../SmoothShowItems';
 
 const StyledSection = styled.section`
   display: flex;
   flex-direction: column;
-  row-gap: ${({ theme }) => theme.size.space.lg};
+  gap: ${({ theme }) => theme.size.space.xl};
   text-align: center;
+  align-items: center;
 `;
 
-const StyledWrapper = styled.div`
+const StyledWrapper = styled(SmoothShowItems)`
   display: grid;
   grid-template-columns: 1fr;
   padding: ${({ theme }) => theme.size.space.sm};
@@ -92,7 +95,7 @@ const StyledDescription = styled.p`
 const Advantages: FC = () => (
   <Container>
     <StyledSection>
-      <Title>Advantages</Title>
+      <Title>What we offer</Title>
       <StyledWrapper>
         {ADVANTAGES_ITEMS.map(({
           title, description, icon, background,
@@ -114,7 +117,7 @@ const Advantages: FC = () => (
           </StyledArticle>
         ))}
       </StyledWrapper>
-      <button type="button">Become an Investor</button>
+      <Button>Become an Investor</Button>
     </StyledSection>
   </Container>
 );

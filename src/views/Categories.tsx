@@ -1,9 +1,10 @@
 import React, { FC } from 'react';
+import Page from 'components/Page';
 
 const Categories: FC = () => (
-  <div>
+  <Page>
     Categories view
-  </div>
+  </Page>
 );
 
 export default Categories;

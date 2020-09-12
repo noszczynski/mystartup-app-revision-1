@@ -41,6 +41,16 @@ type SideNavItemsArray = {
   icon: JSX.Element;
 }[];
 
+type FooterNavigationItem = {
+  title: string,
+  items: {
+    label: string,
+    to: string,
+  }[]
+};
+
+type FooterNavigationArray = FooterNavigationItem[][];
+
 type ArticlesArray = {
   article: {
     image: string;
@@ -76,4 +86,5 @@ export type {
   NavItemsArray,
   SideNavItemsArray,
   ArticlesArray,
+  FooterNavigationArray,
 };

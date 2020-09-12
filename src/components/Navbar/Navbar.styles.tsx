@@ -1,5 +1,6 @@
 import { Link, NavLink } from 'react-router-dom';
 import styled, { css } from 'styled-components';
+import SmoothShowItems from '../SmoothShowItems';
 
 const Navigation: any = styled.div<{isOpen: boolean, scrolled: boolean}>`
   ${({ theme, scrolled }) => css`
@@ -32,14 +33,17 @@ const Navigation: any = styled.div<{isOpen: boolean, scrolled: boolean}>`
   `}`;
 
 const LogoWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-  max-width: 150px;
-  
-  ${({theme}) => theme.mq.mobileL} {
-    max-width: 200px;
-  }
-`;
+  ${({theme}) => css`
+    display: flex;
+    justify-content: space-between;
+    width: 150px;
+    
+    ${theme.mq.mobileL} {
+      width: 240px;
+      max-width: 240px;
+      padding: 0 ${theme.size.space.lg};
+    }
+  `}`;
 
 const Wrapper = styled.div`
   display: flex;
@@ -48,7 +52,7 @@ const Wrapper = styled.div`
   padding: ${({ theme }) => theme.size.space.md};
 `;
 
-const NavigationInner = styled.nav<{isOpen: boolean}>`
+const NavigationInner = styled(SmoothShowItems)<{isOpen: boolean}>`
   ${({ theme }) => css`
     display: none;
     justify-content: space-between;
@@ -68,7 +72,7 @@ const NavigationInner = styled.nav<{isOpen: boolean}>`
 
 const ButtonWrapper = styled.div`
   display: flex;
-  max-width: 200px;
+  width: 240px;
   align-items: center;
   justify-content: center;
   gap: .5rem;
@@ -126,12 +130,10 @@ const iconMixin = () => css`
 const SearchButton = styled.button`
   ${iconMixin()};
   
-  
 `;
 
 const UserButton = styled(Link)`
   ${iconMixin()};
-  
   
 `;
 

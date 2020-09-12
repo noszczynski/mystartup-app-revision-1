@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import styled, { css } from 'styled-components';
+import { hot } from 'react-hot-loader/root';
 
 const Wrapper = styled.button.attrs(({ type }) => ({
   type: type || 'button',
@@ -16,4 +17,4 @@ const Wrapper = styled.button.attrs(({ type }) => ({
 
 const Button: FC = ({ children }) => <Wrapper>{children}</Wrapper>;
 
-export default Button;
+export default hot(Button);

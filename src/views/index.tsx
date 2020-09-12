@@ -6,7 +6,6 @@ import Results from './Results';
 import Article from './Article';
 import Project from './Project';
 import NoRoute from './NoRoute';
-import Layout from '../components/Layout/Layout';
 import About from './About';
 import EditProject from './EditProject';
 import Settings from './Settings';
@@ -22,7 +21,6 @@ export {
   Article,
   Project,
   NoRoute,
-  Layout,
   About,
   EditProject,
   Settings,
