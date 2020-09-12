@@ -1,10 +1,17 @@
 import {
-  Category, MonetizationOn, PlayArrow, FiberNew,
+  Category,
+  MonetizationOn,
+  PlayArrow,
+  FiberNew,
 } from '@material-ui/icons';
 import React from 'react';
 import theme, { colors } from '../theme/theme';
 import {
-  AdvantagesArray, CommentArray, ObjectOfStrings, ArticlesArray,
+  AdvantagesArray,
+  CommentArray,
+  ObjectOfStrings,
+  ArticlesArray,
+  NavItemsArray,
 } from './interfaces';
 
 const ARTICLES_ITEMS: ArticlesArray = [
@@ -22,7 +29,8 @@ const ARTICLES_ITEMS: ArticlesArray = [
       content: 'Lorem ipsum dolor sit amet',
       image: 'https://picsum.photos/64',
     },
-    content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos doloremque eaque nam soluta tenetur! Accusamus aperiam dicta dolore enim excepturi, hic ipsam, laboriosam, magnam neque quae quam quisquam tempore voluptate.',
+    content:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos doloremque eaque nam soluta tenetur! Accusamus aperiam dicta dolore enim excepturi, hic ipsam, laboriosam, magnam neque quae quam quisquam tempore voluptate.',
   },
   {
     article: {
@@ -38,7 +46,8 @@ const ARTICLES_ITEMS: ArticlesArray = [
       content: 'Lorem ipsum dolor sit amet',
       image: 'https://picsum.photos/64',
     },
-    content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos doloremque eaque nam soluta tenetur! Accusamus aperiam dicta dolore enim excepturi, hic ipsam, laboriosam, magnam neque quae quam quisquam tempore voluptate.',
+    content:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos doloremque eaque nam soluta tenetur! Accusamus aperiam dicta dolore enim excepturi, hic ipsam, laboriosam, magnam neque quae quam quisquam tempore voluptate.',
   },
   {
     article: {
@@ -54,7 +63,8 @@ const ARTICLES_ITEMS: ArticlesArray = [
       content: 'Lorem ipsum dolor sit amet',
       image: 'https://picsum.photos/64',
     },
-    content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos doloremque eaque nam soluta tenetur! Accusamus aperiam dicta dolore enim excepturi, hic ipsam, laboriosam, magnam neque quae quam quisquam tempore voluptate.',
+    content:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos doloremque eaque nam soluta tenetur! Accusamus aperiam dicta dolore enim excepturi, hic ipsam, laboriosam, magnam neque quae quam quisquam tempore voluptate.',
   },
   {
     article: {
@@ -70,7 +80,8 @@ const ARTICLES_ITEMS: ArticlesArray = [
       content: 'Lorem ipsum dolor sit amet',
       image: 'https://picsum.photos/64',
     },
-    content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos doloremque eaque nam soluta tenetur! Accusamus aperiam dicta dolore enim excepturi, hic ipsam, laboriosam, magnam neque quae quam quisquam tempore voluptate.',
+    content:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos doloremque eaque nam soluta tenetur! Accusamus aperiam dicta dolore enim excepturi, hic ipsam, laboriosam, magnam neque quae quam quisquam tempore voluptate.',
   },
   {
     article: {
@@ -86,7 +97,8 @@ const ARTICLES_ITEMS: ArticlesArray = [
       content: 'Lorem ipsum dolor sit amet',
       image: 'https://picsum.photos/64',
     },
-    content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos doloremque eaque nam soluta tenetur! Accusamus aperiam dicta dolore enim excepturi, hic ipsam, laboriosam, magnam neque quae quam quisquam tempore voluptate.',
+    content:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos doloremque eaque nam soluta tenetur! Accusamus aperiam dicta dolore enim excepturi, hic ipsam, laboriosam, magnam neque quae quam quisquam tempore voluptate.',
   },
   {
     article: {
@@ -102,32 +114,37 @@ const ARTICLES_ITEMS: ArticlesArray = [
       content: 'Lorem ipsum dolor sit amet',
       image: 'https://picsum.photos/64',
     },
-    content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos doloremque eaque nam soluta tenetur! Accusamus aperiam dicta dolore enim excepturi, hic ipsam, laboriosam, magnam neque quae quam quisquam tempore voluptate.',
+    content:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos doloremque eaque nam soluta tenetur! Accusamus aperiam dicta dolore enim excepturi, hic ipsam, laboriosam, magnam neque quae quam quisquam tempore voluptate.',
   },
 ];
 
 const ADVANTAGES_ITEMS: AdvantagesArray = [
   {
     title: 'Categories',
-    description: 'The projects available on our website have their own categories that you can filter the results by to choose what you really want to support',
+    description:
+      'The projects available on our website have their own categories that you can filter the results by to choose what you really want to support',
     icon: <Category />,
     background: theme.gradient.rose,
   },
   {
     title: 'Start-up',
-    description: 'By registering as a startup, you can actively search for new investors and submit financing proposals to them',
+    description:
+      'By registering as a startup, you can actively search for new investors and submit financing proposals to them',
     icon: <PlayArrow />,
     background: theme.gradient.orange,
   },
   {
     title: 'Invest',
-    description: 'As an investor, you can follow your favorite startups and support them with your funds',
+    description:
+      'As an investor, you can follow your favorite startups and support them with your funds',
     icon: <MonetizationOn />,
     background: theme.gradient.green,
   },
   {
     title: 'News',
-    description: 'Here you will find news from your favorite startups and news that may interest you',
+    description:
+      'Here you will find news from your favorite startups and news that may interest you',
     icon: <FiberNew />,
     background: theme.gradient.blue,
   },
@@ -139,8 +156,7 @@ const COMMENTS: CommentArray = [
     author: 'John doe',
     signature: 'Works in Google as Frontend developer',
     avatar: 'https://api.adorable.io/avatars/120/random',
-    content:
-      `Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit.
             Corporis culpa et eveniet exercitationem facere id, ipsam praesentium quae quasi quo?
             Blanditiis cumque cupiditate earum error iusto praesentium quasi rerum vero 1?
          `,
@@ -150,8 +166,7 @@ const COMMENTS: CommentArray = [
     author: 'John doe',
     signature: 'Works in Google as Frontend developer',
     avatar: 'https://api.adorable.io/avatars/120/random',
-    content:
-      `Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit.
             Corporis culpa et eveniet exercitationem facere id, ipsam praesentium quae quasi quo?
             Blanditiis cumque cupiditate earum error iusto praesentium quasi rerum vero 2?
          `,
@@ -161,8 +176,7 @@ const COMMENTS: CommentArray = [
     author: 'John doe',
     signature: 'Works in Google as Frontend developer',
     avatar: 'https://api.adorable.io/avatars/120/random',
-    content:
-      `Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit.
             Corporis culpa et eveniet exercitationem facere id, ipsam praesentium quae quasi quo?
             Blanditiis cumque cupiditate earum error iusto praesentium quasi rerum vero 3?
          `,
@@ -172,8 +186,7 @@ const COMMENTS: CommentArray = [
     author: 'John doe',
     signature: 'Works in Google as Frontend developer',
     avatar: 'https://api.adorable.io/avatars/120/random',
-    content:
-      `Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit.
             Corporis culpa et eveniet exercitationem facere id, ipsam praesentium quae quasi quo?
             Blanditiis cumque cupiditate earum error iusto praesentium quasi rerum vero 4?
          `,
@@ -183,8 +196,7 @@ const COMMENTS: CommentArray = [
     author: 'John doe',
     signature: 'Works in Google as Frontend developer',
     avatar: 'https://api.adorable.io/avatars/120/random',
-    content:
-      `Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit.
             Corporis culpa et eveniet exercitationem facere id, ipsam praesentium quae quasi quo?
             Blanditiis cumque cupiditate earum error iusto praesentium quasi rerum vero 5?
          `,
@@ -219,7 +231,32 @@ const CATEGORY_LABELS: ObjectOfStrings = {
   FILM_AND_COMICS: 'Film and Comics',
 };
 
-const ARTICLE_THUMBNAIL_MAX_LENGTH = 200;
+const NAV_ITEMS: NavItemsArray = [
+  {
+    label: 'Home',
+    to: '/',
+    alt: 'nav link',
+    exact: true,
+  },
+  {
+    label: 'News',
+    to: '/news',
+    alt: 'nav link',
+    exact: false,
+  },
+  {
+    label: 'Category',
+    to: '/category',
+    alt: 'nav link',
+    exact: false,
+  },
+  {
+    label: 'About',
+    to: '/about',
+    alt: 'nav link',
+    exact: false,
+  },
+];
 
 export {
   ADVANTAGES_ITEMS,
@@ -227,5 +264,5 @@ export {
   COMMENTS,
   CATEGORY_COLORS,
   CATEGORY_LABELS,
-  ARTICLE_THUMBNAIL_MAX_LENGTH,
+  NAV_ITEMS,
 };
