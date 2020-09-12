@@ -1,93 +1,80 @@
 import styled, { css } from 'styled-components';
-import { marginable, MarginableProps } from 'utils/mixins';
+import { marginable, MarginableProps,fontable,FontableProps } from 'utils/mixins';
 
-interface BoxProps extends MarginableProps {
+interface Props extends MarginableProps,FontableProps {
   full?: boolean;
   flex?: boolean;
   wrap?: boolean;
   column?: boolean;
-  justifyCenter?: boolean;
-  justifyBetween?: boolean;
-  justifyAround?: boolean;
-  justifyEnd?: boolean;
+  justify?: 'flex-start' | 'center' | 'space-between' | 'space-around' | 'flex-end';
   alignCenter?: boolean;
   textRight?: boolean;
   textCenter?: boolean;
   inline?: boolean;
   width?: string | number;
   height?: string | number;
-  fullWitdh?: boolean;
 }
 
-const Box = styled.div<BoxProps>`
+const Box = styled.div<Props>`
   ${marginable.css}
+  ${fontable.css}
 
-  ${({ flex }) =>
-    flex &&
-    css<BoxProps>`
-      display: flex;
-      ${({ full }) =>
-        full &&
+  ${({
+    flex,
+    full,
+    column,
+    wrap,
+    justify,
+    alignCenter,
+    textRight,
+    textCenter,
+    inline,
+    width,
+    height,
+  }) =>
+    css`
+      ${flex &&
+      css`
+        display: flex;
+        ${full &&
         css`
           flex: 1;
         `}
-      ${({ column }) => css`
-        flex-direction: ${column ? 'column' : 'row'};
-      `}
-				${({ wrap }) =>
-        css`
+        ${css`
+          flex-direction: ${column ? 'column' : 'row'};
+        `}
+				${css`
           flex-wrap: ${wrap ? 'wrap' : 'nowrap'};
         `}
-				${({ justifyCenter }) =>
-        justifyCenter &&
+				${justify &&
         css`
-          justify-content: center;
+          justify-content: ${justify};
         `}
-				${({ justifyBetween }) =>
-        justifyBetween &&
-        css`
-          justify-content: space-between;
-        `}
-				${({ justifyAround }) =>
-        justifyAround &&
-        css`
-          justify-content: space-around;
-        `}
-				${({ justifyEnd }) =>
-        justifyEnd &&
-        css`
-          justify-content: flex-end;
-        `}
-				${({ alignCenter }) =>
-        alignCenter &&
+				${alignCenter &&
         css`
           align-items: center;
         `}
-    `}
-	${({ textRight }) =>
-    textRight &&
-    css`
-      text-align: right;
-    `}
-	${({ textCenter }) =>
-    textCenter &&
-    css`
-      text-align: center;
-    `}
-	${({ flex, inline }) =>
-    !flex &&
-    css`
-      display: ${inline ? 'inline-block' : 'block'};
-    `}
-	${({ width }) =>
-    width &&
-    css`
-      width: ${Number.isInteger(width) ? `${width}px` : width};
-    `}
-	${({ height }) =>
-    height &&
-    css`
-      height: ${Number.isInteger(height) ? `${height}px` : height};
+      `}
+      ${textRight &&
+      css`
+        text-align: right;
+      `}
+				${textCenter &&
+      css`
+        text-align: center;
+      `}
+				${!flex &&
+      css`
+        display: ${inline ? 'inline-block' : 'block'};
+      `}
+				${width &&
+      css`
+        width: ${Number.isInteger(width) ? `${width}px` : width};
+      `}
+				${height &&
+      css`
+        height: ${Number.isInteger(height) ? `${height}px` : height};
+      `}
     `}
 `;
 

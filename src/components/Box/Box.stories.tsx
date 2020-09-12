@@ -5,11 +5,11 @@ import Box from './Box';
 
 const BoxElement: JSX.Element = (
   <Fragment>
-    <Box pt={4}>aaaaa</Box>
-    <Box my={6}>bbb</Box>
-    <Box width="100%" flex justifyBetween>
-      <Box>aa</Box>
-      <Box>bbb</Box>
+    <Box pt={4}>Lorem</Box>
+    <Box my={6}>ipsum</Box>
+    <Box width="100%" flex justify="space-between">
+      <Box color="red">Left</Box>
+      <Box color="blue">Right</Box>
     </Box>
   </Fragment>
 );
