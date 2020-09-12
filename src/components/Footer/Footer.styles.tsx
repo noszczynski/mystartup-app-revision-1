@@ -7,7 +7,8 @@ const Footer: any = styled.footer`
     flex-direction: column;
     padding: ${theme.size.space.xl} 0;
     width: 100%;
-    gap: 2rem;
+    row-gap: 2rem;
+    column-gap: 2rem;
     
     ${theme.mq.tablet} {
       display: grid;
@@ -15,11 +16,13 @@ const Footer: any = styled.footer`
     }
     
     ${theme.mq.laptopM} {
-      gap: 3rem;
+      row-gap: 3rem;
+      column-gap: 3rem;
     }
 
     ${theme.mq.desktopS} {
-      gap: 5rem;
+      row-gap: 5rem;
+      column-gap: 5rem;
     }
   `}`;
 
@@ -29,7 +32,8 @@ const Aside = styled.aside`
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 2rem;
+    row-gap: 2rem;
+    column-gap: 2rem;
     order: 1;
     
     ${theme.mq.tablet} {
@@ -42,7 +46,8 @@ const Section = styled.section`
     display: grid;
     grid-template-columns: 1fr;
     max-width: 700px;
-    gap: 2rem;
+    row-gap: 2rem;
+    column-gap: 2rem;
     order: 2;
     
     ${theme.mq.tablet} {
@@ -61,7 +66,8 @@ const Section = styled.section`
 const Column = styled.article`
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    row-gap: 2rem;
+    column-gap: 2rem;
 `;
 
 const Navigation = styled(motion.nav)`
@@ -75,7 +81,8 @@ const Navigation = styled(motion.nav)`
       flex-direction: column;
       padding-left: .5rem;
       margin-top: 1rem;
-      gap: .25rem;
+      row-gap: .25rem;
+      column-gap: .25rem;
     }
 `}`;
 
@@ -116,7 +123,8 @@ const Rights = styled.div`
     font-size: ${theme.size.font.xs};
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    row-gap: 1rem;
+    column-gap: 1rem;
     color: ${theme.color.gray700};
   `}`;
 
@@ -125,7 +133,8 @@ const Newsletter = styled.div`
     font-size: ${theme.size.font.xs};
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    row-gap: 1rem;
+    column-gap: 1rem;
     color: ${theme.color.gray700};
     
     ${theme.mq.tabletS} {
@@ -136,7 +145,8 @@ const Newsletter = styled.div`
 const NewsletterForm = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    row-gap: 1rem;
+    column-gap: 1rem;
     
     ${({theme}) => theme.mq.mobileM} {
       flex-direction: row;
@@ -144,9 +154,10 @@ const NewsletterForm = styled.div`
 `;
 
 const Spacer = styled.div`
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  column-gap: 1rem;
 `;
 
 Footer.Aside = Aside;

@@ -1,7 +1,6 @@
-import mockup from './aplication-mockup.png';
-import blob from './blob.svg';
-import macbook from './macbook.png';
 import logo from './logos/logo.svg';
+import logoRight from './logos/logo-right-text.svg';
+import logoBottom from './logos/logo-bottom-text.svg';
 import logoLight from './logos/logo-white.svg';
 import logoDark from './logos/logo-black.svg';
 import logoLightRight from './logos/logo-right-text-white.svg';
@@ -15,10 +14,9 @@ import logoLightRightWithRed from './logos/logo-right-text-white-with-red.svg';
 import hero from './hero.svg'
 
 export {
-  mockup,
-  blob,
-  macbook,
   logo,
+  logoRight,
+  logoBottom,
   logoLight,
   logoDark,
   logoLightRight,

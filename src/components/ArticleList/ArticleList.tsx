@@ -11,14 +11,16 @@ const StyledWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: ${({ theme }) => theme.size.space.xl};
+  row-gap: ${({ theme }) => theme.size.space.xl};
+  column-gap: ${({ theme }) => theme.size.space.xl};
 `;
 
 const StyledGridWrapper = styled(SmoothShowItems)`
   ${({ theme }) => css`
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2rem;
+    row-gap: 2rem;
+    column-gap: 2rem;
     
     article:first-child,
     article:last-child {
@@ -60,7 +62,7 @@ const ArticleList: FC = () => (
       <Title component="h2">
         Happy start-up Owners are here!
       </Title>
-      <StyledGridWrapper>
+      <StyledGridWrapper start={'top 90%'}>
         {ARTICLES_ITEMS.map(({ article, content, signature }) => (
           <Article article={article} signature={signature} key={article.id}>
             {content}

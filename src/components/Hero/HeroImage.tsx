@@ -26,10 +26,10 @@ const HeroImage = () => {
   }
 
   const manAnimation = (man: any) => {
-    const tl = gsap.timeline({defaults: {transformOrigin: "center", ease: 'power3.inOut'}})
+    const tl = gsap.timeline({defaults: {transformOrigin: "center", ease: 'power3.inOut', autoAlpha: 0}})
       tl.fromTo(man,
-        {x: '+=100%', y: 0},
-        {x: 0, y: 0, duration: 1, autoAlpha: 1}
+        {x: '+=200%', y: 0},
+        {x: 0, y: 0, duration: 1.5, autoAlpha: 1}
         )
     return tl
   }

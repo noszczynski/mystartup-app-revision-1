@@ -21,11 +21,13 @@ const Wrapper = styled.main<{isMenuOpen: boolean | undefined}>`
 const StyledContainer = styled.article`
   ${({ theme }) => css`
   padding: 0 ${theme.size.space.md};
-  gap: ${theme.size.space.lg};
+  row-gap: ${theme.size.space.lg};
+  column-gap: ${theme.size.space.lg};
 
   ${theme.mq.tablet} {
     padding: 0 ${theme.size.space.lg};
-    gap: ${theme.size.space.xxxl};
+    row-gap: ${theme.size.space.xxxl};
+    column-gap: ${theme.size.space.xxxl};
   }
 `}`;
 

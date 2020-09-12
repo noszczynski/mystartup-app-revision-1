@@ -57,7 +57,8 @@ const NavigationInner = styled(SmoothShowItems)<{isOpen: boolean}>`
     display: none;
     justify-content: space-between;
     align-items: center;
-    gap: 1rem;
+    row-gap: 1rem;
+    column-gap: 1rem;
     transition: transform .3s ease-in-out;
     flex-direction: row;
     position: relative;
@@ -74,11 +75,13 @@ const ButtonWrapper = styled.div`
   display: flex;
   width: 240px;
   align-items: center;
-  justify-content: center;
-  gap: .5rem;
+  justify-content: flex-end;
+  row-gap: .5rem;
+  column-gap: .5rem;
   
   ${({theme}) => theme.mq.mobileL} {
-    gap: 1rem;
+    row-gap: 1rem;
+    column-gap: 1rem;
   }
 `;
 
@@ -98,8 +101,8 @@ const NavigationItem = styled(NavLink)`
 
 const iconMixin = () => css`
   ${({ theme }) => css`
-    height: 24px;
-    width: 24px;
+    height: 32px;
+    width: 32px;
     display: flex;
     align-items:center;
     justify-content:center;
@@ -110,7 +113,7 @@ const iconMixin = () => css`
     transition: opacity .1s ease-in-out;
     
     svg {
-      font-size:${theme.size.font.xs};
+      font-size:${theme.size.font.s};
     }
     
     :hover {

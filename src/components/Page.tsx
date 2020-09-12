@@ -4,15 +4,19 @@ import { motion } from 'framer-motion';
 
 const Wrapper = styled.div`
   position: relative;
-  overflow-x: hidden;
+  overflow: hidden;
 `;
 
 const Element = styled(motion.div)`
-  min-height: 100vh;
+  min-height: 60vh;
   width: 100%;
   position: relative;
   top: 0;
   left: 0;
+  
+  ${({ theme }) => theme.mq.tablet} {
+    min-height: 100vh;
+  }
 `;
 
 const pageVariants = {
