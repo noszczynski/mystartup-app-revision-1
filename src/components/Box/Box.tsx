@@ -1,15 +1,14 @@
 import styled, { css } from 'styled-components';
-import { marginable, MarginableProps,fontable,FontableProps } from 'utils/mixins';
+import { marginable, MarginableProps, fontable, FontableProps } from 'utils/mixins';
 
-interface Props extends MarginableProps,FontableProps {
+interface Props extends MarginableProps, FontableProps {
   full?: boolean;
   flex?: boolean;
   wrap?: boolean;
   column?: boolean;
   justify?: 'flex-start' | 'center' | 'space-between' | 'space-around' | 'flex-end';
   alignCenter?: boolean;
-  textRight?: boolean;
-  textCenter?: boolean;
+  alignText?: 'left' | 'center' | 'right';
   inline?: boolean;
   width?: string | number;
   height?: string | number;
@@ -26,8 +25,7 @@ const Box = styled.div<Props>`
     wrap,
     justify,
     alignCenter,
-    textRight,
-    textCenter,
+    alignText,
     inline,
     width,
     height,
@@ -55,13 +53,9 @@ const Box = styled.div<Props>`
           align-items: center;
         `}
       `}
-      ${textRight &&
+      ${alignText &&
       css`
-        text-align: right;
-      `}
-				${textCenter &&
-      css`
-        text-align: center;
+        text-align: ${alignText};
       `}
 				${!flex &&
       css`

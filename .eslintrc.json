@@ -42,17 +42,15 @@
       }
     ],
     "react/prop-types": 0,
-    "react/jsx-filename-extension": [1, {
+    "react/jsx-filename-extension": [
+      1,
+      {
         "extensions": [".tsx", ".ts"]
       }
     ],
     "import/prefer-default-export": "off",
-<<<<<<< HEAD
     "import/no-cycle": [2, { "ignoreExternal": true }],
     "react/jsx-fragments": "off"
-=======
-    "import/no-cycle": [0, { "ignoreExternal": true }]
->>>>>>> develop
   },
   "settings": {
     "import/resolver": {
