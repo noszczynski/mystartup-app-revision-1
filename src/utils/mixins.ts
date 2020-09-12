@@ -1,14 +1,5 @@
 import { css } from 'styled-components';
 
-const resolveProps = (mixins:{css:string[]}):any => {
-  console.log(mixins);
-  /* mixins.forEach((mixin:any) => {
-    const styleModifiers = mixin.propTypesDefinition ? Object.keys(mixin.propTypesDefinition) : [];
-    styleModifiers.forEach(propName => newProps[propName] !== undefined && delete newProps[propName]);
-  }); */
-  return {};
-};
-
 interface MarginableProps{
   p?:number;
   px?:number;
@@ -79,4 +70,4 @@ const marginable= {
 	`,
 };
 
-export { resolveProps, marginable };
+export { marginable };

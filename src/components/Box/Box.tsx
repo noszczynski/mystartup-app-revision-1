@@ -1,6 +1,6 @@
 import { createElement } from 'react';
 import styled, { css } from 'styled-components';
-import { marginable, resolveProps } from 'utils/mixins';
+import { marginable } from 'utils/mixins';
 
 interface BoxProps {
   full?: boolean;
@@ -39,7 +39,7 @@ const Box = styled(
     height,
     fullWitdh,
     ...props
-  }) => createElement('div', { ref: innerRef, ...props, ...resolveProps(marginable) }),
+  }) => createElement('div', { ref: innerRef, ...props }),
 )`
 	${marginable.css}
 	${({ flex }) => flex && css<BoxProps>`

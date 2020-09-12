@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Button,Box } from 'components';
+import { Button, Box } from 'components';
 import Title from '../Title/Title';
 import Description from '../Description/Description';
 import blob from '../../assets/blob.svg';
@@ -21,7 +21,6 @@ const Hero: FC = () => (
         <Button>Get started</Button>
         <Element.Blob src={blob} alt="" />
         <Button>Get started</Button>
-        <Box>aaa</Box>
       </Element.ButtonWrapper>
     </Element.Content>
     <Element.ImageWrapper>
