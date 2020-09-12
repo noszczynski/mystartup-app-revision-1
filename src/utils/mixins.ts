@@ -1,4 +1,4 @@
-import { css } from 'styled-components';
+import { css, CSSProp } from 'styled-components';
 // import { colors } from 'theme/theme'; // moze da sie jakoś dynamicznie propsy twozyc na podstawie tego obiektu??
 
 export interface MarginableProps {
@@ -20,69 +20,58 @@ export interface MarginableProps {
 
 const offsetWidth = 0.25;
 
+const generateCss = (style: string): CSSProp =>
+  css`
+    ${style}
+  `;
+
 const marginable = {
   css: css<MarginableProps>`
     ${({ p, px, py, pt, pb, pl, pr, m, mx, my, mt, mb, ml, mr }) => css`
-      ${p &&
-      css`
-        padding: ${p * offsetWidth}rem;
-      `}
+      ${p && generateCss(`padding: ${p * offsetWidth}rem;`)}
+
       ${px &&
-      css`
-        padding-left: ${px * offsetWidth}rem;
-        padding-right: ${px * offsetWidth}rem;
-      `}
+      generateCss(`padding-left: ${px * offsetWidth}rem;
+      padding-right: ${px * offsetWidth}rem;`)}
+
 			${py &&
-      css`
-        padding-top: ${py * offsetWidth}rem;
-        padding-bottom: ${py * offsetWidth}rem;
-      `}
+      generateCss(`padding-top: ${py * offsetWidth}rem;
+      padding-bottom: ${py * offsetWidth}rem;`)}
+
 			${pt &&
-      css`
-        padding-top: ${pt * offsetWidth}rem;
-      `}
+      generateCss(`padding-top: ${pt * offsetWidth}rem;`)}
+
 			${pb &&
-      css`
-        padding-bottom: ${pb * offsetWidth}rem;
-      `}
+      generateCss(`padding-bottom: ${pb * offsetWidth}rem;`)}
+
 			${pl &&
-      css`
-        padding-left: ${pl * offsetWidth}rem;
-      `}
+      generateCss(`padding-left: ${pl * offsetWidth}rem;`)}
+
 			${pr &&
-      css`
-        padding-right: ${pr * offsetWidth}rem;
-      `}
+      generateCss(`padding-right: ${pr * offsetWidth}rem;`)}
+
 			${m &&
-      css`
-        margin: ${m * offsetWidth}rem;
-      `}
+      generateCss(`margin: ${m * offsetWidth}rem;`)}
+
 			${mx &&
-      css`
-        margin-left: ${mx * offsetWidth}rem;
-        margin-right: ${mx * offsetWidth}rem;
-      `}
+      generateCss(`margin-left: ${mx * offsetWidth}rem;
+      margin-right: ${mx * offsetWidth}rem;`)}
+
 			${my &&
-      css`
-        margin-top: ${my * offsetWidth}rem;
-        margin-bottom: ${my * offsetWidth}rem;
-      `}
+      generateCss(`margin-top: ${my * offsetWidth}rem;
+      margin-bottom: ${my * offsetWidth}rem;`)}
+
 			${mt &&
-      css`
-        margin-top: ${mt * offsetWidth}rem;
-      `}
+      generateCss(`margin-top: ${mt * offsetWidth}rem;`)}
+
 			${mb &&
-      css`
-        margin-bottom: ${mb * offsetWidth}rem;
-      `}
+      generateCss(`margin-bottom: ${mb * offsetWidth}rem;`)}
+
 			${ml &&
-      css`
-        margin-left: ${ml * offsetWidth}rem;
-      `}
+      generateCss(`margin-left: ${ml * offsetWidth}rem;`)}
+
 			${mr &&
-      css`
-        margin-right: ${mr * offsetWidth}rem;
-      `}
+      generateCss(`margin-right: ${mr * offsetWidth}rem;`)}
     `}
   `,
 };
@@ -113,32 +102,23 @@ export interface FontableProps {
 const fontable = {
   css: css<FontableProps>`
     ${({ theme, muted, small, bold, color, size, line }) => css`
-      ${muted &&
-      css`
-        opacity: 0.75;
-      `}
-      ${small &&
-      css`
-        font-size: 0.8rem;
-      `}
+      ${muted && generateCss(`opacity: 0.75;`)}
+
+      ${small && generateCss(`font-size: 0.8rem;`)}
+
       ${bold &&
-      css`
-        font-weight: ${bold === true ? 'bold' : bold};
-      `}
+      generateCss(`font-weight: ${bold === true ? 'bold' : bold};`)}
+
       ${color &&
-      css`
-        color: ${theme.color[color]};
-      `}
+      generateCss(`color: ${theme.color[color]};`)}
+
       ${size &&
-      css`
-        font-size: ${Number.isInteger(size) ? `${size}px` : size};
-      `}
+      generateCss(`font-size: ${Number.isInteger(size) ? `${size}px` : size};`)}
+
       ${line &&
-      css`
-        line-height: ${Number.isInteger(line) ? `${line}px` : line};
-      `}
+      generateCss(`line-height: ${Number.isInteger(line) ? `${line}px` : line};`)}
     `}
   `,
 };
 
-export { marginable, fontable };
+export { marginable, fontable, generateCss };

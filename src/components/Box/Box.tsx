@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { marginable, MarginableProps, fontable, FontableProps } from 'utils/mixins';
+import { marginable, MarginableProps, fontable, FontableProps, generateCss } from 'utils/mixins';
 
 interface Props extends MarginableProps, FontableProps {
   full?: boolean;
@@ -34,41 +34,30 @@ const Box = styled.div<Props>`
       ${flex &&
       css`
         display: flex;
-        ${full &&
-        css`
-          flex: 1;
-        `}
-        ${css`
-          flex-direction: ${column ? 'column' : 'row'};
-        `}
-				${css`
-          flex-wrap: ${wrap ? 'wrap' : 'nowrap'};
-        `}
-				${justify &&
-        css`
-          justify-content: ${justify};
-        `}
+        ${full && generateCss(`flex: 1;`)}
+
+        ${generateCss(`flex-direction: ${column ? 'column' : 'row'};`)}
+
+				${generateCss(
+          `flex-wrap: ${wrap ? 'wrap' : 'nowrap'};`,
+        )}
+
+				${justify && generateCss(`justify-content: ${justify};`)}
+
 				${alignCenter &&
-        css`
-          align-items: center;
-        `}
+        generateCss(`align-items: center;`)}
       `}
-      ${alignText &&
-      css`
-        text-align: ${alignText};
-      `}
-				${!flex &&
-      css`
-        display: ${inline ? 'inline-block' : 'block'};
-      `}
-				${width &&
-      css`
-        width: ${Number.isInteger(width) ? `${width}px` : width};
-      `}
-				${height &&
-      css`
-        height: ${Number.isInteger(height) ? `${height}px` : height};
-      `}
+
+      ${alignText && generateCss(`text-align: ${alignText};`)}
+
+			${!flex &&
+      generateCss(`display: ${inline ? 'inline-block' : 'block'};`)}
+
+			${width &&
+      generateCss(`width: ${Number.isInteger(width) ? `${width}px` : width};`)}
+
+      ${height &&
+      generateCss(`height: ${Number.isInteger(height) ? `${height}px` : height};`)}
     `}
 `;
 
