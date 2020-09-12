@@ -1,6 +1,6 @@
 import { css } from 'styled-components';
 
-interface MarginableProps {
+export interface MarginableProps {
   p?: number;
   px?: number;
   py?: number;
@@ -98,4 +98,4 @@ const marginable = {
   `,
 };
 
-export { marginable, MarginableProps };
+export { marginable };
