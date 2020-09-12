@@ -11,7 +11,10 @@
     "airbnb",
     "airbnb-base",
     "airbnb-typescript",
-    "prettier"
+    "prettier",
+    "prettier/@typescript-eslint",
+    "prettier/react",
+    "eslint-config-prettier"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
