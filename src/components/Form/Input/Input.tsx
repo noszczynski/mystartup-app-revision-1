@@ -7,7 +7,6 @@ interface Props {
   type: InputTypes,
   optional?: boolean,
   change: any,
-  // value: string | number,
   name: string,
   label: string,
   // ...props
@@ -26,7 +25,6 @@ const Input: FC<Props> = ({type, label, name, optional, change, ...props}) => {
         type={type}
         required={!optional}
         onChange={change}
-        // value={value}
         {...props}
       />
       <Element.Label htmlFor={name}>
