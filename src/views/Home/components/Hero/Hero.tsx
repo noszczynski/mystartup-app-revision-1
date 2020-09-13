@@ -1,9 +1,8 @@
 import React, { FC, useEffect, useRef } from 'react';
-import { Button } from 'components';
+import { Button,Title,Description } from 'components';
 import { hot } from 'react-hot-loader/root';
 import gsap from 'gsap';
-import Title from '../../../../components/Title/Title';
-import Description from '../../../../components/Description/Description';
+
 import Element from './Hero.styles';
 import HeroImage from './HeroImage';
 

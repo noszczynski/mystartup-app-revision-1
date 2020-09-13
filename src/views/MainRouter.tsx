@@ -14,7 +14,7 @@ const MainRouter: FC = () => {
         <Switch location={location} key={location.pathname}>
           {routes.map((route) => {
             if(!route.path){
-              return <Route component={route.component} />
+              return <Route component={route.component} key={route.key}/>
             }
             if(route.isProtected){
               return <ProtectedRoute
@@ -23,6 +23,7 @@ const MainRouter: FC = () => {
               component={route.component}
               isAuthenticated={route.meta?.isAuthenticated || false}
               isAllowed={route.meta?.isAllowed || false}
+              key={route.key}
             />
             }
             return <Route exact={route.exact} path={route.path} component={route.component} key={route.key}/>

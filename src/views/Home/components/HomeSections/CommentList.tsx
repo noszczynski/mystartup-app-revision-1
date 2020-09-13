@@ -1,11 +1,7 @@
 import React, { FC } from 'react';
-import styled, {css} from 'styled-components';
-import Button from 'components/Button/Button';
-import Comment from '../../../../components/Comment/Comment';
-import { COMMENTS } from '../../../../utils/constants';
-import Title from '../../../../components/Title/Title';
-import Container from '../../../../components/Layout/Container';
-import SmoothShowItems from '../../../../components/SmoothShowItems';
+import styled, { css } from 'styled-components';
+import { Button,Comment,Title,Container,SmoothShowItems } from 'components';
+import { COMMENTS } from 'utils/constants';
 
 const StyledWrapper = styled.section`
   display: flex;

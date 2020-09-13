@@ -9,7 +9,6 @@ import Navbar from './Navbar/Navbar';
 import Signature from './Signature/Signature';
 import Theme from './Theme/Theme';
 import Title from './Title/Title';
-import SocialWrapper from './SocialWrapper';
 import BottomNavigation from './Footer/BottomNavigation';
 import BasicInput from './Form/BasicInput';
 import Button from './Button/Button';
@@ -17,6 +16,9 @@ import Box from './Box/Box';
 import Footer from './Footer/Footer';
 import SocialIcon from './SocialIcon/SocialIcon';
 import Page from './Page/Page';
+import SmoothShowItems from './SmoothShowItems/SmoothShowItems';
+import SocialWrapper from './SocialWrapper/SocialWrapper';
+
 
 export {
   Article,
@@ -38,4 +40,5 @@ export {
   Footer,
   SocialIcon,
   Page,
+  SmoothShowItems,
 };
