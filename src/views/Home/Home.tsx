@@ -2,12 +2,8 @@ import React, { FC } from 'react';
 import styled from 'styled-components';
 import { hot } from 'react-hot-loader/root';
 import { RouteProps } from 'utils/interfaces';
-import Hero from '../../components/Hero/Hero';
-import CommentList from '../../components/HomeSections/CommentList';
-import Advantages from '../../components/Advantages/Advantages';
-import ArticleList from '../../components/ArticleList/ArticleList';
-import Page from '../../components/Page';
-
+import { Page,ArticleList } from 'components';
+import { Hero,CommentList,Advantages } from './components';
 
 const StyledWrapper = styled(Page)`
   display: flex;

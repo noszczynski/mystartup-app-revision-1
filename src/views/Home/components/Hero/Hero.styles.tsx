@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
-import Image from '../Image/Image';
-import SmoothShowItems from '../SmoothShowItems';
+import Image from '../../../../components/Image/Image';
+import SmoothShowItems from '../../../../components/SmoothShowItems';
 
 const Hero: any = styled.section`
 ${({ theme }) => css`

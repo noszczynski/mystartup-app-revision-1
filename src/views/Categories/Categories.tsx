@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import Page from 'components/Page';
+import Page from 'components/Page/Page';
 import {RouteProps} from 'utils/interfaces'
 
 const Categories: FC = () => (

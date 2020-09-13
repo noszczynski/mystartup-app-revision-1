@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from 'react';
-import Element from './Hero.styles';
-import { ReactComponent as VectorHero } from '../../assets/hero.svg';
 import { hot } from 'react-hot-loader/root';
 import gsap from 'gsap'
+import { ReactComponent as VectorHero } from 'assets/hero.svg';
+import Element from './Hero.styles';
 
 const HeroImage = () => {
   const heroRef = useRef(null)

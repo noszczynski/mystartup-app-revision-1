@@ -2,11 +2,11 @@ import React, { FC } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import Button from 'components/Button/Button';
-import Title from '../Title/Title';
-import { ADVANTAGES_ITEMS } from '../../utils/constants';
-import Container from '../Layout/Container';
-import colors from '../../theme/colors';
-import SmoothShowItems from '../SmoothShowItems';
+import Title from '../../../../components/Title/Title';
+import { ADVANTAGES_ITEMS } from '../../../../utils/constants';
+import Container from '../../../../components/Layout/Container';
+import colors from '../../../../theme/colors';
+import SmoothShowItems from '../../../../components/SmoothShowItems';
 
 const StyledSection = styled.section`
   display: flex;

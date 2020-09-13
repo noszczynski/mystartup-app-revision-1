@@ -1,10 +1,7 @@
-import Advantages from './Advantages/Advantages';
 import Article from './Article/Article';
 import ArticleList from './ArticleList/ArticleList';
 import Comment from './Comment/Comment';
-import CommentList from './HomeSections/CommentList';
 import Description from './Description/Description';
-import Hero from './Hero/Hero';
 import Image from './Image/Image';
 import Layout from './Layout/Layout';
 import Container from './Layout/Container';
@@ -19,15 +16,13 @@ import Button from './Button/Button';
 import Box from './Box/Box';
 import Footer from './Footer/Footer';
 import SocialIcon from './SocialIcon/SocialIcon';
+import Page from './Page/Page';
 
 export {
-  Advantages,
   Article,
   ArticleList,
   Comment,
-  CommentList,
   Description,
-  Hero,
   Image,
   Layout,
   Container,
@@ -42,4 +37,5 @@ export {
   Box,
   Footer,
   SocialIcon,
+  Page,
 };

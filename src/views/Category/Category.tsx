@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { useParams, withRouter } from 'react-router-dom';
 import { RouteProps } from 'utils/interfaces';
-import Page from 'components/Page';
+import Page from 'components/Page/Page';
 
 const Category: FC = () => {
   const { id } = useParams();

@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
-import Page from 'components/Page';
+import Page from 'components/Page/Page';
 import { RouteProps } from 'utils/interfaces';
-import { ArticleList } from '../../components';
+import { ArticleList } from 'components';
 
 const News: FC = () => (
   <Page>
