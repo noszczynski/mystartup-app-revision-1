@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { useParams, withRouter } from 'react-router-dom';
-import Page from 'components/Page';
+import { RouteProps } from 'utils/interfaces';
+import Page from 'components/Page/Page';
 
 const Category: FC = () => {
   const { id } = useParams();
@@ -15,4 +16,10 @@ const Category: FC = () => {
   );
 };
 
-export default withRouter(Category);
+const route: RouteProps = {
+  key: 'category',
+  component: withRouter(Category),
+  path: '/category:id',
+};
+
+export default route;

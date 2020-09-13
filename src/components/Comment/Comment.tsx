@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
+import { defaultHover } from 'utils/animations';
 import Image from '../Image/Image';
 import Element from './Comment.styles';
 import Signature from '../Signature/Signature';
-import { defaultHover } from '../../utils/animations';
 
 interface Props {
   image: string,

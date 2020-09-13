@@ -1,9 +1,9 @@
-import React, { FC, useState } from 'react';
-import _ from 'lodash';
-import { hot } from 'react-hot-loader/root';
-import { Container } from '../index';
+import React, { FC } from 'react';
+import styled, {css} from 'styled-components';
+import { NavLink } from 'react-router-dom';
+import { NAV_ITEMS } from 'utils/constants';
+import Container from '../Layout/Container';
 import HamburgerMenu from './HamburgerMenu';
-import { NAV_ITEMS } from '../../utils/constants';
 import { useNavbarContext } from '../../contexts/NavbarContext';
 import Element from './ResponsiveMenu.styles';
 

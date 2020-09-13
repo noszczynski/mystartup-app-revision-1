@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
 import styled, { css } from 'styled-components';
-import ResponsiveMenu from 'components/Navbar/ResponsiveMenu';
+import Footer from '../Footer/Footer';
 import Navbar from '../Navbar/Navbar';
 import ResponsiveContainer from './ResponsiveContainer';
-import { Footer } from '../index';
+import ResponsiveMenu from '../Navbar/ResponsiveMenu';
 import { NavbarContextProvider, useNavbarContext } from '../../contexts/NavbarContext';
 
 const Wrapper = styled.main<{ isMenuOpen: boolean | undefined }>`

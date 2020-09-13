@@ -1,18 +1,16 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
 import { hot } from 'react-hot-loader/root';
-import Hero from '../components/Hero/Hero';
-import CommentList from '../components/HomeSections/CommentList';
-import Advantages from '../components/Advantages/Advantages';
-import ArticleList from '../components/ArticleList/ArticleList';
-import Page from '../components/Page';
+import { RouteProps } from 'utils/interfaces';
+import { Page, ArticleList } from 'components';
+import { Hero, CommentList, Advantages } from './components';
 
 const StyledWrapper = styled(Page)`
   display: flex;
   flex-direction: column;
   row-gap: ${({ theme }) => theme.size.space.xxl};
   column-gap: ${({ theme }) => theme.size.space.xxl};
-  padding-bottom: ${({theme}) => theme.size.space.lg};
+  padding-bottom: ${({ theme }) => theme.size.space.lg};
 `;
 
 const Home: FC = () => {
@@ -26,4 +24,11 @@ const Home: FC = () => {
   );
 };
 
-export default hot(Home);
+const route: RouteProps = {
+  key: 'home',
+  component: hot(Home),
+  path: '/',
+  exact: true,
+};
+
+export default route;

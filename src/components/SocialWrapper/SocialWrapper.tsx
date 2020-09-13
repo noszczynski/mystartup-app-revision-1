@@ -1,7 +1,7 @@
 import React, { FC, useContext } from 'react';
 import { Facebook, Instagram, Twitter } from '@material-ui/icons';
 import styled, { ThemeContext } from 'styled-components';
-import { SocialIcon } from './index';
+import SocialIcon from '../SocialIcon/SocialIcon';
 
 const Element = styled.div`
   display: flex;

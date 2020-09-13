@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import Image from '../Image/Image';
+import { Image } from 'components';
 
 const Hero: any = styled.section`
   ${({ theme }) => css`

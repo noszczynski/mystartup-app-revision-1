@@ -2,9 +2,11 @@ import React, { FC, useEffect, useRef, useState } from 'react';
 import Element from 'components/Navbar/Navbar.styles';
 import { Search, AccountCircle, Brightness7, Brightness4 } from '@material-ui/icons';
 import * as _ from 'lodash';
+import gsap from 'gsap';
+import { NAV_ITEMS, THEME } from 'utils/constants';
 import { logoRight as logo } from 'assets';
-import { Image, Container } from '../index';
-import { THEME } from '../../utils/constants';
+import Image from '../Image/Image';
+import Container from '../Layout/Container';
 import HamburgerMenu from './HamburgerMenu';
 import { useNavbarContext } from '../../contexts/NavbarContext';
 

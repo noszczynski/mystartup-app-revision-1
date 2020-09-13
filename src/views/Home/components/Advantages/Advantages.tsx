@@ -1,14 +1,9 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import Button from 'components/Button/Button';
-import AnimateContent from 'components/AnimateContent';
-import Title from '../Title/Title';
-import { ADVANTAGES_ITEMS } from '../../utils/constants';
-import Container from '../Layout/Container';
-import colors from '../../theme/colors';
-import SmoothShowItems from '../SmoothShowItems';
-import { Description } from '../index';
+import { Button, Title, Container, SmoothShowItems } from 'components';
+import { ADVANTAGES_ITEMS } from 'utils/constants';
+import colors from 'theme/colors';
 
 const StyledSection = styled.section`
   display: flex;

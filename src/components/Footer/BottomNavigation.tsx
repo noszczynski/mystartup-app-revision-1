@@ -1,9 +1,9 @@
 import React, { FC, useContext } from 'react';
-import { Link } from 'react-router-dom';
 import { ThemeContext } from 'styled-components';
-import { BOTTOM_NAV_ITEMS } from '../../utils/constants';
+import { BOTTOM_NAV_ITEMS } from 'utils/constants';
+import { Link } from 'react-router-dom';
+import Title from '../Title/Title';
 import Element from './Footer.styles';
-import { Title } from '../index';
 
 const BottomNavigation: FC = () => {
   const theme = useContext(ThemeContext);

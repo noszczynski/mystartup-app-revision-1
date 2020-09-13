@@ -1,12 +1,11 @@
 import React, { FC } from 'react';
 import styled, { css } from 'styled-components';
-import { Button, Description } from 'components';
+import { ARTICLES_ITEMS } from 'utils/constants';
+import Button from '../Button/Button';
 import Article from '../Article/Article';
 import Container from '../Layout/Container';
 import Title from '../Title/Title';
-import { ARTICLES_ITEMS } from '../../utils/constants';
-import SmoothShowItems from '../SmoothShowItems';
-import AnimateContent from '../AnimateContent';
+import SmoothShowItems from '../SmoothShowItems/SmoothShowItems';
 
 const StyledWrapper = styled.div`
   display: flex;
