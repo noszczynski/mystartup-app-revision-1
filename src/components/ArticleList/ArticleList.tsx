@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import styled, { css } from 'styled-components';
 import { ARTICLES_ITEMS } from 'utils/constants';
+import { AnimateContent, Description } from 'components';
 import Button from '../Button/Button';
 import Article from '../Article/Article';
 import Container from '../Layout/Container';

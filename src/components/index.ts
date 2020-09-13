@@ -19,6 +19,8 @@ import Page from './Page/Page';
 import SmoothShowItems from './SmoothShowItems/SmoothShowItems';
 import SocialWrapper from './SocialWrapper/SocialWrapper';
 import Section from './Section';
+import AnimateContent from './AnimateContent';
+import HamburgerMenu from './Navbar/HamburgerMenu';
 
 export {
   Article,
@@ -42,4 +44,6 @@ export {
   Page,
   SmoothShowItems,
   Section,
+  AnimateContent,
+  HamburgerMenu,
 };

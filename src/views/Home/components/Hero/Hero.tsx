@@ -1,10 +1,9 @@
-import React, { FC, useEffect, useRef } from 'react';
-import { Button, Title, Description } from 'components';
+import React, { FC } from 'react';
+import { Button, Title, Description, AnimateContent } from 'components';
 import { hot } from 'react-hot-loader/root';
-import gsap from 'gsap';
-
 import Element from './Hero.styles';
 import HeroImage from './HeroImage';
+import colors from '../../../../theme/colors';
 
 const Hero: FC = () => {
   return (

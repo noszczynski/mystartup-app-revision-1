@@ -1,6 +1,14 @@
 import React, { FC } from 'react';
 import styled, { css } from 'styled-components';
-import { Button, Comment, Title, Container, SmoothShowItems } from 'components';
+import {
+  Button,
+  Comment,
+  Title,
+  SmoothShowItems,
+  Section,
+  AnimateContent,
+  Description,
+} from 'components';
 import { COMMENTS } from 'utils/constants';
 
 const StyledWrapper = styled.section`

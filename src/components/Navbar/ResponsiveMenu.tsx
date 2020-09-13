@@ -1,9 +1,9 @@
-import React, { FC } from 'react';
-import styled, {css} from 'styled-components';
-import { NavLink } from 'react-router-dom';
+import React, { FC, useState } from 'react';
 import { NAV_ITEMS } from 'utils/constants';
+import { HamburgerMenu } from 'components';
+import _ from 'lodash';
+import { hot } from 'react-hot-loader/root';
 import Container from '../Layout/Container';
-import HamburgerMenu from './HamburgerMenu';
 import { useNavbarContext } from '../../contexts/NavbarContext';
 import Element from './ResponsiveMenu.styles';
 
@@ -17,14 +17,14 @@ const itemsContainer = {
   in: {
     transition: {
       duration: 2,
-      staggerChildren: 0.1
-    }
+      staggerChildren: 0.1,
+    },
   },
   out: {
     transition: {
       duration: 2,
-      staggerChildren: 0.1
-    }
+      staggerChildren: 0.1,
+    },
   },
 };
 
@@ -37,28 +37,28 @@ const item = {
   },
   exit: {
     x: '200%',
-  }
+  },
 };
 
 const menuContainer = {
   initial: {
     x: '-100vw',
     transition: {
-      duration: 0.5
-    }
+      duration: 0.5,
+    },
   },
   open: {
     x: 0,
     transition: {
-      duration: 0.5
-    }
+      duration: 0.5,
+    },
   },
   closed: {
     x: '-100vw',
     transition: {
-      duration: 0.5
-    }
-  }
+      duration: 0.5,
+    },
+  },
 };
 
 const ResponsiveMenu: FC = () => {
@@ -88,23 +88,16 @@ const ResponsiveMenu: FC = () => {
             <HamburgerMenu isLight openVariant />
           </Element.HamburgerWrapperInner>
         </Element.HamburgerWrapper>
-        <Element.MenuWrapper
-          variants={itemsContainer}
-          animate={clickedItem ? 'in' : 'out'}
-        >
-          {NAV_ITEMS.map(({label, to, exact}) => (
+        <Element.MenuWrapper variants={itemsContainer} animate={clickedItem ? 'in' : 'out'}>
+          {NAV_ITEMS.map(({ label, to, exact }) => (
             <Element.MenuItemWrapper key={label}>
-              <Element.MenuItem
-                exact={exact}
-                to={to}
-                onClick={handleLinkClick}
-              >
+              <Element.MenuItem exact={exact} to={to} onClick={handleLinkClick}>
                 {label}
               </Element.MenuItem>
               <Element.AnimationBox
                 variants={item}
-                initial='out'
-                exit='exit'
+                initial="out"
+                exit="exit"
                 transition={{
                   duration: 2,
                 }}

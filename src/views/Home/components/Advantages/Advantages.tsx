@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { Button, Title, Container, SmoothShowItems } from 'components';
+import { Button, Title, Container, SmoothShowItems, AnimateContent, Description } from 'components';
 import { ADVANTAGES_ITEMS } from 'utils/constants';
 import colors from 'theme/colors';
 

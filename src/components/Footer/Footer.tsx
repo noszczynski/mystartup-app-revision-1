@@ -1,6 +1,14 @@
 import React, { FC } from 'react';
 import { hot } from 'react-hot-loader/root';
-import { Container, Image, Button, SocialWrapper, BottomNavigation, BasicInput } from 'components';
+import {
+  Image,
+  Button,
+  SocialWrapper,
+  BottomNavigation,
+  BasicInput,
+  AnimateContent,
+  Section,
+} from 'components';
 import { logoDarkRight as logo } from 'assets';
 import Element from './Footer.styles';
 
