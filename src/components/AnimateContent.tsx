@@ -57,9 +57,9 @@ const AnimateContent: FC<Props> = ({ onScroll, start, delay, color, position, ch
       const tl = gsap.timeline({ defaults: { ease: 'cubic-bezier(.5,0,0,1)' } });
       gsap.set(animatedSpan, { x: 0 });
 
-      tl.from(animatedSpan, { duration: 0.5, x: '-100%', delay })
-        .fromTo(animatedElement, { autoAlpha: 0 }, { duration: 1, autoAlpha: 1 })
-        .to(animatedSpan, { duration: 0.5, x: '120%' });
+      tl.from(animatedSpan, { duration: 0.4, x: '-100%', delay })
+        .fromTo(animatedElement, { autoAlpha: 0 }, { duration: 0.2, autoAlpha: 1 })
+        .to(animatedSpan, { duration: 0.4, x: '120%' });
 
       if (onScroll) {
         ScrollTrigger.create({
