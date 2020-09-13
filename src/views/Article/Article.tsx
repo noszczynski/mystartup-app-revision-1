@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { useParams, withRouter } from 'react-router-dom';
+import { RouteProps } from 'utils/interfaces';
 
 const Article: FC = () => {
   const { id } = useParams();
@@ -13,4 +14,10 @@ const Article: FC = () => {
   );
 };
 
-export default withRouter(Article);
+const route:RouteProps={
+  key: 'article',
+  component: withRouter(Article),
+  path: '/news/:id',
+}
+
+export default route;

@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
 import styled, {css} from 'styled-components';
 import { NavLink } from 'react-router-dom';
-import { Container } from '../index';
+import { NAV_ITEMS } from 'utils/constants';
+import Container from '../Layout/Container';
 import HamburgerMenu from './HamburgerMenu';
-import { NAV_ITEMS } from '../../utils/constants';
 import { useNavbarContext } from '../../contexts/NavbarContext';
 
 const Wrapper = styled.div<{isOpen: boolean | undefined}>`

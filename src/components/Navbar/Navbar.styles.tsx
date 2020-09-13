@@ -1,6 +1,6 @@
 import { Link, NavLink } from 'react-router-dom';
 import styled, { css } from 'styled-components';
-import SmoothShowItems from '../SmoothShowItems';
+import SmoothShowItems from '../SmoothShowItems/SmoothShowItems';
 
 const Navigation: any = styled.div<{isOpen: boolean, scrolled: boolean}>`
   ${({ theme, scrolled }) => css`

@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 import { hot } from 'react-hot-loader/root';
+import { Container, Image, Button, SocialWrapper, BottomNavigation, BasicInput } from 'components';
+import { logoDarkRight as logo } from 'assets';
 import Element from './Footer.styles';
-import { Container, Image, Button, SocialWrapper, BottomNavigation, BasicInput } from '../index';
-import { logoDarkRight as logo } from '../../assets';
 
 const Footer: FC = () => {
   return (

@@ -1,11 +1,10 @@
 import React, { FC, useEffect, useRef } from 'react';
-import { Button } from 'components';
-import Title from '../Title/Title';
-import Description from '../Description/Description';
-import Element from './Hero.styles';
-import HeroImage from './HeroImage';
+import { Button, Title, Description } from 'components';
 import { hot } from 'react-hot-loader/root';
 import gsap from 'gsap';
+
+import Element from './Hero.styles';
+import HeroImage from './HeroImage';
 
 const Hero: FC = () => {
   const wrapper = useRef(null);
