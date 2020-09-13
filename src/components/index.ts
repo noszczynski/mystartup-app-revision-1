@@ -16,6 +16,7 @@ import SocialWrapper from './SocialWrapper';
 import BottomNavigation from './Footer/BottomNavigation';
 import BasicInput from './Form/BasicInput';
 import Button from './Button/Button';
+import Box from './Box/Box';
 import Footer from './Footer/Footer';
 import SocialIcon from './SocialIcon/SocialIcon';
 import Section from './Section';
@@ -39,6 +40,7 @@ export {
   BottomNavigation,
   BasicInput,
   Button,
+  Box,
   Footer,
   SocialIcon,
   Section,
