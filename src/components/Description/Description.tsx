@@ -1,33 +1,39 @@
 import React, { FC } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 interface Props {
-  small?: boolean
+  small?: boolean | undefined;
+  width?: string | undefined;
 }
 
 interface StyledProps {
-  theme: any,
-  small?: boolean
+  small?: boolean | undefined;
+  width?: string | undefined;
 }
 
 const defaultProps = {
   small: false,
+  width: 'auto',
 };
 
 const StyledParagraph = styled.p<StyledProps>`
-  color: ${({ theme }) => theme.color.gray500};
-  font-size: ${({ theme, small }) => (small ? theme.size.font.xxs : theme.size.font.xs)};
-  max-width: 100%;
-  display: block;
-  font-family: Poppins, serif;
-  
-  ${({ theme }) => theme.mq.tablet} {
-    font-size: ${({ theme, small }) => (small ? theme.size.font.md : theme.size.font.lg)};
-  }
+  ${({ theme, small, width }) => css`
+    display: inline-block;
+    color: ${theme.color.gray500};
+    font-size: ${small ? theme.size.font.xxs : theme.size.font.xs};
+    max-width: 100%;
+    font-family: Poppins, serif;
+    width: 100%;
+
+    ${theme.mq.tablet} {
+      font-size: ${small ? theme.size.font.md : theme.size.font.lg};
+      width: ${width || 'auto'};
+    }
+  `};
 `;
 
-const Description: FC<Props> = ({ small, children }) => (
-  <StyledParagraph small={small}>
+const Description: FC<Props> = ({ small, width, children }) => (
+  <StyledParagraph small={small} width={width}>
     {children}
   </StyledParagraph>
 );

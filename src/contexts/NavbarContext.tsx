@@ -6,29 +6,29 @@ type ContextProps = {
   isMenuOpen: boolean,
   toggleTheme: any,
   toggleMenuOpen: any,
-}
+};
 
 const initialState = {
   theme: THEME.LIGHT,
   isMenuOpen: false,
-}
+};
 
-const NavbarContext = React.createContext<Partial<ContextProps>>(initialState)
+const NavbarContext = React.createContext<Partial<ContextProps>>(initialState);
 
 const NavbarContextProvider: FC = ({children}) => {
-  const [state, setState] = useState(initialState)
+  const [state, setState] = useState(initialState);
 
   const toggleTheme = (): any => {
     setState((prevState) => {
-      return ({...prevState, theme: prevState.theme === THEME.LIGHT ? THEME.DARK : THEME.LIGHT })
-    })
-  }
+      return ({...prevState, theme: prevState.theme === THEME.LIGHT ? THEME.DARK : THEME.LIGHT });
+    });
+  };
 
   const toggleMenuOpen = (): any => {
     setState((prevState) => {
-      return ({...prevState, isMenuOpen: !prevState.isMenuOpen  })
-    })
-  }
+      return ({...prevState, isMenuOpen: !prevState.isMenuOpen  });
+    });
+  };
 
   return (
     <NavbarContext.Provider value={{
@@ -36,14 +36,15 @@ const NavbarContextProvider: FC = ({children}) => {
       isMenuOpen: state.isMenuOpen,
       toggleTheme,
       toggleMenuOpen,
-    }}>
+    }}
+    >
       {children}
     </NavbarContext.Provider>
-  )
-}
+  );
+};
 
 const useNavbarContext = () => {
-  return useContext(NavbarContext)
-}
+  return useContext(NavbarContext);
+};
 
-export { NavbarContext, NavbarContextProvider, useNavbarContext }
+export { NavbarContext, NavbarContextProvider, useNavbarContext };

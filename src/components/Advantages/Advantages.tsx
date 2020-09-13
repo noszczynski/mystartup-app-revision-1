@@ -2,19 +2,20 @@ import React, { FC } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import Button from 'components/Button/Button';
+import AnimateContent from 'components/AnimateContent';
 import Title from '../Title/Title';
 import { ADVANTAGES_ITEMS } from '../../utils/constants';
 import Container from '../Layout/Container';
 import colors from '../../theme/colors';
 import SmoothShowItems from '../SmoothShowItems';
+import { Description } from '../index';
 
 const StyledSection = styled.section`
   display: flex;
   flex-direction: column;
   row-gap: ${({ theme }) => theme.size.space.xl};
   column-gap: ${({ theme }) => theme.size.space.xl};
-  text-align: center;
-  align-items: center;
+  align-items: flex-start;
 `;
 
 const StyledWrapper = styled(SmoothShowItems)`
@@ -26,17 +27,17 @@ const StyledWrapper = styled(SmoothShowItems)`
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-  
+
   ${({ theme }) => theme.mq.mobileL} {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   ${({ theme }) => theme.mq.tablet} {
     grid-template-columns: repeat(4, 1fr);
   }
 `;
 
-const StyledArticle = styled(motion.article)<{backgroundColor: string}>`
+const StyledArticle = styled(motion.article)<{ backgroundColor: string }>`
   padding: ${({ theme }) => theme.size.space.md};
   display: flex;
   flex-direction: column;
@@ -45,7 +46,7 @@ const StyledArticle = styled(motion.article)<{backgroundColor: string}>`
   row-gap: 1rem;
   column-gap: 1rem;
   max-width: 400px;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   height: 100%;
   background: ${({ backgroundColor }) => backgroundColor};
 `;
@@ -57,12 +58,12 @@ const StyledIcon = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  
-   svg {
-      width: 100%;
-      height: 100%;
-      color: ${({ theme }) => theme.color.light};
-   }
+
+  svg {
+    width: 100%;
+    height: 100%;
+    color: ${({ theme }) => theme.color.light};
+  }
 `;
 
 const StyledContent = styled.div`
@@ -77,20 +78,18 @@ const StyledContent = styled.div`
 
 const StyledDescription = styled.p`
   font-size: 12px;
-  color: ${({ theme }) => theme.color.lightGray}
-  
-  ${({ theme }) => theme.mq.tabletS} {
+  color: ${({ theme }) => theme.color.lightGray} ${({ theme }) => theme.mq.tabletS} {
     font-size: 13px;
   }
-  
+
   ${({ theme }) => theme.mq.laptopS} {
     font-size: 14px;
   }
-  
+
   ${({ theme }) => theme.mq.laptopL} {
     font-size: 15px;
   }
-  
+
   ${({ theme }) => theme.mq.desktopS} {
     font-size: 16px;
   }
@@ -99,11 +98,21 @@ const StyledDescription = styled.p`
 const Advantages: FC = () => (
   <Container>
     <StyledSection>
-      <Title>What we offer</Title>
+      <div>
+        <AnimateContent onScroll position="left">
+          <Title>What we offer</Title>
+        </AnimateContent>
+        <AnimateContent onScroll delay={1} position="left">
+          <Description small width="50%">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias eveniet iusto libero
+            nemo vel voluptatibus! Adipisci id maiores odit veritatis. Lorem ipsum dolor sit amet,
+            consectetur adipisicing elit. Alias eveniet iusto libero nemo vel voluptatibus! Adipisci
+            id maiores odit veritatis
+          </Description>
+        </AnimateContent>
+      </div>
       <StyledWrapper>
-        {ADVANTAGES_ITEMS.map(({
-          title, description, icon, background,
-        }) => (
+        {ADVANTAGES_ITEMS.map(({ title, description, icon, background }) => (
           <StyledArticle
             key={title}
             backgroundColor={background}
@@ -115,7 +124,9 @@ const Advantages: FC = () => (
           >
             <StyledIcon>{icon}</StyledIcon>
             <StyledContent>
-              <Title component="h3" color={colors.white}>{title}</Title>
+              <Title component="h3" color={colors.white}>
+                {title}
+              </Title>
               <StyledDescription>{description}</StyledDescription>
             </StyledContent>
           </StyledArticle>

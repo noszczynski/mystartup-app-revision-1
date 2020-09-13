@@ -18,6 +18,7 @@ import BasicInput from './Form/BasicInput';
 import Button from './Button/Button';
 import Footer from './Footer/Footer';
 import SocialIcon from './SocialIcon/SocialIcon';
+import Section from './Section';
 
 export {
   Advantages,
@@ -40,4 +41,5 @@ export {
   Button,
   Footer,
   SocialIcon,
+  Section,
 };
