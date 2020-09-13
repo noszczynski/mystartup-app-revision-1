@@ -1,5 +1,6 @@
 import React, { FC, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { RouteProps } from 'utils/interfaces';
 
 const Results: FC = () => {
   const { search } = useParams();
@@ -24,4 +25,10 @@ const Results: FC = () => {
   );
 };
 
-export default Results;
+const route:RouteProps = {
+  key: 'results',
+  component: Results,
+  path: '/results/:search',
+}
+
+export default route;

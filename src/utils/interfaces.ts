@@ -1,3 +1,5 @@
+import { FC,Component } from 'react';
+
 interface ObjectOfStrings {
   [key: string]: string;
 }
@@ -74,6 +76,19 @@ interface ThemeSizes {
   weight: { [key: string]: string };
 }
 
+interface RouteProps {
+  key: string;
+  component: FC | any;
+  path?: string;
+  exact?: boolean;
+  isProtected?: boolean;
+  meta?: {
+    authenticationPath?: string;
+    isAuthenticated?: boolean;
+    isAllowed?: boolean;
+  };
+}
+
 export type {
   ThemeSizes,
   ObjectOfStrings,
@@ -87,4 +102,5 @@ export type {
   SideNavItemsArray,
   ArticlesArray,
   FooterNavigationArray,
+  RouteProps
 };
