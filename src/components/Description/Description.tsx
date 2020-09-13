@@ -20,7 +20,7 @@ const StyledParagraph = styled.p<StyledProps>`
   ${({ theme, small, width }) => css`
     display: inline-block;
     color: ${theme.color.gray500};
-    font-size: ${small ? theme.size.font.xxs : theme.size.font.xs};
+    font-size: ${small ? theme.size.font.s : theme.size.font.md};
     max-width: 100%;
     font-family: Poppins, serif;
     width: 100%;

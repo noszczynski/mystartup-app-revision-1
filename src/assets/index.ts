@@ -1,3 +1,4 @@
+// logos
 import logo from './logos/logo.svg';
 import logoRight from './logos/logo-right-text.svg';
 import logoBottom from './logos/logo-bottom-text.svg';
@@ -11,7 +12,13 @@ import logoDarkBottomWithRed from './logos/logo-bottom-text-black-with-red.svg';
 import logoDarkRightWithRed from './logos/logo-right-text-black-with-red.svg';
 import logoLightBottomWithRed from './logos/logo-bottom-text-white-with-red.svg';
 import logoLightRightWithRed from './logos/logo-right-text-white-with-red.svg';
-import hero from './hero.svg'
+import hero from './hero.svg';
+
+// svg
+import investor from './investor.svg';
+import messenger from './messenger.svg';
+import newsletter from './newsletter.svg';
+import startup from './startup.svg';
 
 export {
   logo,
@@ -28,4 +35,8 @@ export {
   logoLightBottomWithRed,
   logoLightRightWithRed,
   hero,
+  investor,
+  messenger,
+  newsletter,
+  startup,
 };

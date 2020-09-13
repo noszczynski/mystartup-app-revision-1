@@ -4,6 +4,9 @@ import { motion } from 'framer-motion';
 
 const Wrapper = styled.div`
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  grid-row-gap: ${({ theme }) => theme.size.space.xxl};
 `;
 
 const Element = styled(motion.div)`

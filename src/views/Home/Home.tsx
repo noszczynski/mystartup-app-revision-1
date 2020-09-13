@@ -2,8 +2,8 @@ import React, { FC } from 'react';
 import styled from 'styled-components';
 import { hot } from 'react-hot-loader/root';
 import { RouteProps } from 'utils/interfaces';
-import { Page, ArticleList } from 'components';
-import { Hero, CommentList, Advantages } from './components';
+import { Page, ArticleList, SideBySideSection } from 'components';
+import { Hero, CommentList } from './components';
 
 const StyledWrapper = styled(Page)`
   display: flex;
@@ -17,7 +17,7 @@ const Home: FC = () => {
   return (
     <StyledWrapper>
       <Hero />
-      <Advantages />
+      <SideBySideSection />
       <CommentList />
       <ArticleList />
     </StyledWrapper>
