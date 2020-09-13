@@ -6,9 +6,9 @@ const Hero: any = styled.section`
     background-color: ${theme.color.gray50};
     display: flex;
     align-items: center;
-    height: calc(100vh - 16rem);
+    height: calc(100vh - 10rem);
     margin-bottom: ${theme.size.space.xxl};
-  `};
+  `}
 `;
 
 const Content = styled.header`
