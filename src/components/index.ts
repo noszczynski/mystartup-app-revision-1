@@ -19,7 +19,6 @@ import Page from './Page/Page';
 import SmoothShowItems from './SmoothShowItems/SmoothShowItems';
 import SocialWrapper from './SocialWrapper/SocialWrapper';
 
-
 export {
   Article,
   ArticleList,

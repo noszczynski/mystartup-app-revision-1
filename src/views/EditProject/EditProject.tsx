@@ -5,25 +5,19 @@ import { RouteProps } from 'utils/interfaces';
 const EditProject: FC = () => {
   const { id } = useParams();
 
-  return (
-    <div>
-      Edit project
-      {' '}
-      {id}
-    </div>
-  );
+  return <div>Edit project {id}</div>;
 };
 
-const route:RouteProps = {
+const route: RouteProps = {
   key: 'editProject',
   component: EditProject,
   path: '/project/:id/settings',
-  isProtected:true,
+  isProtected: true,
   meta: {
-    authenticationPath: "/",
+    authenticationPath: '/',
     isAuthenticated: false,
     isAllowed: true,
-  }
-}
+  },
+};
 
 export default route;

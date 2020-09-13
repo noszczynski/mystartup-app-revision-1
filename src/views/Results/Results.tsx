@@ -16,19 +16,13 @@ const Results: FC = () => {
     }
   }, [search]);
 
-  return (
-    <div>
-      Results view for:
-      {' '}
-      {searchPhrase}
-    </div>
-  );
+  return <div>Results view for: {searchPhrase}</div>;
 };
 
-const route:RouteProps = {
+const route: RouteProps = {
   key: 'results',
   component: Results,
   path: '/results/:search',
-}
+};
 
 export default route;

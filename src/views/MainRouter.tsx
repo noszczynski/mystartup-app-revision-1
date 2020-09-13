@@ -13,20 +13,29 @@ const MainRouter: FC = () => {
       <AnimatePresence exitBeforeEnter initial={false}>
         <Switch location={location} key={location.pathname}>
           {routes.map((route) => {
-            if(!route.path){
-              return <Route component={route.component} key={route.key}/>
+            if (!route.path) {
+              return <Route component={route.component} key={route.key} />;
             }
-            if(route.isProtected){
-              return <ProtectedRoute
-              restrictedPath={route.path || "/"}
-              authenticationPath={route.meta?.authenticationPath || "/"}
-              component={route.component}
-              isAuthenticated={route.meta?.isAuthenticated || false}
-              isAllowed={route.meta?.isAllowed || false}
-              key={route.key}
-            />
+            if (route.isProtected) {
+              return (
+                <ProtectedRoute
+                  restrictedPath={route.path || '/'}
+                  authenticationPath={route.meta?.authenticationPath || '/'}
+                  component={route.component}
+                  isAuthenticated={route.meta?.isAuthenticated || false}
+                  isAllowed={route.meta?.isAllowed || false}
+                  key={route.key}
+                />
+              );
             }
-            return <Route exact={route.exact} path={route.path} component={route.component} key={route.key}/>
+            return (
+              <Route
+                exact={route.exact}
+                path={route.path}
+                component={route.component}
+                key={route.key}
+              />
+            );
           })}
         </Switch>
       </AnimatePresence>

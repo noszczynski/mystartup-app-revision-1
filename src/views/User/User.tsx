@@ -5,19 +5,13 @@ import { RouteProps } from 'utils/interfaces';
 const User: FC = () => {
   const { id } = useParams();
 
-  return (
-    <div>
-      user with id:
-      {' '}
-      {id}
-    </div>
-  );
+  return <div>user with id: {id}</div>;
 };
 
-const route:RouteProps = {
+const route: RouteProps = {
   key: 'user',
   component: User,
   path: '/user/:id',
-}
+};
 
 export default route;

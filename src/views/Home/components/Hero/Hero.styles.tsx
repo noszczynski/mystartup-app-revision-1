@@ -2,17 +2,18 @@ import styled, { css } from 'styled-components';
 import { Image } from 'components';
 
 const Hero: any = styled.section`
-${({ theme }) => css`
+  ${({ theme }) => css`
     min-height: calc(100vh - ${theme.size.space.xxl});
     background-color: ${theme.color.white};
     display: grid;
     grid-template-columns: 1fr;
     align-items: center;
-    
+
     ${theme.mq.laptopS} {
       grid-template-columns: 45% 55%;
     }
-  `}`;
+  `}
+`;
 
 const Content = styled.header`
   display: flex;
@@ -23,17 +24,16 @@ const Content = styled.header`
   column-gap: ${({ theme }) => theme.size.space.md};
   width: 100%;
   margin: 0 auto;
-  
+
   ${({ theme }) => theme.mq.tablet} {
     row-gap: ${({ theme }) => theme.size.space.xl};
     column-gap: ${({ theme }) => theme.size.space.xl};
     width: 90%;
   }
-  
+
   ${({ theme }) => theme.mq.laptopM} {
     width: 80%;
   }
-  
 `;
 
 const ImageWrapper = styled.section`
@@ -41,19 +41,17 @@ const ImageWrapper = styled.section`
   height: 90%;
   justify-content: flex-start;
   align-items: center;
-    
+
   svg {
     transform: scale(0.8);
   }
-    
+
   ${({ theme }) => theme.mq.laptopS} {
     display: flex;
   }
 `;
 
-const HeroImage = styled(Image)`
-  
-`;
+const HeroImage = styled(Image)``;
 
 const ButtonWrapper = styled.div`
   display: flex;

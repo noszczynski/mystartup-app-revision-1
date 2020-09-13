@@ -16,10 +16,10 @@ const Category: FC = () => {
   );
 };
 
-const route:RouteProps={
+const route: RouteProps = {
   key: 'category',
   component: withRouter(Category),
   path: '/category:id',
-}
+};
 
 export default route;

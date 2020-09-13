@@ -1,5 +1,5 @@
 import React, { FC, useEffect, useRef } from 'react';
-import { Button,Title,Description } from 'components';
+import { Button, Title, Description } from 'components';
 import { hot } from 'react-hot-loader/root';
 import gsap from 'gsap';
 

@@ -27,6 +27,7 @@
   },
   "plugins": ["react", "@typescript-eslint", "import"],
   "rules": {
+    "@typescript-eslint/ban-ts-comment": "off",
     "no-restricted-syntax": ["off"],
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
     "react/jsx-props-no-spreading": "off",

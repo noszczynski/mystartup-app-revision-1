@@ -5,25 +5,19 @@ import { RouteProps } from 'utils/interfaces';
 const Settings: FC = () => {
   const { id } = useParams();
 
-  return (
-    <div>
-      Settings:
-      {' '}
-      {id}
-    </div>
-  );
+  return <div>Settings: {id}</div>;
 };
 
-const route:RouteProps = {
+const route: RouteProps = {
   key: 'settings',
   component: Settings,
   path: '/settings/:id',
-  isProtected:true,
+  isProtected: true,
   meta: {
-    authenticationPath: "/",
+    authenticationPath: '/',
     isAuthenticated: true,
     isAllowed: true,
-  }
-}
+  },
+};
 
 export default route;

@@ -1,4 +1,4 @@
-import { FC,Component } from 'react';
+import { FC } from 'react';
 
 interface ObjectOfStrings {
   [key: string]: string;
@@ -44,11 +44,11 @@ type SideNavItemsArray = {
 }[];
 
 type FooterNavigationItem = {
-  title: string,
+  title: string;
   items: {
-    label: string,
-    to: string,
-  }[]
+    label: string;
+    to: string;
+  }[];
 };
 
 type FooterNavigationArray = FooterNavigationItem[][];
@@ -102,5 +102,5 @@ export type {
   SideNavItemsArray,
   ArticlesArray,
   FooterNavigationArray,
-  RouteProps
+  RouteProps,
 };

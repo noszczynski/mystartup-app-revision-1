@@ -9,11 +9,11 @@ const News: FC = () => (
   </Page>
 );
 
-const route:RouteProps={
+const route: RouteProps = {
   key: 'news',
   component: News,
   path: '/news',
   exact: true,
-}
+};
 
 export default route;
