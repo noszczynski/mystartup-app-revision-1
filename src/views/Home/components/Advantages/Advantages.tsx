@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { Button, Title, Container, SmoothShowItems } from 'components';
 import { ADVANTAGES_ITEMS } from 'utils/constants';
-import colors from 'theme/colors';
+import { colors } from '../../../../theme/colors';
 
 const StyledSection = styled.section`
   display: flex;

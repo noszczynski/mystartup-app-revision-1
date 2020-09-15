@@ -14,7 +14,7 @@ const Wrapper = styled.div<{isOpen: boolean | undefined}>`
     left: 0;
     height: 100vh;
     width: 100vw;
-    background-color: ${theme.color.white};
+    background-color: ${theme.color.primaryBackground};
     display: flex;
     align-items: flex-start;
     justify-content: center;

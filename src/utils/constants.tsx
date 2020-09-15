@@ -5,8 +5,6 @@ import {
   FiberNew,
 } from '@material-ui/icons';
 import React from 'react';
-import colors from 'theme/colors';
-import theme from 'theme/theme';
 import {
   AdvantagesArray,
   CommentArray,
@@ -15,6 +13,8 @@ import {
   NavItemsArray,
   FooterNavigationArray,
 } from './interfaces';
+import { colors } from '../theme/colors';
+import { gradients } from '../theme/theme';
 
 const ARTICLES_ITEMS: ArticlesArray = [
   {
@@ -110,28 +110,28 @@ const ADVANTAGES_ITEMS: AdvantagesArray = [
     description:
       'The projects available on our website have their own categories that you can filter the results by to choose what you really want to support',
     icon: <Category />,
-    background: theme.gradient.rose,
+    background: gradients.rose,
   },
   {
     title: 'Start-up',
     description:
       'By registering as a startup, you can actively search for new investors and submit financing proposals to them',
     icon: <PlayArrow />,
-    background: theme.gradient.orange,
+    background: gradients.orange,
   },
   {
     title: 'Invest',
     description:
       'As an investor, you can follow your favorite startups and support them with your funds',
     icon: <MonetizationOn />,
-    background: theme.gradient.green,
+    background: gradients.green,
   },
   {
     title: 'News',
     description:
       'Here you will find news from your favorite startups and news that may interest you',
     icon: <FiberNew />,
-    background: theme.gradient.blue,
+    background: gradients.blue,
   },
 ];
 

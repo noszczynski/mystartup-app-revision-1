@@ -1,4 +1,4 @@
-import { ObjectOfStrings } from '../utils/interfaces';
+ import { ObjectOfStrings } from '../utils/interfaces';
 
 const socialColors: ObjectOfStrings = {
   facebook: '#1877f2',
@@ -25,6 +25,7 @@ const colors: ObjectOfStrings = {
   green: '#2FA84F',
   red: '#FA5D50',
   ocean: '#069697',
+  gray1000: '#242728',
   gray900: '#3E4345',
   gray700: '#5E6366',
   gray500: '#919699',
@@ -45,5 +46,35 @@ const colors: ObjectOfStrings = {
   spotify: socialColors.spotify,
 };
 
-export {socialColors};
-export default colors;
+ const lightThemeColors: ObjectOfStrings = {
+   ...colors,
+   primary: colors.blue,
+   secondary: colors.blue,
+   primaryBackground: colors.white,
+   secondaryBackground: colors.white,
+ }
+
+ const darkThemeColors: ObjectOfStrings = {
+   ...colors,
+   primary: colors.white,
+   secondary: colors.gray300,
+   primaryBackground: colors.gray900,
+   secondaryBackground: colors.gray1000,
+ }
+
+ const contrastThemeColors: ObjectOfStrings = {
+   ...colors,
+   primary: colors.white,
+   secondary: colors.light,
+   primaryBackground: colors.black,
+   secondaryBackground: colors.gray1000,
+ }
+
+
+export {
+ colors,
+  socialColors,
+  lightThemeColors,
+  darkThemeColors,
+  contrastThemeColors,
+ };

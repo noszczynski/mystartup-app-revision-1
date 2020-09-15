@@ -4,7 +4,7 @@ import { Image } from 'components';
 const Hero: any = styled.section`
   ${({ theme }) => css`
     min-height: calc(100vh - ${theme.size.space.xxl});
-    background-color: ${theme.color.white};
+    background-color: ${theme.color.primaryBackground};
     display: grid;
     grid-template-columns: 1fr;
     align-items: center;

@@ -9,9 +9,11 @@ import Image from '../Image/Image';
 import Container from '../Layout/Container';
 import HamburgerMenu from './HamburgerMenu';
 import { useNavbarContext } from '../../contexts/NavbarContext';
+import { useThemeContext } from '../../contexts/ThemeContext';
 
 const Navbar: FC = () => {
-  const { isMenuOpen, theme, toggleTheme } = useNavbarContext();
+  const { isMenuOpen } = useNavbarContext();
+  const { theme, toggleTheme } = useThemeContext();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isLinksDisabled, setIsLinksDisabled] = useState(false);
   const navigation = useRef(null);

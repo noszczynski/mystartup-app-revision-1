@@ -9,7 +9,8 @@ import { NavbarContextProvider, useNavbarContext } from '../../contexts/NavbarCo
 const Wrapper = styled.main<{isMenuOpen: boolean | undefined}>`
   width: 100%;
   max-width: 100%;
-
+  background-color: ${({ theme }) => theme.color.primaryBackground};
+  
   ${({ theme }) => theme.mq.laptopS} {
       overflow: auto;
       height: auto;

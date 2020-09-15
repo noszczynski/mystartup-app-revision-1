@@ -1,11 +1,11 @@
 import React, { FC } from 'react';
 import { defaultHover } from 'utils/animations';
 import { CATEGORY_COLORS, CATEGORY_LABELS } from 'utils/constants';
-import colors from 'theme/colors';
 import Element from './Article.styles';
 import Signature from '../Signature/Signature';
 import Title from '../Title/Title';
 import Image from '../Image/Image';
+import { colors } from '../../theme/colors';
 
 interface Props {
   article: {

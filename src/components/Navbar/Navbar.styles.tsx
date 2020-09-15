@@ -9,7 +9,7 @@ const Navigation: any = styled.div<{isOpen: boolean, scrolled: boolean}>`
     left: 0;
     margin: 0 auto;
     width: 100%;
-    background-color: ${theme.color.white};
+    background-color: ${theme.color.primaryBackground};
     z-index: 1000;
     
     ::after {

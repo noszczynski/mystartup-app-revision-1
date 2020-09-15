@@ -1,6 +1,6 @@
 import { boxShadows, buttonSizes } from './constants';
 import { ObjectOfStrings, ObjectOfAny, ThemeSizes, ObjectOfNumbers } from '../utils/interfaces';
-import colors from './colors';
+import { darkThemeColors, lightThemeColors, contrastThemeColors } from './colors';
 
 const breakpoints: ObjectOfNumbers = {
   mobileS: 375,
@@ -76,16 +76,38 @@ const utils: ObjectOfAny = {
   createBoxShadow,
 };
 
-const theme: ObjectOfAny = {
+const defaultTheme: ObjectOfAny = {
   utils,
   buttonSizes,
-  color: colors,
   size: sizes,
-  gradient: gradients,
   breakpoint: breakpoints,
   mq,
+}
+
+const lightTheme: ObjectOfAny = {
+  ...defaultTheme,
+  color: lightThemeColors,
+  gradient: gradients,
 };
 
-export { gradients, sizes, mq, breakpoints };
+const darkTheme: ObjectOfAny = {
+  ...defaultTheme,
+  color: darkThemeColors,
+  gradient: gradients,
+};
 
-export default theme;
+const contrastTheme: ObjectOfAny = {
+  ...defaultTheme,
+  color: contrastThemeColors,
+  gradient: gradients,
+};
+
+export {
+  gradients,
+  sizes,
+  mq,
+  breakpoints,
+  lightTheme,
+  darkTheme,
+  contrastTheme,
+};
