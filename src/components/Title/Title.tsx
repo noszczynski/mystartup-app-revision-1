@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
-import { colors } from '../../theme/colors';
 
 type Headings = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
@@ -12,12 +11,12 @@ interface Props {
 
 const defaultProps = {
   component: undefined,
-  color: colors.blue,
+  color: undefined,
   linkTo: undefined,
 };
 
 const Title: FC<Props> = ({
-  component, color, linkTo, children,
+  component, linkTo,color , children,
 }) => {
   const renderHeadline = () => {
     switch (component) {

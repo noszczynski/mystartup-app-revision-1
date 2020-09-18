@@ -5,7 +5,6 @@ import Element from './Article.styles';
 import Signature from '../Signature/Signature';
 import Title from '../Title/Title';
 import Image from '../Image/Image';
-import { colors } from '../../theme/colors';
 
 interface Props {
   article: {
@@ -52,7 +51,7 @@ const Article: FC<Props> = ({ article, signature, columns, children }) => {
           </Element.Head>
           <Element.Body>
             <Element.BodyInner>
-              <Title component="h3" color={colors.dark} linkTo={`/news/${id}`}>
+              <Title component="h3" linkTo={`/news/${id}`}>
                 {title}
               </Title>
               <Element.Description>{children}</Element.Description>

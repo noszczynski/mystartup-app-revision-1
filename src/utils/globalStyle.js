@@ -1,7 +1,7 @@
 import { createGlobalStyle, css } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
-  ${({ theme: { size, gradient, color, mq } }) => css`
+  ${({ theme: { size, color, mq } }) => css`
     *, *::after, *::before {
       box-sizing: border-box;
     }
@@ -19,14 +19,14 @@ const GlobalStyle = createGlobalStyle`
     
     h1, h2 {
       font-weight: ${size.weight.bold};
-      background: ${gradient.violet};
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
     }
     
     h1 {
       font-size: 40px;
       line-height: 48px;
+      background: ${color.h1};
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       
       ${mq.tablet} {
         font-size: ${size.font.xxl};
@@ -37,6 +37,9 @@ const GlobalStyle = createGlobalStyle`
     h2 {
       font-size: ${size.font.lg};
       line-height: 32px;
+      background: ${color.h2};
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       
       ${mq.tablet} {
         font-size: ${size.font.xl};
@@ -67,6 +70,10 @@ const GlobalStyle = createGlobalStyle`
     h6 {
       font-size: ${size.font.sm};
       line-height: ${size.font.sm};
+    }
+    
+    h3, h4, h5, h6 {
+      color: ${color.headers};
     }
     
     h1, h2, h3, h4, h5, h6, p, ul, ol {
@@ -125,6 +132,7 @@ const GlobalStyle = createGlobalStyle`
     
     p {
       font-size: ${size.font.xs};
+      color: ${color.p};
       
       ${mq.tablet} {
         font-size: ${size.font.md};

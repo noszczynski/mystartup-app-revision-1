@@ -2,7 +2,6 @@ import React, { FC } from 'react';
 import styled from 'styled-components';
 import Image from '../Image/Image';
 import Title from '../Title/Title';
-import { colors } from '../../theme/colors';
 
 const StyledSignature = styled.div`
   display: flex;
@@ -43,8 +42,8 @@ const Signature: FC<Props> = ({
   <StyledSignature>
     <Image src={image} alt="start-up cover" linkTo={`/user/${id}`} />
     <StyledSignatureInner>
-      <Title component="h5" color={colors.dark} linkTo={`/user/${id}`}>{name}</Title>
-      <Title component="h6" color={colors.dark}>
+      <Title component="h5" linkTo={`/user/${id}`}>{name}</Title>
+      <Title component="h6">
         {children}
       </Title>
     </StyledSignatureInner>

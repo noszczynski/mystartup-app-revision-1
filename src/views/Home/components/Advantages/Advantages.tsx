@@ -2,8 +2,10 @@ import React, { FC } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { Button, Title, Container, SmoothShowItems } from 'components';
-import { ADVANTAGES_ITEMS } from 'utils/constants';
+import { Category, FiberNew, MonetizationOn, PlayArrow } from '@material-ui/icons';
 import { colors } from '../../../../theme/colors';
+import { AdvantagesArray } from '../../../../utils/interfaces';
+import { gradients } from '../../../../theme/theme';
 
 const StyledSection = styled.section`
   display: flex;
@@ -90,6 +92,37 @@ const StyledDescription = styled.p`
     font-size: 16px;
   }
 `;
+
+const ADVANTAGES_ITEMS: AdvantagesArray = [
+  {
+    title: 'Categories',
+    description:
+      'The projects available on our website have their own categories that you can filter the results by to choose what you really want to support',
+    icon: <Category />,
+    background: gradients.rose,
+  },
+  {
+    title: 'Start-up',
+    description:
+      'By registering as a startup, you can actively search for new investors and submit financing proposals to them',
+    icon: <PlayArrow />,
+    background: gradients.orange,
+  },
+  {
+    title: 'Invest',
+    description:
+      'As an investor, you can follow your favorite startups and support them with your funds',
+    icon: <MonetizationOn />,
+    background: gradients.green,
+  },
+  {
+    title: 'News',
+    description:
+      'Here you will find news from your favorite startups and news that may interest you',
+    icon: <FiberNew />,
+    background: gradients.blue,
+  },
+];
 
 const Advantages: FC = () => (
   <Container>

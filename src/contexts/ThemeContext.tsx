@@ -7,7 +7,7 @@ type ContextProps = {
 }
 
 const initialState = {
-  theme: THEME.LIGHT,
+  theme: THEME.DARK,
 }
 
 const ThemeContext = React.createContext<Partial<ContextProps>>(initialState)

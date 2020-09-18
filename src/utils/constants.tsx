@@ -1,12 +1,4 @@
 import {
-  Category,
-  MonetizationOn,
-  PlayArrow,
-  FiberNew,
-} from '@material-ui/icons';
-import React from 'react';
-import {
-  AdvantagesArray,
   CommentArray,
   ObjectOfStrings,
   ArticlesArray,
@@ -14,7 +6,6 @@ import {
   FooterNavigationArray,
 } from './interfaces';
 import { colors } from '../theme/colors';
-import { gradients } from '../theme/theme';
 
 const ARTICLES_ITEMS: ArticlesArray = [
   {
@@ -101,37 +92,6 @@ const ARTICLES_ITEMS: ArticlesArray = [
     },
     content:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos doloremque eaque nam soluta tenetur! Accusamus aperiam dicta dolore enim excepturi, hic ipsam, laboriosam, magnam neque quae quam quisquam tempore voluptate.',
-  },
-];
-
-const ADVANTAGES_ITEMS: AdvantagesArray = [
-  {
-    title: 'Categories',
-    description:
-      'The projects available on our website have their own categories that you can filter the results by to choose what you really want to support',
-    icon: <Category />,
-    background: gradients.rose,
-  },
-  {
-    title: 'Start-up',
-    description:
-      'By registering as a startup, you can actively search for new investors and submit financing proposals to them',
-    icon: <PlayArrow />,
-    background: gradients.orange,
-  },
-  {
-    title: 'Invest',
-    description:
-      'As an investor, you can follow your favorite startups and support them with your funds',
-    icon: <MonetizationOn />,
-    background: gradients.green,
-  },
-  {
-    title: 'News',
-    description:
-      'Here you will find news from your favorite startups and news that may interest you',
-    icon: <FiberNew />,
-    background: gradients.blue,
   },
 ];
 
@@ -327,7 +287,6 @@ const THEME: ObjectOfStrings ={
 };
 
 export {
-  ADVANTAGES_ITEMS,
   ARTICLES_ITEMS,
   COMMENTS,
   CATEGORY_COLORS,

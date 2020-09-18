@@ -1,6 +1,7 @@
+import { THEME } from 'utils/constants';
 import { boxShadows, buttonSizes } from './constants';
 import { ObjectOfStrings, ObjectOfAny, ThemeSizes, ObjectOfNumbers } from '../utils/interfaces';
-import { darkThemeColors, lightThemeColors, contrastThemeColors } from './colors';
+import { darkThemeColors, lightThemeColors, contrastThemeColors, gradients } from './colors';
 
 const breakpoints: ObjectOfNumbers = {
   mobileS: 375,
@@ -28,14 +29,6 @@ const mq: ObjectOfStrings = {
   desktopS: `@media screen and (min-width: ${breakpoints.desktopS}px)`,
   desktopM: `@media screen and (min-width: ${breakpoints.desktopM}px)`,
   desktopL: `@media screen and (min-width: ${breakpoints.desktopL}px)`,
-};
-
-const gradients: ObjectOfStrings = {
-  orange: 'linear-gradient(to right, #F2Af8C, #E6753A)',
-  green: 'linear-gradient(to right, #57CBAF, #2FA84F)',
-  rose: 'linear-gradient(to right, #F4977B, #F9567E)',
-  blue: 'linear-gradient(to right, #9BAAFA, #367BF5)',
-  violet: 'linear-gradient(to right, #4F586A, #367BF5)',
 };
 
 const sizes: ThemeSizes = {
@@ -88,18 +81,21 @@ const lightTheme: ObjectOfAny = {
   ...defaultTheme,
   color: lightThemeColors,
   gradient: gradients,
+  activeTheme: THEME.LIGHT
 };
 
 const darkTheme: ObjectOfAny = {
   ...defaultTheme,
   color: darkThemeColors,
   gradient: gradients,
+  activeTheme: THEME.DARK
 };
 
 const contrastTheme: ObjectOfAny = {
   ...defaultTheme,
   color: contrastThemeColors,
   gradient: gradients,
+  activeTheme: THEME.CONTRAST
 };
 
 export {

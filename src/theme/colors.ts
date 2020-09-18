@@ -46,18 +46,34 @@ const colors: ObjectOfStrings = {
   spotify: socialColors.spotify,
 };
 
+ const gradients: ObjectOfStrings = {
+   orange: 'linear-gradient(to right, #F2Af8C, #E6753A)',
+   green: 'linear-gradient(to right, #57CBAF, #2FA84F)',
+   rose: 'linear-gradient(to right, #F4977B, #F9567E)',
+   blue: 'linear-gradient(to right, #9BAAFA, #367BF5)',
+   violet: 'linear-gradient(to right, #4F586A, #367BF5)',
+ };
+
  const lightThemeColors: ObjectOfStrings = {
    ...colors,
    primary: colors.blue,
    secondary: colors.blue,
+   h1: gradients.violet,
+   h2: gradients.violet,
+   p: colors.gray900,
+   headers: gradients.dark,
    primaryBackground: colors.white,
-   secondaryBackground: colors.white,
+   secondaryBackground: colors.gray50,
  }
 
  const darkThemeColors: ObjectOfStrings = {
    ...colors,
    primary: colors.white,
-   secondary: colors.gray300,
+   secondary: colors.yellow,
+   h1: gradients.orange,
+   h2: colors.white,
+   p: colors.white,
+   headers: colors.white,
    primaryBackground: colors.gray900,
    secondaryBackground: colors.gray1000,
  }
@@ -66,6 +82,10 @@ const colors: ObjectOfStrings = {
    ...colors,
    primary: colors.white,
    secondary: colors.light,
+   h1: colors.yellow,
+   h2: colors.yellow,
+   p: colors.yellow,
+   headers: colors.yellow,
    primaryBackground: colors.black,
    secondaryBackground: colors.gray1000,
  }
@@ -73,6 +93,7 @@ const colors: ObjectOfStrings = {
 
 export {
  colors,
+  gradients,
   socialColors,
   lightThemeColors,
   darkThemeColors,
