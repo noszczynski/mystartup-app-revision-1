@@ -15,9 +15,14 @@ import Button from './Button/Button';
 import Box from './Box/Box';
 import Footer from './Footer/Footer';
 import SocialIcon from './SocialIcon/SocialIcon';
-import Page from './Page/Page';
+import Section from './Section';
+import AnimateContent from './AnimateContent';
+import HamburgerMenu from './Navbar/HamburgerMenu';
 import SmoothShowItems from './SmoothShowItems/SmoothShowItems';
+import Page from './Page/Page';
 import SocialWrapper from './SocialWrapper/SocialWrapper';
+import SideBySideSection from './SideBySideSection/SideBySideSection';
+import TwoSideItem from './SideBySideSection/TwoSideItem';
 
 export {
   Article,
@@ -40,4 +45,9 @@ export {
   SocialIcon,
   Page,
   SmoothShowItems,
+  Section,
+  AnimateContent,
+  HamburgerMenu,
+  SideBySideSection,
+  TwoSideItem,
 };

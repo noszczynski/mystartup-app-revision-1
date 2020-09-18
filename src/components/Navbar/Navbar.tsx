@@ -2,8 +2,7 @@ import React, { FC, useEffect, useRef, useState } from 'react';
 import Element from 'components/Navbar/Navbar.styles';
 import { Search, AccountCircle, Brightness7, Brightness4 } from '@material-ui/icons';
 import * as _ from 'lodash';
-import gsap from 'gsap';
-import { NAV_ITEMS, THEME } from 'utils/constants';
+import { THEME } from 'utils/constants';
 import { logoRight as logo } from 'assets';
 import Image from '../Image/Image';
 import Container from '../Layout/Container';
@@ -15,44 +14,20 @@ const Navbar: FC = () => {
   const { isMenuOpen } = useNavbarContext();
   const { theme, toggleTheme } = useThemeContext();
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isLinksDisabled, setIsLinksDisabled] = useState(false);
   const navigation = useRef(null);
   const wrapper = useRef(null);
 
   useEffect(() => {
-    const fn = _.debounce( () => {
+    const delay = _.debounce(() => {
       setIsScrolled(window.scrollY > 200);
     }, 60);
 
-    window.addEventListener('scroll', fn);
+    window.addEventListener('scroll', delay);
 
     return () => {
-      window.removeEventListener('scroll', fn, true);
+      window.removeEventListener('scroll', delay, true);
     };
   }, []);
-
-  const toggleDisableNavItems = () => {
-    setIsLinksDisabled(prevState => !prevState);
-  };
-
-  const handleMenuClick = (e: Event) => {
-    if (isLinksDisabled) {
-      e.preventDefault();
-    } else {
-      setIsLinksDisabled(true);
-      const tl = gsap.timeline();
-
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      const [,items] = navigation.current.children;
-      const {children} = items;
-
-      tl
-        .to(children, {y: '-=100', stagger: 0.2})
-        .to(children, {y: 0})
-        .call(toggleDisableNavItems);
-    }
-  };
 
   return (
     <Element isOpen={isMenuOpen} scrolled={isScrolled} ref={wrapper}>
@@ -61,19 +36,6 @@ const Navbar: FC = () => {
           <Element.LogoWrapper>
             <Image src={logo} alt="logo" linkTo="/" />
           </Element.LogoWrapper>
-          <Element.NavigationInner startHeight="-=100" duration={0.75}>
-            {NAV_ITEMS.map(({label, to, exact, alt}) => (
-              <Element.Item
-                exact={exact}
-                to={to}
-                alt={alt}
-                key={label}
-                onClick={handleMenuClick}
-              >
-                {label}
-              </Element.Item>
-            ))}
-          </Element.NavigationInner>
           <Element.ButtonWrapper>
             <Element.SearchButton>
               <Search />

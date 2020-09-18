@@ -1,100 +1,113 @@
-import React, { FC } from 'react';
-import styled, {css} from 'styled-components';
-import { NavLink } from 'react-router-dom';
+import React, { FC, useState } from 'react';
 import { NAV_ITEMS } from 'utils/constants';
+import { HamburgerMenu } from 'components';
+import _ from 'lodash';
+import { hot } from 'react-hot-loader/root';
 import Container from '../Layout/Container';
-import HamburgerMenu from './HamburgerMenu';
 import { useNavbarContext } from '../../contexts/NavbarContext';
+import Element from './ResponsiveMenu.styles';
 
-const Wrapper = styled.div<{isOpen: boolean | undefined}>`
-  ${({ theme, isOpen }) => css`
-    z-index: 1000;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100vw;
-    background-color: ${theme.color.primaryBackground};
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    transition: transform .2s ease-in-out;
-    transform: translateX(-${isOpen ? 0 : 100}%);
-    
-    > div {
-      height: 100%;
-    }
-  `}`;
+const transitions = {
+  type: 'spring',
+  stiffness: 10,
+  ease: 'anticipate',
+};
 
-const HamburgerWrapper = styled.div`
-    height: 30%;
-`;
+const itemsContainer = {
+  in: {
+    transition: {
+      duration: 2,
+      staggerChildren: 0.1,
+    },
+  },
+  out: {
+    transition: {
+      duration: 2,
+      staggerChildren: 0.1,
+    },
+  },
+};
 
-const HamburgerWrapperInner = styled.div`
-  ${({theme}) => css`
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    height: 76px;
-    padding: 0 ${theme.size.space.md};
-    
-    ${theme.mq.mobileL} {
-      height: 90px;
-    }
-  `}`;
+const item = {
+  in: {
+    x: '200%',
+  },
+  out: {
+    x: '-200%',
+  },
+  exit: {
+    x: '200%',
+  },
+};
 
-const MenuWrapper = styled.nav`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100%;
-  justify-content: flex-start;
-`;
-
-const MenuItem = styled(NavLink)`
-  ${({ theme }) => css`
-    padding: ${theme.size.space.sm} ${theme.size.space.md};
-    color: ${theme.color.light};
-    font-size: ${theme.size.font.xl};
-    font-weight: ${theme.size.weight.bold};
-    border-radius: .5rem;
-    background: ${theme.gradient.violet};
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    
-    &.active {
-      background: ${theme.gradient.orange};
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-  `}`;
+const menuContainer = {
+  initial: {
+    x: '-100vw',
+    transition: {
+      duration: 0.5,
+    },
+  },
+  open: {
+    x: 0,
+    transition: {
+      duration: 0.5,
+    },
+  },
+  closed: {
+    x: '-100vw',
+    transition: {
+      duration: 0.5,
+    },
+  },
+};
 
 const ResponsiveMenu: FC = () => {
-  const { isMenuOpen, toggleMenuOpen } = useNavbarContext()
+  const { isMenuOpen, toggleMenuOpen } = useNavbarContext();
+  const [clickedItem, setClickedItem] = useState(false);
 
   const handleLinkClick = () => {
-    toggleMenuOpen()
+    const delay = _.debounce(() => {
+      toggleMenuOpen();
+      setClickedItem(false);
+    }, 2000);
+
+    setClickedItem(true);
+    delay();
   };
 
   return (
-    <Wrapper isOpen={isMenuOpen}>
+    <Element
+      initial="initial"
+      animate={isMenuOpen ? 'open' : 'closed'}
+      variants={menuContainer}
+      transition={transitions}
+    >
       <Container>
-        <HamburgerWrapper style={{ height: '30%' }}>
-          <HamburgerWrapperInner>
-            <HamburgerMenu />
-          </HamburgerWrapperInner>
-        </HamburgerWrapper>
-        <MenuWrapper>
-          {NAV_ITEMS.map(({label, to, exact}) => (
-            <MenuItem exact={exact} to={to} key={label} onClick={handleLinkClick}>
-              {label}
-            </MenuItem>
+        <Element.HamburgerWrapper style={{ height: '30%' }}>
+          <Element.HamburgerWrapperInner>
+            <HamburgerMenu isLight openVariant />
+          </Element.HamburgerWrapperInner>
+        </Element.HamburgerWrapper>
+        <Element.MenuWrapper variants={itemsContainer} animate={clickedItem ? 'in' : 'out'}>
+          {NAV_ITEMS.map(({ label, to, exact }) => (
+            <Element.MenuItemWrapper key={label}>
+              <Element.MenuItem exact={exact} to={to} onClick={handleLinkClick}>
+                {label}
+              </Element.MenuItem>
+              <Element.AnimationBox
+                variants={item}
+                initial="out"
+                exit="exit"
+                transition={{
+                  duration: 2,
+                }}
+              />
+            </Element.MenuItemWrapper>
           ))}
-        </MenuWrapper>
+        </Element.MenuWrapper>
       </Container>
-    </Wrapper>
+    </Element>
   );
 };
 
-export default ResponsiveMenu;
+export default hot(ResponsiveMenu);
