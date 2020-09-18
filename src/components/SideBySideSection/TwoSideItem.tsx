@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import styled, { css } from 'styled-components';
 import { AnimateContent, Description, Image, Title } from 'components';
-import colors from '../../theme/colors';
+import { colors } from '../../theme/colors';
 
 const Element: any = styled.article`
   ${({ theme }) => css`

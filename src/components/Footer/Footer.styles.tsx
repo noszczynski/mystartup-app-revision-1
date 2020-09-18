@@ -1,6 +1,5 @@
 import styled, {css} from 'styled-components';
 import { motion } from 'framer-motion';
-import { THEME } from '../../utils/constants';
 
 const Footer: any = styled.footer`
   ${({ theme }) => css`
@@ -60,7 +59,7 @@ const Section = styled.section`
     }
     
     article:first-child nav:last-child {
-      background-color: ${theme.activeTheme === THEME.LIGHT ? theme.color.yellow : theme.color.dark}40;
+      background-color: ${theme.color.bottomMenuHighlighted};
     }
   `}`;
 
@@ -74,7 +73,7 @@ const Column = styled.article`
 const Navigation = styled(motion.nav)`
   ${({ theme }) => css`
     padding: 1rem;
-    background-color: ${theme.color.secondaryBackground};
+    background-color: ${theme.color.bottomMenu};
     border-radius: .5rem;
     
     ul, ol {

@@ -1,4 +1,6 @@
- import { ObjectOfStrings } from '../utils/interfaces';
+import { hexToRgba } from 'utils/utils';
+import { ObjectOfAny, ObjectOfStrings } from '../utils/interfaces';
+import { THEME } from '../utils/constants';
 
 const socialColors: ObjectOfStrings = {
   facebook: '#1877f2',
@@ -46,6 +48,20 @@ const colors: ObjectOfStrings = {
   spotify: socialColors.spotify,
 };
 
+const categoryColors: ObjectOfStrings = {
+  EVENTS: colors.blue,
+  CULTURE_AND_ART: colors.yellow,
+  BUSINESS: colors.green,
+  POLITICS: colors.gray900,
+  HEALTH: colors.red,
+  SPORT: colors.blue,
+  GAMES: colors.green,
+  MUSIC: colors.red,
+  FOOD_AND_CRAFT: colors.yellow,
+  DESIGN_AND_TECH: colors.ocean,
+  FILM_AND_COMICS: colors.ocean,
+};
+
  const gradients: ObjectOfStrings = {
    orange: 'linear-gradient(to right, #F2Af8C, #E6753A)',
    green: 'linear-gradient(to right, #57CBAF, #2FA84F)',
@@ -54,40 +70,106 @@ const colors: ObjectOfStrings = {
    violet: 'linear-gradient(to right, #4F586A, #367BF5)',
  };
 
+ const elements: ObjectOfAny = {
+   h1: {
+     light: gradients.violet,
+     dark: gradients.orange,
+     contrast: colors.yellow
+   },
+   h2: {
+     light: gradients.violet,
+     dark: colors.white,
+     contrast: colors.white
+   },
+   headers: {
+     light: colors.dark,
+     dark: colors.white,
+     contrast: colors.yellow
+   },
+   bodyBg: {
+     light: colors.white,
+     dark: colors.gray1000,
+     contrast: colors.dark
+   },
+   p: {
+     light: colors.gray900,
+     dark: colors.white,
+     contrast: colors.yellow
+   },
+   icon: {
+     light: colors.blue,
+     dark: colors.yellow,
+     contrast: colors.yellow
+   },
+   iconBg: {
+     light: hexToRgba(colors.blue, 0.2),
+     dark: hexToRgba(colors.yellow, 0.2),
+     contrast: hexToRgba(colors.yellow, 0.2)
+   },
+   elementBg: {
+     light: colors.white,
+     dark: colors.gray900,
+     contrast: colors.gray900
+   },
+   highlightedElementBg: {
+     light: colors.gray50,
+     dark: colors.gray900,
+     contrast: colors.dark
+   },
+   bottomMenu: {
+     light: colors.gray50,
+     dark: colors.gray900,
+     contrast: colors.dark
+   },
+   bottomMenuHighlighted: {
+     light: hexToRgba(colors.yellow, 0.2),
+     dark: hexToRgba(colors.ocean, 0.2),
+     contrast: colors.dark
+   },
+   button: {
+     light: colors.blue,
+     dark: gradients.orange,
+     contrast: colors.yellow
+   },
+   buttonText: {
+     light: colors.white,
+     dark: colors.gray1000,
+     contrast: colors.dark
+   },
+   hamburger: {
+     light: colors.dark,
+     dark: colors.white,
+     contrast: colors.dark
+   }
+ }
+
+ export const generateElements = (theme: string ): any => {
+   // returns object {h1: '#ffffff', h2: '#323232', button: '#222', ...}
+
+   const keys = Object.keys(elements)
+
+   return keys.reduce((acc, key) => {
+     const element = elements[key]
+     const o: string = element[theme.toLowerCase()]
+
+     Object.assign(acc, { [key]: o })
+     return acc
+   }, {})
+ }
+
  const lightThemeColors: ObjectOfStrings = {
    ...colors,
-   primary: colors.blue,
-   secondary: colors.blue,
-   h1: gradients.violet,
-   h2: gradients.violet,
-   p: colors.gray900,
-   headers: gradients.dark,
-   primaryBackground: colors.white,
-   secondaryBackground: colors.gray50,
+   ...generateElements(THEME.LIGHT),
  }
 
  const darkThemeColors: ObjectOfStrings = {
    ...colors,
-   primary: colors.white,
-   secondary: colors.yellow,
-   h1: gradients.orange,
-   h2: colors.white,
-   p: colors.white,
-   headers: colors.white,
-   primaryBackground: colors.gray900,
-   secondaryBackground: colors.gray1000,
+   ...generateElements(THEME.DARK),
  }
 
  const contrastThemeColors: ObjectOfStrings = {
    ...colors,
-   primary: colors.white,
-   secondary: colors.light,
-   h1: colors.yellow,
-   h2: colors.yellow,
-   p: colors.yellow,
-   headers: colors.yellow,
-   primaryBackground: colors.black,
-   secondaryBackground: colors.gray1000,
+   ...generateElements(THEME.CONTRAST),
  }
 
 
@@ -98,4 +180,5 @@ export {
   lightThemeColors,
   darkThemeColors,
   contrastThemeColors,
+  categoryColors,
  };

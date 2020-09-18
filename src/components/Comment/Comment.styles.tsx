@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const Comment: any = styled(motion.article)`
   border-radius: .5rem;
-  background-color: ${({ theme }) => theme.color.secondaryBackground};
+  background-color: ${({ theme }) => theme.color.elementBg};
   padding: ${({ theme }) => theme.size.space.md};
   display: flex;
   flex-direction: column;
@@ -14,7 +14,7 @@ const Comment: any = styled(motion.article)`
 
 const Avatar = styled.figure`
   border-radius: 100%;
-  border: 1px solid ${({ theme }) => theme.color.white};
+  border: 1px solid ${({ theme }) => theme.color.elementBg};
   width: 64px;
   height: 64px;
   min-height: 64px;

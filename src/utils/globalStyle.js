@@ -25,6 +25,7 @@ const GlobalStyle = createGlobalStyle`
       padding: 0;
       margin: 0;
       font-family: Poppins, Arial, sans-serif;
+      background-color: ${color.bodyBg};
     }
 
     h1,
@@ -139,12 +140,11 @@ const GlobalStyle = createGlobalStyle`
       padding: 0;
       width: auto;
       overflow: visible;
-      background: transparent;
-      color: inherit;
       text-align: inherit;
       line-height: inherit;
       -webkit-appearance: none;
-
+      background-color: transparent;
+      
       ${mq.tablet} {
         font-size: ${size.font.md};
       }

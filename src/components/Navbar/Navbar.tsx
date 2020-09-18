@@ -3,7 +3,7 @@ import Element from 'components/Navbar/Navbar.styles';
 import { Search, AccountCircle, Brightness7, Brightness4 } from '@material-ui/icons';
 import * as _ from 'lodash';
 import { THEME } from 'utils/constants';
-import { logoRight as logo } from 'assets';
+import { logoRight as logo, logoLightRight as logoWhite } from 'assets';
 import Image from '../Image/Image';
 import Container from '../Layout/Container';
 import HamburgerMenu from './HamburgerMenu';
@@ -34,7 +34,7 @@ const Navbar: FC = () => {
       <Container>
         <Element.Navigation ref={navigation}>
           <Element.LogoWrapper>
-            <Image src={logo} alt="logo" linkTo="/" />
+            <Image src={theme === THEME.LIGHT ? logo : logoWhite} alt="logo" linkTo="/" />
           </Element.LogoWrapper>
           <Element.ButtonWrapper>
             <Element.SearchButton>

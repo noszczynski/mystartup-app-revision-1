@@ -10,7 +10,7 @@ const Wrapper = styled.main<{ isMenuOpen: boolean | undefined }>`
   width: 100%;
   max-width: 100%;
   margin-top: ${({ theme }) => theme.size.space.xxl};
-  background-color: ${({ theme }) => theme.color.primaryBackground};
+  background-color: ${({ theme }) => theme.color.bodyBg};
   
   ${({ theme }) => theme.mq.laptopS} {
     overflow: auto;

@@ -21,7 +21,7 @@ const StyledGridWrapper = styled(SmoothShowItems)`
 
     article:first-child,
     article:last-child {
-      background-color: ${theme.color.white};
+      background-color: ${theme.color.highlightedElementBg};
       box-shadow: 0 5px 15px -8px rgba(0, 0, 0, 0.5);
     }
 

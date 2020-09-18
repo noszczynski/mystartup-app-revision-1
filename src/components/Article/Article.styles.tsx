@@ -6,7 +6,7 @@ const Article: any = styled(motion.article)<{columns: string | undefined}>`
   display: flex;
   flex-direction: column;
   width: 100%;
-  background-color: ${({ theme }) => theme.color.secondaryBackground};
+  background-color: ${({ theme }) => theme.color.elementBg};
   overflow: hidden;
   
   ${({ theme }) => theme.mq.tablet} {

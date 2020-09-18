@@ -5,7 +5,6 @@ import {
   NavItemsArray,
   FooterNavigationArray,
 } from './interfaces';
-import { colors } from '../theme/colors';
 
 const ARTICLES_ITEMS: ArticlesArray = [
   {
@@ -266,20 +265,6 @@ const BOTTOM_NAV_ITEMS: FooterNavigationArray = [
   }]
 ];
 
-const CATEGORY_COLORS: ObjectOfStrings = {
-  EVENTS: colors.blue,
-  CULTURE_AND_ART: colors.yellow,
-  BUSINESS: colors.green,
-  POLITICS: colors.gray900,
-  HEALTH: colors.red,
-  SPORT: colors.blue,
-  GAMES: colors.green,
-  MUSIC: colors.red,
-  FOOD_AND_CRAFT: colors.yellow,
-  DESIGN_AND_TECH: colors.ocean,
-  FILM_AND_COMICS: colors.ocean,
-};
-
 const THEME: ObjectOfStrings ={
   LIGHT: 'LIGHT',
   DARK: 'DARK',
@@ -289,7 +274,6 @@ const THEME: ObjectOfStrings ={
 export {
   ARTICLES_ITEMS,
   COMMENTS,
-  CATEGORY_COLORS,
   CATEGORY_LABELS,
   NAV_ITEMS,
   BOTTOM_NAV_ITEMS,
