@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { Button, Title, Container, SmoothShowItems } from 'components';
+import { Button, Title, Container, SmoothShowItems, AnimateContent, Description } from 'components';
 import { ADVANTAGES_ITEMS } from 'utils/constants';
 import colors from 'theme/colors';
 
@@ -10,8 +10,7 @@ const StyledSection = styled.section`
   flex-direction: column;
   row-gap: ${({ theme }) => theme.size.space.xl};
   column-gap: ${({ theme }) => theme.size.space.xl};
-  text-align: center;
-  align-items: center;
+  align-items: flex-start;
 `;
 
 const StyledWrapper = styled(SmoothShowItems)`
@@ -94,7 +93,19 @@ const StyledDescription = styled.p`
 const Advantages: FC = () => (
   <Container>
     <StyledSection>
-      <Title>What we offer</Title>
+      <div>
+        <AnimateContent onScroll position="left">
+          <Title>What we offer</Title>
+        </AnimateContent>
+        <AnimateContent onScroll delay={1} position="left">
+          <Description small width="50%">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias eveniet iusto libero
+            nemo vel voluptatibus! Adipisci id maiores odit veritatis. Lorem ipsum dolor sit amet,
+            consectetur adipisicing elit. Alias eveniet iusto libero nemo vel voluptatibus! Adipisci
+            id maiores odit veritatis
+          </Description>
+        </AnimateContent>
+      </div>
       <StyledWrapper>
         {ADVANTAGES_ITEMS.map(({ title, description, icon, background }) => (
           <StyledArticle

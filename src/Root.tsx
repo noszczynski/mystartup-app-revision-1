@@ -4,7 +4,6 @@ import Theme from './components/Theme/Theme';
 import MainRouter from './views/MainRouter';
 
 const Root: FC = () => {
-
   return (
     <Theme>
       <Router>

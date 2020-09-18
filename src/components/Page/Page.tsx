@@ -1,50 +1,52 @@
 import React, { FC, useEffect } from 'react';
-import styled  from 'styled-components';
+import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
 const Wrapper = styled.div`
-  position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  grid-row-gap: ${({ theme }) => theme.size.space.xxl};
 `;
 
 const Element = styled(motion.div)`
-  min-height: 60vh;
-  width: 100%;
-  position: relative;
+  position: fixed;
+  min-height: 100vh;
+  height: 100vh;
+  width: 800vw;
   top: 0;
   left: 0;
-  
-  ${({ theme }) => theme.mq.tablet} {
-    min-height: 100vh;
-  }
+  z-index: 1000;
+  background-color: ${({ theme }) => theme.color.dark};
 `;
 
 const pageVariants = {
   initial: {
-    opacity: 0,
-    x: '-100vw',
-    scale: 0.8
+    x: '-400vw',
+    transition: {
+      duration: 2,
+    },
   },
   in: {
-    opacity: 1,
-    x: 0,
-    scale: 1
+    x: '100vw',
+    transition: {
+      duration: 1,
+    },
   },
   out: {
-    opacity: 0,
-    x: '100vw',
-    scale: 1.2
-  }
+    x: '-400vw',
+    transition: {
+      duration: 2,
+    },
+  },
 };
 
 const pageTransition = {
-  type: 'tween',
+  type: 'linear',
   ease: 'anticipate',
-  duration: 1
 };
 
-const Page:FC = ({children, ...props }) => {
-
+const Page: FC = ({ children, ...props }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -58,9 +60,8 @@ const Page:FC = ({children, ...props }) => {
         variants={pageVariants}
         transition={pageTransition}
         {...props}
-      >
-        {children}
-      </Element>
+      />
+      {children}
     </Wrapper>
   );
 };

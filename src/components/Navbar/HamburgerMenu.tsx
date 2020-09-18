@@ -2,16 +2,16 @@ import React, { FC } from 'react';
 import styled, { css } from 'styled-components';
 import { useNavbarContext } from '../../contexts/NavbarContext';
 
-const hamburgerBarMixin = () => css`
-  background-color: ${({theme}) => theme.color.dark};
+const hamburgerBarMixin = (isLight: boolean | undefined) => css`
+  background-color: ${({theme}) => isLight ? theme.color.white : theme.color.dark};
   display: block;
   border-radius: 8px;
   height: .125rem;
   width: 80%;
 `;
 
-const Element = styled.button<{ isOpen: boolean | undefined }>`
-  ${({ theme }) => css`
+const Element = styled.button<{ isLight: boolean | undefined, isOpen: boolean | undefined }>`
+  ${({ theme, isLight, isOpen }) => css`
     cursor:pointer;
     padding: 0.4rem;
     display: flex;
@@ -20,6 +20,14 @@ const Element = styled.button<{ isOpen: boolean | undefined }>`
     height: 32px;
     width: 32px;
     z-index: 1000;
+    
+    :hover span::after{
+      transform: translateY(2px);
+    }
+    
+    :hover span::before{
+      transform: translateY(-2px);
+    }
     
     ${theme.mq.mobileL} {
       height: 48px;
@@ -31,18 +39,19 @@ const Element = styled.button<{ isOpen: boolean | undefined }>`
     }
     
     span {
-      ${hamburgerBarMixin()};
+      ${hamburgerBarMixin(isLight)};
       
       position: relative;
       
       ::after,
       ::before {
-        ${hamburgerBarMixin()};
+        ${hamburgerBarMixin(isLight)};
+        content: '';
         background-color: inherit;
         position: absolute;
         top: 0;
-        left: 0;
-        content: '';
+        transition: transform .2s ease-in-out;
+        ${isOpen ? css` right: 0; ` : css` left: 0; `};
       }
       
       ::after {
@@ -55,14 +64,30 @@ const Element = styled.button<{ isOpen: boolean | undefined }>`
     }
   `}`;
 
-const HamburgerMenu: FC = () => {
-  const {isMenuOpen, toggleMenuOpen} = useNavbarContext()
+interface Props {
+  isLight?: boolean | undefined,
+  openVariant?: boolean | undefined,
+}
+
+const defaultProps = {
+  isLight: false,
+  openVariant: false,
+};
+
+const HamburgerMenu: FC<Props> = ({isLight, openVariant}) => {
+  const { toggleMenuOpen } = useNavbarContext();
 
   return (
-    <Element isOpen={isMenuOpen} onClick={toggleMenuOpen}>
+    <Element
+      isOpen={openVariant}
+      onClick={toggleMenuOpen}
+      isLight={isLight}
+    >
       <span />
     </Element>
   );
 };
+
+HamburgerMenu.defaultProps = defaultProps;
 
 export default HamburgerMenu;

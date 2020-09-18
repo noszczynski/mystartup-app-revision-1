@@ -1,6 +1,14 @@
 import React, { FC } from 'react';
 import styled, { css } from 'styled-components';
-import { Button, Comment, Title, Container, SmoothShowItems } from 'components';
+import {
+  Button,
+  Comment,
+  Title,
+  SmoothShowItems,
+  Section,
+  AnimateContent,
+  Description,
+} from 'components';
 import { COMMENTS } from 'utils/constants';
 
 const StyledWrapper = styled.section`
@@ -47,7 +55,7 @@ const BigCommentsRow = styled(SmoothShowItems)`
       background-color: ${theme.color.white};
       box-shadow: 0 5px 15px -8px rgba(0, 0, 0, 0.5);
     }
-  `}
+  `};
 `;
 
 const RegularCommentsRow = styled(SmoothShowItems)`
@@ -85,13 +93,23 @@ const RegularCommentsRow = styled(SmoothShowItems)`
         display: flex;
       }
     }
-  `}
+  `};
 `;
 
 const CommentList: FC = () => (
-  <Container>
+  <Section>
     <StyledWrapper>
-      <Title component="h2">Hey, see what our specialists are writing</Title>
+      <div>
+        <AnimateContent onScroll>
+          <Title component="h2">Hey, see what our specialists are writing</Title>
+        </AnimateContent>
+        <AnimateContent onScroll delay={1} position="left">
+          <Description small width="50%">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias eveniet iusto libero
+            nemo vel voluptatibus! Adipisci id maiores odit veritatis
+          </Description>
+        </AnimateContent>
+      </div>
       <CommentSections>
         <BigCommentsRow>
           {COMMENTS.slice(0, 3).map(({ avatar, content, signature, author, id }) => (
@@ -110,7 +128,7 @@ const CommentList: FC = () => (
       </CommentSections>
       <Button>Read more comments</Button>
     </StyledWrapper>
-  </Container>
+  </Section>
 );
 
 export default CommentList;

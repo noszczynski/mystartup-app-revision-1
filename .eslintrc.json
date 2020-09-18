@@ -1,4 +1,4 @@
-{
+ {
   "env": {
     "browser": true,
     "es2020": true
@@ -28,30 +28,10 @@
   "plugins": ["react", "@typescript-eslint", "import"],
   "rules": {
     "@typescript-eslint/ban-ts-comment": "off",
-    "no-restricted-syntax": ["off"],
-    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
     "react/jsx-props-no-spreading": "off",
-    "import/extensions": [
-      "error",
-      "ignorePackages",
-      {
-        "js": "never",
-        "mjs": "never",
-        "jsx": "never",
-        "ts": "never",
-        "tsx": "never"
-      }
-    ],
     "react/prop-types": 0,
-    "react/jsx-filename-extension": [
-      1,
-      {
-        "extensions": [".tsx", ".ts"]
-      }
-    ],
-    "import/prefer-default-export": "off",
-    "import/no-cycle": [2, { "ignoreExternal": true }],
-    "react/jsx-fragments": "off"
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "import/no-cycle": [0, { "ignoreExternal": true }]
   },
   "settings": {
     "import/resolver": {
