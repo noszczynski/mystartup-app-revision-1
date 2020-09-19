@@ -17,7 +17,7 @@ const Theme: FC = ({ children }) => {
     }
   };
 
-  useEffect(() => setActiveTheme(getTheme()), [theme])
+  useEffect(() => setActiveTheme(getTheme()), [theme, getTheme])
 
   return activeTheme && (
     <ThemeProvider theme={activeTheme}>
