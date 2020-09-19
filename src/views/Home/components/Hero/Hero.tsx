@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Button, Title, Description, AnimateContent } from 'components';
+import { Button, Title, Description, AnimateContent, Checkbox } from 'components';
 import { hot } from 'react-hot-loader/root';
 import Element from './Hero.styles';
 import HeroImage from './HeroImage';
@@ -25,6 +25,9 @@ const Hero: FC = () => {
               <Button>Create a startup</Button>
             </Element.ButtonWrapper>
           </AnimateContent>
+          <div>
+            <Checkbox label="this is label" />
+          </div>
         </Element.ContentInner>
       </Element.Content>
       <HeroImage />
