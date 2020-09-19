@@ -69,7 +69,7 @@ const SideBySideSection: FC = () => {
     <Section>
       <Element>
         <Element.Head>
-          <AnimateContent>
+          <AnimateContent variant="h2">
             <Title>Title</Title>
           </AnimateContent>
           <AnimateContent>

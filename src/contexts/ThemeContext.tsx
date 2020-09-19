@@ -1,5 +1,6 @@
-import React, { FC, useContext, useState } from 'react';
+import React, { FC, useContext, useEffect, useState } from 'react';
 import { THEME } from 'utils/constants';
+import themeStorage from '../storage/themeStorage';
 
 type ContextProps = {
   toggleTheme: any,
@@ -7,7 +8,7 @@ type ContextProps = {
 }
 
 const initialState = {
-  theme: THEME.DARK,
+  theme: themeStorage.get() || THEME.LIGHT,
 }
 
 const ThemeContext = React.createContext<Partial<ContextProps>>(initialState)
@@ -15,9 +16,26 @@ const ThemeContext = React.createContext<Partial<ContextProps>>(initialState)
 const ThemeContextProvider: FC = ({children}) => {
   const [theme, setTheme] = useState(initialState.theme)
 
-  const toggleTheme = (): any => {
+  const toggleTheme = (): void => {
     setTheme((prevTheme) => prevTheme === THEME.LIGHT ? THEME.DARK : THEME.LIGHT)
   }
+
+  const init = () => {
+    // set as user preferences when ready
+    const storageTheme = themeStorage.get()
+    if (storageTheme) {
+      setTheme(storageTheme)
+    } else {
+      setTheme(THEME.LIGHT)
+    }
+  };
+
+  const setThemeToStorage = () => {
+    themeStorage.set(theme)
+  }
+
+  useEffect(init, [])
+  useEffect(setThemeToStorage, [theme])
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme}}>

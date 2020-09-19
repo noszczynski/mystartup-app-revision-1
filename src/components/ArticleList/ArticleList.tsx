@@ -58,7 +58,7 @@ const ArticleList: FC = () => (
   <Container>
     <StyledWrapper>
       <div>
-        <AnimateContent onScroll>
+        <AnimateContent onScroll variant="h2">
           <Title component="h2">See what our editors have been writing about recently</Title>
         </AnimateContent>
         <AnimateContent onScroll delay={1} position="left">

@@ -127,7 +127,7 @@ const Advantages: FC = () => (
   <Container>
     <StyledSection>
       <div>
-        <AnimateContent onScroll position="left">
+        <AnimateContent onScroll position="left" variant="h2">
           <Title>What we offer</Title>
         </AnimateContent>
         <AnimateContent onScroll delay={1} position="left">

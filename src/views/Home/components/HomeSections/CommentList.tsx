@@ -100,7 +100,7 @@ const CommentList: FC = () => (
   <Section>
     <StyledWrapper>
       <div>
-        <AnimateContent onScroll>
+        <AnimateContent onScroll variant="h2">
           <Title component="h2">Hey, see what our specialists are writing</Title>
         </AnimateContent>
         <AnimateContent onScroll delay={1} position="left">
