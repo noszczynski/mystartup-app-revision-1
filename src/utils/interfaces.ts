@@ -89,6 +89,11 @@ interface RouteProps {
   };
 }
 
+type RadioSchema = {
+  label: string;
+  id: string;
+}[];
+
 export type {
   ThemeSizes,
   ObjectOfStrings,
@@ -103,4 +108,5 @@ export type {
   ArticlesArray,
   FooterNavigationArray,
   RouteProps,
+  RadioSchema,
 };

@@ -14,21 +14,13 @@ const bounce = keyframes`
 
 const check = keyframes`
   0% {
-    width: 0;
-    height: 0;
-    border-color: white;
-    transform: translate3d(0, 0, 0) rotate(45deg);
+    transform: translateY(-50%) scale(0);
   }
   33% {
-    width: .5rem;
-    height: 0;
-    transform: translate3d(0, 0, 0) rotate(45deg);
+    transform: translateY(-50%) scale(0.5);
   }
   100% {
-    width: .5rem;
-    height: 1rem;
-    border-color: white;
-    transform: translate3d(0, -1rem, 0) rotate(45deg);
+    transform: translateY(-50%) scale(1);
   }
 `;
 
@@ -39,7 +31,7 @@ const CheckboxWrapper: any = styled.div`
   align-items: center;
 `;
 
-const Checkbox = styled.input`
+const Radio = styled.input`
   ${({ theme }) => css`
     height: 0;
     width: 0;
@@ -62,16 +54,19 @@ const Checkbox = styled.input`
         overflow: hidden;
         text-decoration: none;
         transition: height 300ms cubic-bezier(0.4, 0, 0.23, 1);
+        font-size: inherit;
 
         i {
           position: absolute;
           bottom: 0;
           font-style: normal;
           color: ${theme.color.blue};
+          font-size: inherit;
         }
       }
 
       span {
+        font-size: inherit;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -80,7 +75,7 @@ const Checkbox = styled.input`
         height: 1.5rem;
         background: transparent;
         border: 2px solid ${theme.color.gray500};
-        border-radius: 2px;
+        border-radius: 100%;
         cursor: pointer;
         transition: all 250ms cubic-bezier(0.4, 0, 0.23, 1);
       }
@@ -91,9 +86,14 @@ const Checkbox = styled.input`
       color: ${theme.color.gray900};
     }
 
+    :focus + label span,
+    :hover + label span {
+      border-color: ${theme.color.gray900};
+    }
+
     & + label:hover span,
     :focus + label span {
-      background: rgba(255, 255, 255, 0.1);
+      background: transparent;
     }
 
     :checked {
@@ -102,18 +102,23 @@ const Checkbox = styled.input`
       }
 
       & + label span {
-        border: 0.75rem solid ${theme.color.blue};
+        border: 2px solid ${theme.color.blue};
+        background-color: ${theme.color.white};
         animation: ${bounce} 200ms cubic-bezier(0.4, 0, 0.23, 1);
 
         ::before {
           content: '';
           position: absolute;
-          top: 0.9rem;
-          left: 0.2rem;
+          top: 50%;
+          left: 5px;
+          width: 14px;
+          height: 14px;
+          border-radius: 100%;
+          background-color: ${theme.color.blue};
           border-right: 3px solid transparent;
           border-bottom: 3px solid transparent;
-          transform: rotate(45deg);
-          transform-origin: 0 100%;
+          transform-origin: center;
+          transform: scale(0);
           animation: ${check} 125ms 250ms cubic-bezier(0.4, 0, 0.23, 1) forwards;
         }
       }
@@ -125,7 +130,7 @@ const CheckboxLabel = styled.label`
   //
 `;
 
-CheckboxWrapper.Checkbox = Checkbox;
+CheckboxWrapper.Radio = Radio;
 CheckboxWrapper.Label = CheckboxLabel;
 
 export default CheckboxWrapper;
