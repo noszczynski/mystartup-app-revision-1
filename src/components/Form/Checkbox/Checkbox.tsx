@@ -4,14 +4,19 @@ import Element from './Checkbox.styles';
 
 interface Props {
   label: string,
+  id: string,
+  [key: string]: any,
 }
 
-const Checkbox: FC<Props> = ({label}) => {
-  const id = 'ass';
+const Checkbox: FC<Props> = ({
+   label,
+   id,
+  ...props
+}) => {
 
   return (
     <Element>
-      <Element.Checkbox type='checkbox' id={id} />
+      <Element.Checkbox type='checkbox' id={id} {...props} />
       <Element.Label htmlFor={id}>
         <span />
         {label}

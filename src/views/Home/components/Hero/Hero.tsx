@@ -26,7 +26,7 @@ const Hero: FC = () => {
             </Element.ButtonWrapper>
           </AnimateContent>
           <div>
-            <Checkbox label="this is label" />
+            <Checkbox label="this is label" id="test_checkbox" />
           </div>
         </Element.ContentInner>
       </Element.Content>
