@@ -2,8 +2,9 @@ import React, { FC } from 'react';
 import styled, { css } from 'styled-components';
 import { hot } from 'react-hot-loader/root';
 
-const Wrapper = styled.button.attrs(({ type }) => ({
+const Wrapper = styled.button.attrs(({ type,size }) => ({
   type: type || 'button',
+  size: size || 'lg',
 }))`
   ${({ theme }) => css`
     text-align: center;
@@ -15,6 +16,8 @@ const Wrapper = styled.button.attrs(({ type }) => ({
     box-shadow: ${theme.utils.createBoxShadow([ 'minimal' ])};
   `}`;
 
-const Button: FC = ({ children }) => <Wrapper>{children}</Wrapper>;
+const Button: FC = ({ children,...props }) => <Wrapper {...props}>{children}</Wrapper>;
+
+Button.displayName = "Button";
 
 export default hot(Button);
