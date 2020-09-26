@@ -1,4 +1,4 @@
- {
+{
   "env": {
     "browser": true,
     "es2020": true
@@ -31,7 +31,8 @@
     "react/jsx-props-no-spreading": "off",
     "react/prop-types": 0,
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
-    "import/no-cycle": [0, { "ignoreExternal": true }]
+    "import/no-cycle": [0, { "ignoreExternal": true }],
+    "react/jsx-fragments": "off"
   },
   "settings": {
     "import/resolver": {
