@@ -16,5 +16,5 @@ const ButtonElement: JSX.Element = (
 );
 
 storiesOf('Button', module)
-  .addDecorator(StoryRouter())
+  /* .addDecorator(StoryRouter()) */
   .add('Button', (): JSX.Element => <Theme>{ButtonElement}</Theme>);
