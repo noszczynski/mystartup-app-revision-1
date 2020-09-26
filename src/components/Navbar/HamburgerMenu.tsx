@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import { useNavbarContext } from '../../contexts/NavbarContext';
 
 const hamburgerBarMixin = (isLight: boolean | undefined) => css`
-  background-color: ${({theme}) => isLight ? theme.color.white : theme.color.dark};
+  background-color: ${({theme}) => isLight ? theme.color.white : theme.color.hamburger};
   display: block;
   border-radius: 8px;
   height: .125rem;

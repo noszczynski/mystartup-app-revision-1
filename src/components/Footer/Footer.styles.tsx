@@ -59,7 +59,7 @@ const Section = styled.section`
     }
     
     article:first-child nav:last-child {
-      background-color: ${theme.color.yellow}40;
+      background-color: ${theme.color.bottomMenuHighlighted};
     }
   `}`;
 
@@ -73,7 +73,7 @@ const Column = styled.article`
 const Navigation = styled(motion.nav)`
   ${({ theme }) => css`
     padding: 1rem;
-    background-color: ${theme.color.gray50};
+    background-color: ${theme.color.bottomMenu};
     border-radius: .5rem;
     
     ul, ol {
@@ -91,26 +91,31 @@ const NavItem = styled(motion.li)`
     display: inline-block;
     position: relative;
     font-size: ${theme.size.font.s};
-    color: ${theme.color.gray900};
     
     ::after {
       content: '';
       position: absolute;
       height: 2px;
       width: 2px;
-      background-color: ${theme.color.gray900};
+      background-color: ${theme.color.p};
       border-radius: 100%;
       left: -0.5rem;
       top: 50%;
       transform: translateY(-50%);
     }
     
-    :hover::after {
-      background-color: ${theme.color.blue};
+    :hover {
+      ::after {
+        background-color: ${theme.color.secondary};
+      }
+      
+      a {
+        color: ${theme.color.secondary}
+      }
     }
     
     a {
-      color: inherit;
+      color: ${theme.color.p};
     }
   `}`;
 

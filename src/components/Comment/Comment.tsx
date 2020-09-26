@@ -1,5 +1,4 @@
 import React, { FC } from 'react';
-import { defaultHover } from 'utils/animations';
 import Image from '../Image/Image';
 import Element from './Comment.styles';
 import Signature from '../Signature/Signature';
@@ -16,12 +15,7 @@ const Comment: FC<Props> = ({
   name,
   signature,
 }) => (
-  <Element
-    whileHover={defaultHover}
-    transition={{
-      filter: { delay: 0.1 },
-    }}
-  >
+  <Element>
     <Element.Avatar>
       <Image src={image} alt="comment author avatar" />
     </Element.Avatar>

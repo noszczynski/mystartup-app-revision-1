@@ -7,12 +7,14 @@ const Wrapper = styled.button.attrs(({ type }) => ({
 }))`
   ${({ theme }) => css`
     text-align: center;
-    background-color: ${theme.color.blue};
-    padding: ${theme.buttonSizes.lg.padding};
+    padding: .75rem 1.75rem;
     border-radius: ${theme.buttonSizes.lg.borderRadius};
-    color: ${theme.color.white};
-    font-size: ${theme.buttonSizes.lg.fontSize};
+    font-size: ${theme.size.font.xs};
     box-shadow: ${theme.utils.createBoxShadow([ 'minimal' ])};
+    background: ${theme.color.button};
+    color: ${theme.color.buttonText};
+    font-weight: ${theme.size.weight.bold};
+    text-transform: uppercase;
   `}`;
 
 const Button: FC = ({ children }) => <Wrapper>{children}</Wrapper>;
