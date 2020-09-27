@@ -40,21 +40,15 @@ const Wrapper = styled.button<Props>`
 `;
 
 const Button: FC<Props> = ({ to, children, ...props }) => {
-  if (to) {
-    return (
-      <Wrapper as={Link} to={to} {...props}>
-        {children}
-      </Wrapper>
-    );
-  }
-
-  return (
-    <Wrapper to={to} {...props} type="button">
+  return to ? (
+    <Wrapper as={Link} to={to} {...props}>
+      {children}
+    </Wrapper>
+  ) : (
+    <Wrapper {...props} type="button">
       {children}
     </Wrapper>
   );
 };
-
-Button.displayName = 'Button';
 
 export default hot(Button);

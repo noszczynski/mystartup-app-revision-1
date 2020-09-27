@@ -1,22 +1,19 @@
 import styled, { css } from 'styled-components';
-import { Link as LinkStandard } from 'react-router-dom';
-import { generateCss,fontable,FontableProps } from 'utils/mixins';
+import { Link as LinkComponent } from 'react-router-dom';
+import { generateCss, fontable, FontableProps } from 'utils/mixins';
 
-interface Props extends FontableProps{
-  iblock?: boolean;
-  block?: boolean;
+interface Props extends FontableProps {
+  display: 'inline-block' | 'block';
 }
 
-const Link = styled(LinkStandard)<Props>`
+const Link = styled(LinkComponent)<Props>`
   ${fontable.css}
 
-  ${({iblock,block})=> css`
-    ${iblock && generateCss('display: inline-block')}
+  ${({ display }) => css`
+    ${display === 'inline-block' && generateCss('display: inline-block')}
 
-    ${block && generateCss('display: block')}
+    ${display === 'block' && generateCss('display: block')}
   `}
 `;
-
-Link.displayName = 'Link';
 
 export default Link;
