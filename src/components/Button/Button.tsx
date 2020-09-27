@@ -25,9 +25,9 @@ interface Props extends MarginableProps, FontableProps {
 }
 
 const Wrapper = styled.button<Props>`
-  ${({ theme, btnSize = 'lg', bgColor = 'blue' }) => css`
+  ${({ theme, btnSize = 'lg', bgColor }) => css`
     text-align: center;
-    background-color: ${theme.color[bgColor]};
+    background: ${bgColor ? theme.color[bgColor] : theme.color.button};
     padding: ${theme.buttonSizes[btnSize].padding};
     border-radius: ${theme.buttonSizes[btnSize].borderRadius};
     color: ${theme.color.white};
