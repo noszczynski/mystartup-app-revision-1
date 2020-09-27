@@ -3,7 +3,6 @@ import { Image } from 'components';
 
 const Hero: any = styled.section`
   ${({ theme }) => css`
-    background-color: ${theme.color.gray50};
     display: flex;
     align-items: center;
     height: calc(100vh - 10rem);

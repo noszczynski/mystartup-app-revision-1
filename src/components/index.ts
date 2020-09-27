@@ -23,6 +23,8 @@ import Page from './Page/Page';
 import SocialWrapper from './SocialWrapper/SocialWrapper';
 import SideBySideSection from './SideBySideSection/SideBySideSection';
 import TwoSideItem from './SideBySideSection/TwoSideItem';
+import Checkbox from './Form/Checkbox/Checkbox';
+import Radio from './Form/Radio/Radio';
 
 export {
   Article,
@@ -50,4 +52,6 @@ export {
   HamburgerMenu,
   SideBySideSection,
   TwoSideItem,
+  Checkbox,
+  Radio,
 };

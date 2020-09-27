@@ -69,7 +69,7 @@ const SideBySideSection: FC = () => {
     <Section>
       <Element>
         <Element.Head>
-          <AnimateContent>
+          <AnimateContent variant="h2">
             <Title>Title</Title>
           </AnimateContent>
           <AnimateContent>
@@ -81,7 +81,7 @@ const SideBySideSection: FC = () => {
         </Element.Head>
         <Element.Content>
           {ITEMS.map((item) => (
-            <TwoSideItem item={item} />
+            <TwoSideItem item={item} key={item.title} />
           ))}
         </Element.Content>
       </Element>

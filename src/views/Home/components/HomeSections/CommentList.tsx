@@ -52,10 +52,10 @@ const BigCommentsRow = styled(SmoothShowItems)`
     }
 
     article:nth-child(n + 2) {
-      background-color: ${theme.color.white};
+      background-color: ${theme.color.highlightedElementBg};
       box-shadow: 0 5px 15px -8px rgba(0, 0, 0, 0.5);
     }
-  `};
+  `}
 `;
 
 const RegularCommentsRow = styled(SmoothShowItems)`
@@ -70,7 +70,7 @@ const RegularCommentsRow = styled(SmoothShowItems)`
     }
 
     article:nth-child(2) {
-      background-color: ${theme.color.white};
+      background-color: ${theme.color.highlightedElementBg};
       box-shadow: 0 5px 15px -8px rgba(0, 0, 0, 0.5);
     }
 
@@ -93,14 +93,14 @@ const RegularCommentsRow = styled(SmoothShowItems)`
         display: flex;
       }
     }
-  `};
+  `}
 `;
 
 const CommentList: FC = () => (
   <Section>
     <StyledWrapper>
       <div>
-        <AnimateContent onScroll>
+        <AnimateContent onScroll variant="h2">
           <Title component="h2">Hey, see what our specialists are writing</Title>
         </AnimateContent>
         <AnimateContent onScroll delay={1} position="left">

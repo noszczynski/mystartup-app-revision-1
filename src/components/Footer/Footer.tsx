@@ -9,10 +9,14 @@ import {
   AnimateContent,
   Section,
 } from 'components';
-import { logoDarkRight as logo } from 'assets';
+import { logoDarkRight as logo, logoLightRight as logoWhite } from 'assets';
 import Element from './Footer.styles';
+import { THEME } from '../../utils/constants';
+import { useThemeContext } from '../../contexts/ThemeContext';
 
 const Footer: FC = () => {
+  const { theme } = useThemeContext()
+
   return (
     <Section>
       <Element>
@@ -20,7 +24,7 @@ const Footer: FC = () => {
         <Element.Aside>
           <Element.Spacer>
             <Element.Logo>
-              <Image src={logo} alt="black m letter as logo and text MyStartup" />
+              <Image src={theme === THEME.LIGHT ? logo: logoWhite} alt="black m letter as logo and text MyStartup" />
             </Element.Logo>
             <Element.Rights>
               <AnimateContent onScroll>
