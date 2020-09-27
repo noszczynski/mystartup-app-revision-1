@@ -1,7 +1,7 @@
 import React, { ChangeEvent, FC } from 'react';
 import { hot } from 'react-hot-loader/root';
+import { RadioSchema } from 'utils/interfaces';
 import Element from './Radio.styles';
-import { RadioSchema } from '../../../utils/interfaces';
 
 interface Props {
   schema: RadioSchema;
