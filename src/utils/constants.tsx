@@ -1,14 +1,4 @@
 import {
-  Category,
-  MonetizationOn,
-  PlayArrow,
-  FiberNew,
-} from '@material-ui/icons';
-import React from 'react';
-import colors from 'theme/colors';
-import theme from 'theme/theme';
-import {
-  AdvantagesArray,
   CommentArray,
   ObjectOfStrings,
   ArticlesArray,
@@ -101,37 +91,6 @@ const ARTICLES_ITEMS: ArticlesArray = [
     },
     content:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos doloremque eaque nam soluta tenetur! Accusamus aperiam dicta dolore enim excepturi, hic ipsam, laboriosam, magnam neque quae quam quisquam tempore voluptate.',
-  },
-];
-
-const ADVANTAGES_ITEMS: AdvantagesArray = [
-  {
-    title: 'Categories',
-    description:
-      'The projects available on our website have their own categories that you can filter the results by to choose what you really want to support',
-    icon: <Category />,
-    background: theme.gradient.rose,
-  },
-  {
-    title: 'Start-up',
-    description:
-      'By registering as a startup, you can actively search for new investors and submit financing proposals to them',
-    icon: <PlayArrow />,
-    background: theme.gradient.orange,
-  },
-  {
-    title: 'Invest',
-    description:
-      'As an investor, you can follow your favorite startups and support them with your funds',
-    icon: <MonetizationOn />,
-    background: theme.gradient.green,
-  },
-  {
-    title: 'News',
-    description:
-      'Here you will find news from your favorite startups and news that may interest you',
-    icon: <FiberNew />,
-    background: theme.gradient.blue,
   },
 ];
 
@@ -306,20 +265,6 @@ const BOTTOM_NAV_ITEMS: FooterNavigationArray = [
   }]
 ];
 
-const CATEGORY_COLORS: ObjectOfStrings = {
-  EVENTS: colors.blue,
-  CULTURE_AND_ART: colors.yellow,
-  BUSINESS: colors.green,
-  POLITICS: colors.gray900,
-  HEALTH: colors.red,
-  SPORT: colors.blue,
-  GAMES: colors.green,
-  MUSIC: colors.red,
-  FOOD_AND_CRAFT: colors.yellow,
-  DESIGN_AND_TECH: colors.ocean,
-  FILM_AND_COMICS: colors.ocean,
-};
-
 const THEME: ObjectOfStrings ={
   LIGHT: 'LIGHT',
   DARK: 'DARK',
@@ -327,10 +272,8 @@ const THEME: ObjectOfStrings ={
 };
 
 export {
-  ADVANTAGES_ITEMS,
   ARTICLES_ITEMS,
   COMMENTS,
-  CATEGORY_COLORS,
   CATEGORY_LABELS,
   NAV_ITEMS,
   BOTTOM_NAV_ITEMS,

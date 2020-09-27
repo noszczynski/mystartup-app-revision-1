@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
 import styled, { css } from 'styled-components';
 import { AnimateContent, Description, Image, Title } from 'components';
-import colors from '../../theme/colors';
 
 const Element: any = styled.article`
   ${({ theme }) => css`
@@ -60,7 +59,7 @@ const TwoSideItem: FC<Props> = ({ item: { content, image, title, alt } }) => {
           <Image src={image} alt={alt} />
         </Element.Image>
         <Element.ContentInner>
-          <AnimateContent onScroll color={colors.blue}>
+          <AnimateContent onScroll variant="h2">
             <Title>{title}</Title>
           </AnimateContent>
           <AnimateContent onScroll delay={0.4}>

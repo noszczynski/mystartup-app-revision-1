@@ -9,7 +9,7 @@ const Navigation: any = styled.div<{isOpen: boolean, scrolled: boolean}>`
     left: 0;
     margin: 0 auto;
     width: 100%;
-    background-color: ${theme.color.white};
+    background-color: ${theme.color.bodyBg};
     z-index: 1000;
     
     ::after {
@@ -107,8 +107,8 @@ const iconMixin = () => css`
     align-items:center;
     justify-content:center;
     text-align:center;
-    color: ${theme.color.blue};
-    background-color: ${theme.color.blue}20;
+    color: ${theme.color.icon};
+    background-color: ${theme.color.iconBg};
     border-radius: 100%;
     transition: opacity .1s ease-in-out;
     

@@ -1,11 +1,10 @@
 import React, { FC } from 'react';
-import { defaultHover } from 'utils/animations';
-import { CATEGORY_COLORS, CATEGORY_LABELS } from 'utils/constants';
-import colors from 'theme/colors';
+import { CATEGORY_LABELS } from 'utils/constants';
 import Element from './Article.styles';
 import Signature from '../Signature/Signature';
 import Title from '../Title/Title';
 import Image from '../Image/Image';
+import { categoryColors } from '../../theme/colors';
 
 interface Props {
   article: {
@@ -32,7 +31,7 @@ const Article: FC<Props> = ({ article, signature, columns, children }) => {
   const { image, imageAlt, category, time, title, id } = article;
 
   return (
-    <Element columns={columns} whileHover={defaultHover}>
+    <Element columns={columns}>
       <Element.BodyTop>
         <Image src={image} alt={imageAlt} />
       </Element.BodyTop>
@@ -42,7 +41,7 @@ const Article: FC<Props> = ({ article, signature, columns, children }) => {
             <Element.Category>
               <Title
                 component="h6"
-                color={CATEGORY_COLORS[category]}
+                color={categoryColors[category]}
                 linkTo={`/category/${category.toLowerCase()}`}
               >
                 {CATEGORY_LABELS[category]}
@@ -52,7 +51,7 @@ const Article: FC<Props> = ({ article, signature, columns, children }) => {
           </Element.Head>
           <Element.Body>
             <Element.BodyInner>
-              <Title component="h3" color={colors.dark} linkTo={`/news/${id}`}>
+              <Title component="h3" linkTo={`/news/${id}`}>
                 {title}
               </Title>
               <Element.Description>{children}</Element.Description>

@@ -33,7 +33,7 @@ const Select: FC<Props> = ({
   const [open, setOpen] = useState(false);
 
   const handleChange = ():void => {
-    console.log('change');
+    // TODO
   };
 
   return (

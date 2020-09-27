@@ -21,21 +21,21 @@ const AnimatedElement = styled.div`
   display: inline-block;
 `;
 
-const AnimatedSpan = styled.span<{ color: string | undefined }>`
+const AnimatedSpan = styled.span<{ variant: string | undefined }>`
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   z-index: 2;
-  background-color: ${({ theme, color }) => color || theme.color.gray100};
+  background: ${({ theme, variant }) => variant ? theme.color[variant] : theme.color.p};
 `;
 
 type Props = {
   onScroll?: boolean | undefined;
   delay?: number | undefined;
   start?: string | undefined;
-  color?: string | undefined;
+  variant?: string | undefined;
   position?: PositionTypes;
 };
 
@@ -43,11 +43,11 @@ const defaultProps = {
   onScroll: false,
   delay: 0,
   start: 'top 80%',
-  color: undefined,
+  variant: 'p',
   position: 'left',
 };
 
-const AnimateContent: FC<Props> = ({ onScroll, start, delay, color, position, children }) => {
+const AnimateContent: FC<Props> = ({ onScroll, start, delay, variant, position, children }) => {
   const wrapper = useRef(null);
 
   const animate = () => {
@@ -76,7 +76,7 @@ const AnimateContent: FC<Props> = ({ onScroll, start, delay, color, position, ch
   return (
     <Element position={position} ref={wrapper}>
       <AnimatedElement>{children}</AnimatedElement>
-      <AnimatedSpan color={color} />
+      <AnimatedSpan variant={variant} />
     </Element>
   );
 };
