@@ -1,9 +1,9 @@
 import React, { FC, useEffect, useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 import GlobalStyle from 'utils/globalStyle';
+import { contrastTheme, darkTheme, lightTheme } from 'theme/theme';
 import { useThemeContext } from '../../contexts/ThemeContext';
 import { THEME } from '../../utils/constants';
-import { contrastTheme, darkTheme, lightTheme } from '../../theme/theme';
 
 const Theme: FC = ({ children }) => {
   const [activeTheme, setActiveTheme] = useState(null)

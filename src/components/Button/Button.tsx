@@ -1,22 +1,54 @@
 import React, { FC } from 'react';
 import styled, { css } from 'styled-components';
 import { hot } from 'react-hot-loader/root';
+import { marginable, MarginableProps, fontable, FontableProps } from 'utils/mixins';
+import Link from '../Link/Link';
 
-const Wrapper = styled.button.attrs(({ type }) => ({
-  type: type || 'button',
-}))`
-  ${({ theme }) => css`
+interface Props extends MarginableProps, FontableProps {
+  btnSize?: 'sm' | 'md' | 'lg' | 'xl';
+  bgColor?:
+    | 'light'
+    | 'dark'
+    | 'white'
+    | 'black'
+    | 'blue'
+    | 'yellow'
+    | 'red'
+    | 'ocean'
+    | 'gray900'
+    | 'gray700'
+    | 'gray500'
+    | 'gray300'
+    | 'gray100'
+    | 'gray50';
+  to?: string;
+}
+
+const Wrapper = styled.button<Props>`
+  ${({ theme, btnSize = 'lg', bgColor }) => css`
     text-align: center;
-    padding: .75rem 1.75rem;
-    border-radius: ${theme.buttonSizes.lg.borderRadius};
-    font-size: ${theme.size.font.xs};
-    box-shadow: ${theme.utils.createBoxShadow([ 'minimal' ])};
-    background: ${theme.color.button};
-    color: ${theme.color.buttonText};
-    font-weight: ${theme.size.weight.bold};
-    text-transform: uppercase;
-  `}`;
+    background: ${bgColor ? theme.color[bgColor] : theme.color.button};
+    padding: ${theme.buttonSizes[btnSize].padding};
+    border-radius: ${theme.buttonSizes[btnSize].borderRadius};
+    color: ${theme.color.white};
+    font-size: ${theme.buttonSizes[btnSize].fontSize};
+    box-shadow: ${theme.utils.createBoxShadow(['minimal'])};
+  `}
 
-const Button: FC = ({ children }) => <Wrapper>{children}</Wrapper>;
+  ${marginable.css}
+  ${fontable.css}
+`;
+
+const Button: FC<Props> = ({ to, children, ...props }) => {
+  return to ? (
+    <Wrapper as={Link} to={to} {...props}>
+      {children}
+    </Wrapper>
+  ) : (
+    <Wrapper {...props} type="button">
+      {children}
+    </Wrapper>
+  );
+};
 
 export default hot(Button);
