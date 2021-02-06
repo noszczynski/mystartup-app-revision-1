@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC, useCallback, useEffect, useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 import GlobalStyle from 'utils/globalStyle';
 import { contrastTheme, darkTheme, lightTheme } from 'theme/theme';
@@ -9,15 +9,15 @@ const Theme: FC = ({ children }) => {
   const [activeTheme, setActiveTheme] = useState(null)
   const { theme } = useThemeContext()
 
-  const getTheme = (): any => {
+  const getTheme = useCallback((): any => {
     switch (theme) {
       case THEME.DARK: return darkTheme
       case THEME.CONTRAST: return contrastTheme
       default: return lightTheme
     }
-  };
+  }, [theme])
 
-  useEffect(() => setActiveTheme(getTheme()), [theme])
+  useEffect(() => setActiveTheme(getTheme()), [theme, getTheme])
 
   return activeTheme && (
     <ThemeProvider theme={activeTheme}>
